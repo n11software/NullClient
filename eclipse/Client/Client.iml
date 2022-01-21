@@ -373,5 +373,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="discord-rpc" level="project" />
+    <orderEntry type="library" name="discord-rpc_1" level="project" />
+    <orderEntry type="library" name="slick" level="project" />
   </component>
 </module>

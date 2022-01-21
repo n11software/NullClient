@@ -95,7 +95,7 @@ public class SplashScreen {
         GlStateManager.resetColor();
         resetTextureState();
 
-        Gui.drawRect(0, sr.getScaledHeight() - 2, (int)calc, sr.getScaledHeight(), new Color(149, 201, 144).getRGB());
+        Gui.drawRect(0, sr.getScaledHeight() - 2, (int)calc, sr.getScaledHeight(), new Color(255, 0, 0).getRGB());
     }
 
     public static void resetTextureState() {

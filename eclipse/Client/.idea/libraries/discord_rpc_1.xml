@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="discord-rpc_1">
+    <CLASSES>
+      <root url="jar://$MCP_LOC$/jars/libraries/net/arikia/dev/discord-rpc_1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
