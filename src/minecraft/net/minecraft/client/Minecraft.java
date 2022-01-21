@@ -630,7 +630,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     private void createDisplay() throws LWJGLException
     {
         Display.setResizable(true);
-        Display.setTitle("null");
+        Display.setTitle("N11 Client 1.8.9");
 
         try
         {
