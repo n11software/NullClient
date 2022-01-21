@@ -1,6 +1,7 @@
 package n11client;
 
 import n11client.Log;
+import n11client.gui.SplashScreen;
 import net.arikia.dev.drpc.DiscordUser;
 
 public class Client {
@@ -13,6 +14,7 @@ public class Client {
 
     public void init() {
         Log.log("Initializing client...");
+        SplashScreen.setProgress(1, "Initializing Discord RPC...");
         discordRP.start();
     }
 
