@@ -1660,14 +1660,14 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.displayWidth = Display.getDisplayMode().getWidth();
                 this.displayHeight = Display.getDisplayMode().getHeight();
 
-                if (this.displayWidth <= 0)
-                {
-                    this.displayWidth = 1;
-                }
+                if (!Client.isBorderlessFullscreenEnabled) {
+                    if (this.displayWidth <= 0) {
+                        this.displayWidth = 1;
+                    }
 
-                if (this.displayHeight <= 0)
-                {
-                    this.displayHeight = 1;
+                    if (this.displayHeight <= 0) {
+                        this.displayHeight = 1;
+                    }
                 }
             }
             else
@@ -1696,7 +1696,13 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.updateFramebufferSize();
             }
 
-            Display.setFullscreen(this.fullscreen);
+            if (!Client.isBorderlessFullscreenEnabled) Display.setFullscreen(this.fullscreen);
+            else {
+                System.setProperty("org.lwjgl.opengl.Window.undecorated", String.valueOf(fullscreen));
+                Display.setFullscreen(false);
+                Display.setResizable(!fullscreen);
+                Display.setDisplayMode(fullscreen ? Display.getDesktopDisplayMode() : new DisplayMode(displayWidth, displayHeight));
+            }
             Display.setVSyncEnabled(this.gameSettings.enableVsync);
             this.updateDisplay();
         }

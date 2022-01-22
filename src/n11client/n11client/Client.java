@@ -9,8 +9,8 @@ public class Client {
     public static Client getInstance() {
         return INSTANCE;
     }
-    
-    public static boolean isOldAnimationsEnabled = true;
+
+    public static boolean isOldAnimationsEnabled = true, isBorderlessFullscreenEnabled = true;
 
     private final DiscordIntegration discordRP = new DiscordIntegration();
 
