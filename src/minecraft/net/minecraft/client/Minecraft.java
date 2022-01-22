@@ -37,6 +37,7 @@ import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
 
 import n11client.Client;
+import n11client.event.impl.RenderEvent;
 import n11client.gui.SplashScreen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -603,6 +604,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
 
         this.renderGlobal.makeEntityOutlineShader();
+        Client.getInstance().start();
     }
 
     private void registerMetadataSerializers()
@@ -2278,6 +2280,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             this.mcProfiler.endStartSection("pendingConnection");
             this.myNetworkManager.processReceivedPackets();
         }
+
+        new RenderEvent().call();
 
         this.mcProfiler.endSection();
         this.systemTime = getSystemTime();

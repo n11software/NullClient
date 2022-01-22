@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
+
+import n11client.event.impl.RenderEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.material.Material;
@@ -1427,6 +1429,8 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 }
             }
         }
+
+        new RenderEvent().call();
 
         this.frameFinish();
         this.waitForServerThread();

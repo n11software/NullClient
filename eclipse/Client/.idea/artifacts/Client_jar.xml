@@ -3,8 +3,6 @@
     <output-path>$MCP_LOC$/export/jar/</output-path>
     <root id="archive" name="N11.jar">
       <element id="module-output" name="Client" />
-      <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/net/arikia/dev/discord-rpc_1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/org/newdawn/slick.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
