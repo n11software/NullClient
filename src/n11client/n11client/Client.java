@@ -1,8 +1,6 @@
 package n11client;
 
-import n11client.Log;
 import n11client.gui.SplashScreen;
-import net.arikia.dev.drpc.DiscordUser;
 
 public class Client {
     private static final Client INSTANCE = new Client();
