@@ -1,16 +1,16 @@
 package n11client.mods;
 
 import n11client.gui.hud.HUDManager;
-import n11client.mods.impl.ModHelloWorld;
+import n11client.mods.impl.ModArmorStatus;
 
 public class ModInstances {
 
-    private static ModHelloWorld HelloWorld;
+    private static ModArmorStatus ArmorStatus;
 
     public static  void register(HUDManager manager) {
-        HelloWorld = new ModHelloWorld();
-        manager.register(HelloWorld);
+        ArmorStatus = new ModArmorStatus();
+        manager.register(ArmorStatus);
     }
 
-    public static ModHelloWorld getHelloWorld() { return HelloWorld; }
+    public static ModArmorStatus getArmorStatus() { return ArmorStatus; }
 }
