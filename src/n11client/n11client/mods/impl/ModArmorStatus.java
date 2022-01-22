@@ -11,7 +11,9 @@ import org.lwjgl.opengl.GL11;
 
 public class ModArmorStatus extends ModDraggable {
 
-    public boolean isShowingDurability = false;
+    public boolean isShowingDurability = true;
+    public boolean isVertical = true;
+    public boolean isRightAligned = true;
     private ScreenPosition pos = ScreenPosition.fromAbsolute(1216, 640);
 
     @Override
@@ -25,26 +27,34 @@ public class ModArmorStatus extends ModDraggable {
     }
 
     @Override
-    public int getWidth() {
-        return 64;
-    }
+    public int getWidth() { return !isVertical ? 80 : isShowingDurability ? 64 : 16; }
 
     @Override
-    public int getHeight() {
-        return 80;
-    }
+    public int getHeight() { return isVertical ? 80 : 16; }
 
     @Override
     public void render(ScreenPosition pos) {
-        int used = 0;
-        if (mc.thePlayer.getHeldItem() != null) {
-            renderItemStack(pos, 0, mc.thePlayer.getHeldItem());
-            used = 1;
+        int used = isRightAligned&&!isVertical ? 0 : isRightAligned ? 0 : 5;
+        if ((isRightAligned||isVertical) && mc.thePlayer.getHeldItem() != null) {
+            renderItemStack(pos, used, mc.thePlayer.getHeldItem());
+            if (isRightAligned&&!isVertical) used++;
+            else if (isVertical) used++;
+            else used--;
         }
         for (int i=0;i<mc.thePlayer.inventory.armorInventory.length;i++) {
             ItemStack item = mc.thePlayer.inventory.armorInventory[i];
             renderItemStack(pos, used, item);
-            if (item != null) used++;
+            if (item != null) {
+                if (isRightAligned&&!isVertical) used++;
+                else if (isVertical) used++;
+                else used--;
+            }
+        }
+        if ((!isRightAligned&&!isVertical) && mc.thePlayer.getHeldItem() != null) {
+            renderItemStack(pos, used, mc.thePlayer.getHeldItem());
+            if (isRightAligned&&!isVertical) used++;
+            else if (isVertical) used++;
+            else used--;
         }
     }
 
@@ -60,10 +70,10 @@ public class ModArmorStatus extends ModDraggable {
     private void renderItemStack(ScreenPosition pos, int i, ItemStack item) {
         if (item == null) return;
         GL11.glPushMatrix();
-        int yAdd = (-16*i)+64;
-        if (isShowingDurability && item.getItem().isDamageable()) font.drawString(item.getMaxDamage()-item.getItemDamage()+"", (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20, pos.getAbsoluteY()+yAdd+5, -1);
+        int off = (-16*i)+64;
+        if ((isShowingDurability && isVertical) && item.getItem().isDamageable()) font.drawString(item.getMaxDamage()-item.getItemDamage()+"", isRightAligned ? (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20 : pos.getAbsoluteX()+20, pos.getAbsoluteY()+off+5, -1);
         RenderHelper.enableGUIStandardItemLighting();
-        mc.getRenderItem().renderItemAndEffectIntoGUI(item, (pos.getAbsoluteX()+getWidth())-16, pos.getAbsoluteY()+yAdd);
+        mc.getRenderItem().renderItemAndEffectIntoGUI(item, isVertical ? isRightAligned ? (pos.getAbsoluteX()+getWidth())-16 : (pos.getAbsoluteX()) : pos.getAbsoluteX()+off, isVertical ? pos.getAbsoluteY()+off : (pos.getAbsoluteY()+getHeight()-16));
         GL11.glPopMatrix();
     }
 
