@@ -9,6 +9,8 @@ public class Client {
     public static Client getInstance() {
         return INSTANCE;
     }
+    
+    public static boolean isOldAnimationsEnabled = true;
 
     private final DiscordIntegration discordRP = new DiscordIntegration();
 
