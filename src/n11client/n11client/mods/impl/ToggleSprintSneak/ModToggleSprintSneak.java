@@ -16,6 +16,7 @@ public class ModToggleSprintSneak extends ModDraggable {
     private ScreenPosition pos = ScreenPosition.fromAbsolute(5, 706-font.FONT_HEIGHT-2);
 
     public boolean isSprintToggle = true, isSneakToggle = false;
+    public boolean sprint = false;
 
     public int keyHoldTicks = 7;
 
