@@ -20,6 +20,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonSyntaxException;
+import n11client.event.impl.RenderEvent;
 import net.optifine.CustomColors;
 import net.optifine.CustomSky;
 import net.optifine.DynamicLights;

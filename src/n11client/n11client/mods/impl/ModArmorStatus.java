@@ -67,7 +67,7 @@ public class ModArmorStatus extends ModDraggable {
     private void renderItemStack(ScreenPosition pos, int i, ItemStack item) {
         if (item == null) return;
         int off = (-16*i)+64;
-        if ((isShowingDurabilityText && isShowingDurability && isVertical) && item.getItem().isDamageable()) font.drawStringWithShadow(item.getMaxDamage()-item.getItemDamage()+"", isRightAligned ? (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20 : pos.getAbsoluteX()+20, pos.getAbsoluteY()+off+5, -1);
+        if ((isShowingDurabilityText && isShowingDurability && isVertical) && item.getItem().isDamageable()) font.drawStringWithShadow(item.getMaxDamage()-item.getItemDamage()+"", isRightAligned ? (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20 : pos.getAbsoluteX()+20, pos.getAbsoluteY()+off+5, 0xFFFF5555);
         RenderHelper.enableGUIStandardItemLighting();
         GlStateManager.translate(0.0F, 0.0F, 32.0F);
         float zLevel;

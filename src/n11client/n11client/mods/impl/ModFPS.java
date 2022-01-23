@@ -29,6 +29,6 @@ public class ModFPS extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow("FPS: " + mc.getDebugFPS(), pos.getAbsoluteX(), pos.getAbsoluteY(), -1);
+        font.drawStringWithShadow("FPS: " + mc.getDebugFPS(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
     }
 }
