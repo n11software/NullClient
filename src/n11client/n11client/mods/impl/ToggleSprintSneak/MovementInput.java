@@ -57,7 +57,6 @@ public class MovementInput extends net.minecraft.util.MovementInput {
             if (gameSettings.keyBindInventory.isKeyDown()) {
                 if (sprintWasPressed == 0) {
                     if (ModInstances.getToggleSprintSneak().sprint) sprintWasPressed = -1;
-                    else if (player.capabilities.isFlying) sprintWasPressed = ModInstances.getToggleSprintSneak().keyHoldTicks+1;
                     else sprintWasPressed = 1;
                     ModInstances.getToggleSprintSneak().sprint = !ModInstances.getToggleSprintSneak().sprint;
                 } else if (sprintWasPressed>0) sprintWasPressed++;
@@ -67,7 +66,7 @@ public class MovementInput extends net.minecraft.util.MovementInput {
             }
         } else ModInstances.getToggleSprintSneak().sprint = false;
 
-        if (ModInstances.getToggleSprintSneak().sprint && moveForward == 1.0F && player.onGround && !player.isUsingItem() && !player.isPotionActive(Potion.blindness)) player.setSprinting(true);
+        if (ModInstances.getToggleSprintSneak().sprint && moveForward > 0.0F && !player.isUsingItem() && !player.isPotionActive(Potion.blindness)) player.setSprinting(true);
     }
 
     public String getDisplayText() {
@@ -84,7 +83,7 @@ public class MovementInput extends net.minecraft.util.MovementInput {
             displayText+="[Sneaking (Held)] ";
         } else if (sneak) {
             displayText+="[Sneaking (Toggled)] ";
-        } else if (ModInstances.getToggleSprintSneak().sprint && !isFlying && !isRiding) {
+        } else if (ModInstances.getToggleSprintSneak().sprint && !isRiding) {
             if (isHoldingSprint) displayText += "[Sprinting (Held)] ";
             else displayText += "[Sprinting (Toggled)] ";
         }
