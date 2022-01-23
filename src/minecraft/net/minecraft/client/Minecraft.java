@@ -39,6 +39,7 @@ import javax.imageio.ImageIO;
 import n11client.Client;
 import n11client.event.impl.RenderEvent;
 import n11client.gui.SplashScreen;
+import n11client.mods.ModInstances;
 import n11client.mods.impl.ToggleSprintSneak.ModToggleSprintSneak;
 import n11client.mods.impl.ToggleSprintSneak.MovementInput;
 import net.minecraft.block.Block;

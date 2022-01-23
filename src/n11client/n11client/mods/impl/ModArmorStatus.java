@@ -1,6 +1,7 @@
 package n11client.mods.impl;
 
 import n11client.Log;
+import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
 import net.minecraft.client.Minecraft;
@@ -19,7 +20,10 @@ public class ModArmorStatus extends ModDraggable {
     public boolean isVertical = true;
     public boolean isRightAligned = true;
     public boolean showItemCount = true;
-    private ScreenPosition pos = ScreenPosition.fromAbsolute(isShowingDurabilityText ? isRightAligned ? 1216 : 0 : isVertical ? isRightAligned ? 1264 : 0 : 1200, isVertical ? 640 : 706);
+
+    private RelativePosition rp = new RelativePosition(5, getWidth(), getHeight());
+
+    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
     @Override
     public void save(ScreenPosition pos) {
@@ -28,6 +32,7 @@ public class ModArmorStatus extends ModDraggable {
 
     @Override
     public ScreenPosition load() {
+        Log.log(pos.getAbsoluteX() + ", " + pos.getAbsoluteY());
         return pos;
     }
 

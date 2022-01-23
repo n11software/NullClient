@@ -25,6 +25,12 @@ public class ScreenPosition {
         return new ScreenPosition(x, y);
     }
 
+    public static ScreenPosition fromRelative(RelativePosition rp) {
+        ScreenPosition pos = new ScreenPosition(rp.getAbsoluteX(), rp.getAbsoluteY());
+        pos.setRelativePos(rp);
+        return pos;
+    }
+
     public int getAbsoluteX() {
         return x;
     }
@@ -52,6 +58,11 @@ public class ScreenPosition {
         ScaledResolution sr = new ScaledResolution(mc);
         this.x = (int) (sr.getScaledWidth() / x);
         this.y = (int) (sr.getScaledHeight() / y);
+    }
+
+    public void setRelativePos(RelativePosition pos) {
+        this.x = pos.getAbsoluteX();
+        this.y = pos.getAbsoluteY();
     }
 
 }
