@@ -1,5 +1,7 @@
 package net.minecraft.client.entity;
 
+import n11client.mods.impl.ToggleSprintSneak.ModToggleSprintSneak;
+import n11client.mods.impl.ToggleSprintSneak.MovementInput;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -47,7 +49,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.IChatComponent;
-import net.minecraft.util.MovementInput;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
