@@ -1,4 +1,4 @@
-package n11client;
+package n11client.mods.discord;
 
 import n11client.Log;
 import net.arikia.dev.drpc.DiscordEventHandlers;

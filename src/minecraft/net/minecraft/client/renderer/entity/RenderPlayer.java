@@ -1,6 +1,6 @@
 package net.minecraft.client.renderer.entity;
 
-import n11client.cosmetics.impl.CosmeticTopHat;
+import n11client.cosmetics.hats.CosmeticTopHat;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.model.ModelPlayer;

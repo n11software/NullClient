@@ -1,4 +1,4 @@
-package n11client.cosmetics.impl;
+package n11client.cosmetics.hats;
 
 import n11client.cosmetics.CosmeticBase;
 import n11client.cosmetics.CosmeticController;

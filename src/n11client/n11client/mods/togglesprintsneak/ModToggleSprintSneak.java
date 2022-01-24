@@ -1,4 +1,4 @@
-package n11client.mods.impl.ToggleSprintSneak;
+package n11client.mods.togglesprintsneak;
 
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
@@ -17,8 +17,8 @@ public class ModToggleSprintSneak extends ModDraggable {
     private RelativePosition rp = new RelativePosition(6, 5, (font.FONT_HEIGHT*2)+6);
     private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
-    public boolean isSprintToggle = false, isSneakToggle = false;
-    public boolean sprint = false;
+    public boolean isSprintToggle = true, isSneakToggle = false;
+    public boolean sprint = true, sneak = true;
 
     public int keyHoldTicks = 7;
 
@@ -38,7 +38,7 @@ public class ModToggleSprintSneak extends ModDraggable {
 
     @Override
     public int getWidth() {
-        return font.getStringWidth("[Sprinting (Key Toggled)]");
+        return font.getStringWidth("[Sprinting (Toggled)]");
     }
 
     @Override
@@ -48,11 +48,11 @@ public class ModToggleSprintSneak extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFFFFFF);
     }
 
     @Override
     public void renderDummy(ScreenPosition pos) {
-        font.drawStringWithShadow("[Sprinting (Key Toggled)]", pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow("[Sprinting (Toggled)]", pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
     }
 }

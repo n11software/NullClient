@@ -1,4 +1,4 @@
-package n11client.mods.impl;
+package n11client.mods.armorstatus;
 
 import n11client.Log;
 import n11client.gui.hud.RelativePosition;

@@ -1,4 +1,4 @@
-package n11client.mods.impl.ToggleSprintSneak;
+package n11client.mods.togglesprintsneak;
 
 import n11client.Log;
 import n11client.mods.Mod;

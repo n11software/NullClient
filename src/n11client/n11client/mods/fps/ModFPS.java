@@ -1,4 +1,4 @@
-package n11client.mods.impl;
+package n11client.mods.fps;
 
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
