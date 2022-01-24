@@ -14,7 +14,7 @@ import org.newdawn.slick.Game;
 
 public class ModToggleSprintSneak extends ModDraggable {
 
-    private RelativePosition rp = new RelativePosition(3, 5, (font.FONT_HEIGHT*2)+6);
+    private RelativePosition rp = new RelativePosition(6, 5, (font.FONT_HEIGHT*2)+6);
     private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
     public boolean isSprintToggle = false, isSneakToggle = false;

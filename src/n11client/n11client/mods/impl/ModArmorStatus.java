@@ -21,7 +21,7 @@ public class ModArmorStatus extends ModDraggable {
     public boolean isRightAligned = true;
     public boolean showItemCount = true;
 
-    private RelativePosition rp = new RelativePosition(5, getWidth(), getHeight());
+    private RelativePosition rp = new RelativePosition(8, getWidth(), getHeight());
 
     private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 

@@ -79,9 +79,9 @@ public class MovementInput extends net.minecraft.util.MovementInput {
             if (originalFlySpeed>0.0F) displayText += "[Flying (Boosted)] ";
             else displayText += "[Flying] ";
         }
-        if (sneak&&isHoldingSneak) {
+        if (ModInstances.getToggleSprintSneak().isSneakToggle&&sneak&&isHoldingSneak) {
             displayText+="[Sneaking (Held)] ";
-        } else if (sneak) {
+        } else if (ModInstances.getToggleSprintSneak().isSneakToggle&&sneak) {
             displayText+="[Sneaking (Toggled)] ";
         } else if (ModInstances.getToggleSprintSneak().sprint && !isRiding) {
             if (isHoldingSprint) displayText += "[Sprinting (Held)] ";

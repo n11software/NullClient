@@ -37,12 +37,13 @@ public class HUDConfigScreen extends GuiScreen {
         super.drawDefaultBackground();
         final float zBackup = this.zLevel;
         this.zLevel = 200;
-        this.drawHollowRect(0, 0, this.width-1, this.height-1, 0xFFFF0000);
         for (IRenderer renderer: renderers.keySet()) {
             ScreenPosition pos = renderers.get(renderer);
             renderer.renderDummy(pos);
             this.drawHollowRect(pos.getAbsoluteX(), pos.getAbsoluteY(), renderer.getWidth(), renderer.getHeight(), 0xFF00FFFF);
         }
+
+        ScaledResolution res = new ScaledResolution(mc);
         this.zLevel = zBackup;
     }
 
