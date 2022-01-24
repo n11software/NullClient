@@ -47,8 +47,7 @@ public class Client {
         HUDMan = HUDManager.getInstance();
         ModInstances.register(HUDMan);
 
-        Login.getSessionMicrosoft();
-        Log.log(Login.Token);
+//        Log.log(Login.getSessionMicrosoft());
     }
 
     public void shutdown() {

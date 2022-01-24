@@ -21,7 +21,7 @@ public class Login {
         String url = "https://login.live.com/oauth20_authorize.srf?client_id=41b85c73-302f-4ddb-9a40-d18c73c4bfaa&response_type=code&redirect_uri=http://localhost:25564/&scope=XboxLive.signin%20offline_access";
         browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
         HTTPServer.start();
-        return "";
+        return Token;
     }
 
     public static void microsoftLoginDone(String key) throws IOException {
