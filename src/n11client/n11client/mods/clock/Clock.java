@@ -7,7 +7,7 @@ import n11client.mods.ModDraggable;
 import java.text.SimpleDateFormat;
 
 public class Clock extends ModDraggable {
-    private RelativePosition rp = new RelativePosition(0, 200, 5);
+    private RelativePosition rp = new RelativePosition(1, 0, 20);
     private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
     public void ResizeEvent() {

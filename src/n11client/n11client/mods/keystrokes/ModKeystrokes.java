@@ -127,16 +127,12 @@ public class ModKeystrokes extends ModDraggable {
     @Override
     public void render(ScreenPosition pos) {
         GL11.glPushMatrix();
-        boolean blend = GL11.glIsEnabled(GL11.GL_BLEND);
-        GL11.glDisable(GL11.GL_BLEND);
 
         for (Key key: mode.getKeys()) {
             int textWidth = font.getStringWidth(key.getName());
             Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(255, 255, 255, 55).getRGB() : new Color(0, 0, 0, 102).getRGB());
             font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? new Color(0, 0, 0, 255).getRGB() : new Color(255, 255, 255, 255).getRGB());
         }
-
-        if (blend) GL11.glEnable(GL11.GL_BLEND);
         GL11.glPopMatrix();
     }
 }
