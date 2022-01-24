@@ -1710,6 +1710,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 Display.setResizable(!fullscreen);
                 Display.setDisplayMode(fullscreen ? Display.getDesktopDisplayMode() : new DisplayMode(displayWidth, displayHeight));
             }
+
+            ModInstances.ResizeEvent();
             Display.setVSyncEnabled(this.gameSettings.enableVsync);
             this.updateDisplay();
         }
@@ -1717,7 +1719,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         {
             logger.error((String)"Couldn\'t toggle fullscreen", (Throwable)exception);
         }
-        ModInstances.ResizeEvent();
     }
 
     /**
