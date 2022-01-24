@@ -48,7 +48,7 @@ public class ModToggleSprintSneak extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFFFFFF);
+        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
     }
 
     @Override

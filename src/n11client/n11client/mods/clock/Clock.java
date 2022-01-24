@@ -7,16 +7,17 @@ import n11client.mods.ModDraggable;
 import java.text.SimpleDateFormat;
 
 public class Clock extends ModDraggable {
-    private RelativePosition rp = new RelativePosition(1, 0, 20);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
-
-    public void ResizeEvent() {
-        pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
-    }
 
     SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
     public String getLocalTime() {
         return formatter.format(new java.util.Date());
+    }
+
+    private RelativePosition rp = new RelativePosition(1, -font.getStringWidth(getLocalTime())/2-1, 20);
+    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+
+    public void ResizeEvent() {
+        pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
     }
 
     @Override

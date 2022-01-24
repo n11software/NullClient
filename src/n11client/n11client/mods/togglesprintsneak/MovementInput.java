@@ -83,7 +83,7 @@ public class MovementInput extends net.minecraft.util.MovementInput {
             displayText+="[Sneaking (Held)] ";
         } else if (ModInstances.getToggleSprintSneak().isSneakToggle&&sneak) {
             displayText+="[Sneaking (Toggled)] ";
-        } else if (ModInstances.getToggleSprintSneak().sprint && !isRiding) {
+        } else if (ModInstances.getToggleSprintSneak().sprint && !isRiding && !isFlying) {
             if (isHoldingSprint) displayText += "[Sprinting (Held)] ";
             else displayText += "[Sprinting (Toggled)] ";
         }
