@@ -1,11 +1,17 @@
 package n11client.mods.impl;
 
+import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
 
 public class ModFPS extends ModDraggable {
 
-    private ScreenPosition pos = ScreenPosition.fromAbsolute(5, 5);
+    private RelativePosition rp = new RelativePosition(0, 5, 5);
+    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+
+    public void ResizeEvent() {
+        pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
+    }
 
     @Override
     public void save(ScreenPosition pos) {

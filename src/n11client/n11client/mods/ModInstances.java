@@ -13,7 +13,7 @@ public class ModInstances {
     private static ModKeystrokes KeyStrokes;
     private static ModToggleSprintSneak ToggleSprintSneak;
 
-    public static  void register(HUDManager manager) {
+    public static void register(HUDManager manager) {
         ArmorStatus = new ModArmorStatus();
         manager.register(ArmorStatus);
         FPS = new ModFPS();
@@ -22,6 +22,13 @@ public class ModInstances {
         manager.register(KeyStrokes);
         ToggleSprintSneak = new ModToggleSprintSneak();
         manager.register(ToggleSprintSneak);
+    }
+
+    public static void ResizeEvent() {
+        ArmorStatus.ResizeEvent();
+        FPS.ResizeEvent();
+        KeyStrokes.ResizeEvent();
+        ToggleSprintSneak.ResizeEvent();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }

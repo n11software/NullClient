@@ -39,6 +39,7 @@ import javax.imageio.ImageIO;
 import n11client.Client;
 import n11client.event.impl.RenderEvent;
 import n11client.gui.SplashScreen;
+import n11client.mods.Mod;
 import n11client.mods.ModInstances;
 import n11client.mods.impl.ToggleSprintSneak.ModToggleSprintSneak;
 import n11client.mods.impl.ToggleSprintSneak.MovementInput;
@@ -1259,7 +1260,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                 this.resize(this.displayWidth, this.displayHeight);
             }
-            ModInstances.getArmorStatus().ResizeEvent();
+            ModInstances.ResizeEvent();
         }
     }
 
@@ -1716,7 +1717,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         {
             logger.error((String)"Couldn\'t toggle fullscreen", (Throwable)exception);
         }
-        ModInstances.getArmorStatus().ResizeEvent();
+        ModInstances.ResizeEvent();
     }
 
     /**

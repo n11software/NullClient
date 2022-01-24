@@ -31,7 +31,7 @@ public class ModArmorStatus extends ModDraggable {
     }
 
     public void ResizeEvent() {
-        pos.setRelativePos(new RelativePosition(rp.getSector(), rp.getX(), rp.getY()));
+        pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package n11client.mods.impl.ToggleSprintSneak;
 
+import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.Mod;
 import n11client.mods.ModDraggable;
@@ -13,12 +14,17 @@ import org.newdawn.slick.Game;
 
 public class ModToggleSprintSneak extends ModDraggable {
 
-    private ScreenPosition pos = ScreenPosition.fromAbsolute(5, 706-font.FONT_HEIGHT-2);
+    private RelativePosition rp = new RelativePosition(3, 5, (font.FONT_HEIGHT*2)+6);
+    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
     public boolean isSprintToggle = false, isSneakToggle = false;
     public boolean sprint = false;
 
     public int keyHoldTicks = 7;
+
+    public void ResizeEvent() {
+        pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
+    }
 
     @Override
     public void save(ScreenPosition pos) {

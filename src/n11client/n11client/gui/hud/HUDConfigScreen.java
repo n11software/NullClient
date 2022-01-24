@@ -85,7 +85,6 @@ public class HUDConfigScreen extends GuiScreen {
         int y = Math.max(0, Math.min(pos.getAbsoluteY(), Math.max(height - renderer.getHeight(), 0)));
         RelativePosition rp = new RelativePosition(x, y);
         pos.setRelativePos(rp);
-        pos.setConfXY(x, y);
     }
 
     @Override
