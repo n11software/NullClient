@@ -1259,6 +1259,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                 this.resize(this.displayWidth, this.displayHeight);
             }
+            ModInstances.getArmorStatus().ResizeEvent();
         }
     }
 
@@ -1715,6 +1716,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         {
             logger.error((String)"Couldn\'t toggle fullscreen", (Throwable)exception);
         }
+        ModInstances.getArmorStatus().ResizeEvent();
     }
 
     /**

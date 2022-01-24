@@ -7,6 +7,8 @@ public class ScreenPosition {
 
     private static final Minecraft mc = Minecraft.getMinecraft();
 
+    private RelativePosition rp;
+
     private int x, y;
 
     public ScreenPosition(double x, double y) {
@@ -39,6 +41,8 @@ public class ScreenPosition {
         return y;
     }
 
+    public RelativePosition getRelativePos() { return rp; }
+
     public double getRelativeX() {
         ScaledResolution sr = new ScaledResolution(mc);
         return x / sr.getScaledWidth_double();
@@ -61,8 +65,23 @@ public class ScreenPosition {
     }
 
     public void setRelativePos(RelativePosition pos) {
+        this.rp = pos;
         this.x = pos.getAbsoluteX();
         this.y = pos.getAbsoluteY();
     }
 
+    private int cx, cy;
+
+    public void setConfXY(int x, int y) {
+        this.cx = x;
+        this.cy = y;
+    }
+
+    public int getCx() {
+        return cx;
+    }
+
+    public int getCy() {
+        return cy;
+    }
 }

@@ -16,7 +16,7 @@ import org.lwjgl.opengl.GL11;
 public class ModArmorStatus extends ModDraggable {
 
     public boolean isShowingDurability = true;
-    public boolean isShowingDurabilityText = true;
+    public boolean isShowingDurabilityText = false;
     public boolean isVertical = true;
     public boolean isRightAligned = true;
     public boolean showItemCount = true;
@@ -30,9 +30,12 @@ public class ModArmorStatus extends ModDraggable {
         this.pos = pos;
     }
 
+    public void ResizeEvent() {
+        pos.setRelativePos(new RelativePosition(rp.getSector(), rp.getX(), rp.getY()));
+    }
+
     @Override
     public ScreenPosition load() {
-        Log.log(pos.getAbsoluteX() + ", " + pos.getAbsoluteY());
         return pos;
     }
 
