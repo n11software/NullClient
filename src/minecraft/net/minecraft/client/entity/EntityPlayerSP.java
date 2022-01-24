@@ -1,7 +1,6 @@
 package net.minecraft.client.entity;
 
-import n11client.mods.impl.ToggleSprintSneak.ModToggleSprintSneak;
-import n11client.mods.impl.ToggleSprintSneak.MovementInput;
+import n11client.mods.togglesprintsneak.MovementInput;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
