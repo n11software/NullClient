@@ -16,8 +16,8 @@ public class ModKeystrokes extends ModDraggable {
 
         WASD(Key.W, Key.A, Key.S, Key.D),
         WASD_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB),
-        WASD_SPACE(Key.W, Key.A, Key.S, Key.D, new Key("Space", Minecraft.getMinecraft().gameSettings.keyBindSneak, 1, 41, 58, 18)),
-        WASD_SPACE_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB, new Key("Space", Minecraft.getMinecraft().gameSettings.keyBindSneak, 1, 61, 58, 18));
+        WASD_SPACE(Key.W, Key.A, Key.S, Key.D, Key.SPACE),
+        WASD_SPACE_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB, Key.SPACE);
 
         private final Key[] keys;
         private int width = 0, height = 0;
@@ -45,13 +45,15 @@ public class ModKeystrokes extends ModDraggable {
 
     private static class Key {
 
-        private static final Key W = new Key("W", Minecraft.getMinecraft().gameSettings.keyBindLeft, 21, 1, 18, 18);
-        private static final Key A = new Key("A", Minecraft.getMinecraft().gameSettings.keyBindBack, 1, 21, 18, 18);
-        private static final Key S = new Key("S", Minecraft.getMinecraft().gameSettings.keyBindRight, 21, 21, 18, 18);
-        private static final Key D = new Key("D", Minecraft.getMinecraft().gameSettings.keyBindJump, 41, 21, 18, 18);
+        private static final Key W = new Key("W", Minecraft.getMinecraft().gameSettings.keyBindLeft, 26, 2, 22, 22);
+        private static final Key A = new Key("A", Minecraft.getMinecraft().gameSettings.keyBindBack, 2, 26, 22, 22);
+        private static final Key S = new Key("S", Minecraft.getMinecraft().gameSettings.keyBindRight, 26, 26,22, 22);
+        private static final Key D = new Key("D", Minecraft.getMinecraft().gameSettings.keyBindJump, 50, 26, 22, 22);
 
-        private static final Key LMB = new Key("LMB", Minecraft.getMinecraft().gameSettings.keyBindPickBlock, 1, 41, 28, 18);
-        private static final Key RMB = new Key("RMB", Minecraft.getMinecraft().gameSettings.keyBindDrop, 31, 41, 28, 18);
+        private static final Key LMB = new Key("LMB", Minecraft.getMinecraft().gameSettings.keyBindPickBlock, 2, 50, 34, 18);
+        private static final Key RMB = new Key("RMB", Minecraft.getMinecraft().gameSettings.keyBindDrop, 38, 50, 34, 18);
+
+        private static final Key SPACE = new Key("Space", Minecraft.getMinecraft().gameSettings.keyBindSneak, 2, 70, 70, 18);
 
         private final String name;
         private final KeyBinding keyBind;
@@ -130,8 +132,8 @@ public class ModKeystrokes extends ModDraggable {
 
         for (Key key: mode.getKeys()) {
             int textWidth = font.getStringWidth(key.getName());
-//            Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(255, 255, 255, 102).getRGB() : new Color(0, 0, 0, 102).getRGB());
-            font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? -1 : 0xFFFF5555);
+            Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(255, 255, 255, 55).getRGB() : new Color(0, 0, 0, 102).getRGB());
+            font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? new Color(0, 0, 0, 255).getRGB() : new Color(255, 255, 255, 255).getRGB());
         }
 
         if (blend) GL11.glEnable(GL11.GL_BLEND);
