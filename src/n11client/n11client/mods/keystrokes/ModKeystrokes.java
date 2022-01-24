@@ -6,6 +6,7 @@ import n11client.mods.ModDraggable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.settings.KeyBinding;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
@@ -50,14 +51,15 @@ public class ModKeystrokes extends ModDraggable {
         private static final Key S = new Key("S", Minecraft.getMinecraft().gameSettings.keyBindRight, 26, 26,22, 22);
         private static final Key D = new Key("D", Minecraft.getMinecraft().gameSettings.keyBindJump, 50, 26, 22, 22);
 
-        private static final Key LMB = new Key("LMB", Minecraft.getMinecraft().gameSettings.keyBindPickBlock, 2, 50, 34, 18);
-        private static final Key RMB = new Key("RMB", Minecraft.getMinecraft().gameSettings.keyBindDrop, 38, 50, 34, 18);
+        private static final Key LMB = new Key("LMB", 0, 2, 50, 34, 18);
+        private static final Key RMB = new Key("RMB", 1, 38, 50, 34, 18);
 
         private static final Key SPACE = new Key("Space", Minecraft.getMinecraft().gameSettings.keyBindSneak, 2, 70, 70, 18);
 
         private final String name;
         private final KeyBinding keyBind;
         private final int x, y, width, height;
+        private final int b;
 
         public Key(String name, KeyBinding keyBind, int x, int y, int width, int height) {
             this.name = name;
@@ -66,9 +68,20 @@ public class ModKeystrokes extends ModDraggable {
             this.y = y;
             this.width = width;
             this.height = height;
+            this.b = -1;
         }
 
-        public boolean isDown() { return keyBind.isKeyDown(); }
+        public Key(String name, int b, int x, int y, int width, int height) {
+            this.name = name;
+            this.b = b;
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.keyBind = null;
+        }
+
+        public boolean isDown() { return this.keyBind == null ? Mouse.isButtonDown(this.b) : keyBind.isKeyDown(); }
 
         public int getHeight() {
             return height;
@@ -131,7 +144,7 @@ public class ModKeystrokes extends ModDraggable {
         for (Key key: mode.getKeys()) {
             int textWidth = font.getStringWidth(key.getName());
             Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(255, 255, 255, 55).getRGB() : new Color(0, 0, 0, 102).getRGB());
-            font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2-1, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? new Color(0, 0, 0, 255).getRGB() : new Color(255, 255, 255, 255).getRGB());
+            font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? new Color(0, 0, 0, 255).getRGB() : new Color(255, 255, 255, 255).getRGB());
         }
         GL11.glPopMatrix();
     }

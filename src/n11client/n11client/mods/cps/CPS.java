@@ -10,9 +10,12 @@ import java.util.List;
 
 public class CPS extends ModDraggable {
 
-    private final List<Long> clicks = new ArrayList<Long>();
-    private boolean wasPressed;
-    private long lastPressed;
+    private final List<Long> lclicks = new ArrayList<Long>();
+    private final List<Long> rclicks = new ArrayList<Long>();
+    private boolean lwasPressed;
+    private long llastPressed;
+    private boolean rwasPressed;
+    private long rlastPressed;
 
     private RelativePosition rp = new RelativePosition(7, -100 - getWidth(), 1 + font.FONT_HEIGHT);
     private ScreenPosition pos = ScreenPosition.fromRelative(rp);
@@ -33,23 +36,42 @@ public class CPS extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        final boolean isPressed = Mouse.isButtonDown(0);
+        {
+            final boolean isPressed = Mouse.isButtonDown(0);
 
-        if (isPressed != this.wasPressed) {
-            this.lastPressed = System.currentTimeMillis();
-            this.wasPressed = isPressed;
-            if (isPressed) {
-                this.clicks.add(this.lastPressed);
+            if (isPressed != this.lwasPressed) {
+                this.llastPressed = System.currentTimeMillis();
+                this.lwasPressed = isPressed;
+                if (isPressed) {
+                    this.lclicks.add(this.llastPressed);
+                }
+            }
+        }
+        {
+            final boolean isPressed = Mouse.isButtonDown(1);
+
+            if (isPressed != this.rwasPressed) {
+                this.rlastPressed = System.currentTimeMillis();
+                this.rwasPressed = isPressed;
+                if (isPressed) {
+                    this.rclicks.add(this.rlastPressed);
+                }
             }
         }
 
-        font.drawStringWithShadow("CPS: " + getCPS(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFFFF);
+        font.drawStringWithShadow("[" + getCPSLeft() + " | " + getCPSRight() + "]", pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFFFF);
     }
 
-    private int getCPS() {
+    private int getCPSLeft() {
         final long time = System.currentTimeMillis();
-        this.clicks.removeIf(aLong -> aLong + 1000 < time);
-        return this.clicks.size();
+        this.lclicks.removeIf(aLong -> aLong + 1000 < time);
+        return this.lclicks.size();
+    }
+
+    private int getCPSRight() {
+        final long time = System.currentTimeMillis();
+        this.rclicks.removeIf(aLong -> aLong + 1000 < time);
+        return this.rclicks.size();
     }
 
     @Override
