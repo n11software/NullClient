@@ -7,6 +7,7 @@ import n11client.gui.SplashScreen;
 import n11client.gui.hud.HUDManager;
 import n11client.mods.ModInstances;
 import n11client.mods.discord.DiscordIntegration;
+import n11client.utils.Log;
 import net.minecraft.client.Minecraft;
 
 public class Client {

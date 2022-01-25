@@ -1,17 +1,12 @@
 package n11client.mods.armorstatus;
 
-import n11client.Log;
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.GL11;
 
 public class ModArmorStatus extends ModDraggable {
 

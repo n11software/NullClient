@@ -1,6 +1,5 @@
 package n11client.gui.hud;
 
-import n11client.Log;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 

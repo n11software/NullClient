@@ -1,5 +1,7 @@
 package n11client;
 
+import n11client.utils.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,7 +1,5 @@
 package n11client.mods.togglesprintsneak;
 
-import n11client.Log;
-import n11client.mods.Mod;
 import n11client.mods.ModInstances;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
