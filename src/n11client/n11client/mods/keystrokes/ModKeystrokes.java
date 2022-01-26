@@ -13,6 +13,12 @@ import java.awt.*;
 
 public class ModKeystrokes extends ModDraggable {
 
+    private KeystrokeSettings config;
+
+    public KeystrokeSettings getSettings() {
+        return config;
+    }
+
     public static enum KeyStrokesMode {
 
         WASD(Key.W, Key.A, Key.S, Key.D),
@@ -54,7 +60,7 @@ public class ModKeystrokes extends ModDraggable {
         private static final Key LMB = new Key("LMB", 0, 2, 50, 34, 18);
         private static final Key RMB = new Key("RMB", 1, 38, 50, 34, 18);
 
-        private static final Key SPACE = new Key("Space", Minecraft.getMinecraft().gameSettings.keyBindSneak, 2, 70, 70, 18);
+        private static final Key SPACE = new Key("-----", Minecraft.getMinecraft().gameSettings.keyBindSneak, 2, 70, 70, 18);
 
         private final String name;
         private final KeyBinding keyBind;
@@ -139,6 +145,7 @@ public class ModKeystrokes extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
+
         GL11.glPushMatrix();
 
         for (Key key: mode.getKeys()) {
