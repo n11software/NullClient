@@ -3,6 +3,7 @@ package n11client.mods.keystrokes;
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
+import n11client.utils.Log;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.settings.KeyBinding;
@@ -10,28 +11,25 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
+import java.io.File;
 
 public class ModKeystrokes extends ModDraggable {
 
-    private KeystrokeSettings config;
+    private KeystrokeSettings config = new KeystrokeSettings(this, new File("N11"));
 
     public KeystrokeSettings getSettings() {
         return config;
     }
 
-    public static enum KeyStrokesMode {
-
-        WASD(Key.W, Key.A, Key.S, Key.D),
-        WASD_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB),
-        WASD_SPACE(Key.W, Key.A, Key.S, Key.D, Key.SPACE),
-        WASD_SPACE_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB, Key.SPACE);
+    public static class KeyStrokesMode {
 
         private final Key[] keys;
         private int width = 0, height = 0;
 
-        private KeyStrokesMode(Key... keysIn) {
+        public KeyStrokesMode(Key... keysIn) {
             this.keys = keysIn;
             for (Key key: keys) {
+                if (key == null) continue;
                 this.width = Math.max(this.width, key.getX() + key.getWidth());
                 this.height = Math.max(this.height, key.getY() + key.getHeight());
             }
@@ -110,10 +108,10 @@ public class ModKeystrokes extends ModDraggable {
         }
     }
 
-    private RelativePosition rp = new RelativePosition(0, 5, 5+font.FONT_HEIGHT+20);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.getPos());
 
-    private KeyStrokesMode mode = KeyStrokesMode.WASD_SPACE_MOUSE;
+    private KeyStrokesMode mode = new KeyStrokesMode(config.isWASD() ? Key.W : null, config.isWASD() ? Key.A : null, config.isWASD() ? Key.S : null, config.isWASD() ? Key.D : null,
+            config.isMouseButtons() ? Key.LMB : null, config.isMouseButtons() ? Key.RMB : null, config.isSpaceBar() ? Key.SPACE : null);
 
     public void ResizeEvent() {
         pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
@@ -127,6 +125,8 @@ public class ModKeystrokes extends ModDraggable {
     public void save(ScreenPosition pos) {
         this.pos = pos;
     }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
 
     @Override
     public ScreenPosition load() {
@@ -145,13 +145,13 @@ public class ModKeystrokes extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-
         GL11.glPushMatrix();
-
         for (Key key: mode.getKeys()) {
+            if (key == null) continue;
             int textWidth = font.getStringWidth(key.getName());
-            Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(255, 255, 255, 55).getRGB() : new Color(0, 0, 0, 102).getRGB());
-            font.drawStringWithShadow(key.getName(), pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2, pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4, key.isDown() ? new Color(0, 0, 0, 255).getRGB() : new Color(255, 255, 255, 255).getRGB());
+            if (config.keyBackground) Gui.drawRect(pos.getAbsoluteX()+key.getX(), pos.getAbsoluteY()+key.getY(), pos.getAbsoluteX()+key.getX()+key.getWidth(), pos.getAbsoluteY()+key.getY()+key.getHeight(), key.isDown() ? new Color(config.keyBackgroundPressedRed, config.keyBackgroundPressedGreen, config.keyBackgroundPressedBlue, config.keyBackgroundAlpha).getRGB() : new Color(config.keyBackgroundRed, config.keyBackgroundGreen, config.keyBackgroundBlue, config.keyBackgroundAlpha).getRGB());
+            if (key.keyBind != Minecraft.getMinecraft().gameSettings.keyBindSneak) font.drawStringWithShadow(key.getName(), (int)(pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2), (int)(pos.getAbsoluteY() + key.getY() + key.getHeight()/2-4), key.isDown() ? new Color(config.pressedRed, config.pressedGreen, config.pressedBlue, 255).getRGB() : new Color(config.red, config.green, config.blue, 255).getRGB());
+            else Gui.drawRect((int)(pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2), (int)(pos.getAbsoluteY() + key.getY() + key.getHeight()/2-1), (int)(pos.getAbsoluteX() + key.getX() + key.getWidth()/2-textWidth/2)+textWidth, (int)(pos.getAbsoluteY() + key.getY() + key.getHeight()/2+1), key.isDown() ? new Color(config.pressedRed, config.pressedGreen, config.pressedBlue, 255).getRGB() : new Color(config.red, config.green, config.blue, 255).getRGB());
         }
         GL11.glPopMatrix();
     }

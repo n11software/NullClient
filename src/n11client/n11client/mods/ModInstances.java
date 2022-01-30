@@ -7,6 +7,7 @@ import n11client.mods.cps.CPS;
 import n11client.mods.fps.ModFPS;
 import n11client.mods.keystrokes.ModKeystrokes;
 import n11client.mods.togglesprintsneak.ModToggleSprintSneak;
+import n11client.utils.Log;
 
 public class ModInstances {
 
@@ -39,6 +40,11 @@ public class ModInstances {
         ToggleSprintSneak.ResizeEvent();
         ClockMod.ResizeEvent();
         CPSMod.ResizeEvent();
+    }
+
+    public static void unregister() {
+        getKeyStrokes().getSettings().setPos(getKeyStrokes().getPos());
+        getKeyStrokes().getSettings().save();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }

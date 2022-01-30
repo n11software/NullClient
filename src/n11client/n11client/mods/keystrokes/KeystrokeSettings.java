@@ -1,6 +1,7 @@
 package n11client.mods.keystrokes;
 
 import com.google.gson.Gson;
+import n11client.gui.hud.RelativePosition;
 import n11client.utils.Log;
 import n11client.utils.N11JsonObject;
 
@@ -15,28 +16,27 @@ import java.util.stream.Collectors;
 public class KeystrokeSettings {
     public ModKeystrokes theMod;
     public File configFile;
-    public int x;
-    public int y;
-    public  boolean enabled = true;
-    public  boolean mouseButtons = true;
-    public  boolean spaceBar = true;
-    public  boolean WASD = true;
+    public RelativePosition pos = new RelativePosition(0, 5, 5+9+20);
+    public boolean enabled = true;
+    public boolean mouseButtons = true;
+    public boolean spaceBar = true;
+    public boolean WASD = true;
 
-    public  int red = 255;
-    public  int green = 255;
-    public  int blue = 255;
-    public  int pressedRed = 0;
-    public  int pressedGreen = 0;
-    public  int pressedBlue = 0;
+    public int red = 255;
+    public int green = 255;
+    public int blue = 255;
+    public int pressedRed = 0;
+    public int pressedGreen = 0;
+    public int pressedBlue = 0;
 
-    public  boolean keyBackground = true;
-    public  int keyBackgroundAlpha = 120;
-    public  int keyBackgroundRed = 0;
-    public  int keyBackgroundGreen = 0;
-    public  int keyBackgroundBlue = 0;
-    public  int keyBackgroundPressedRed = 255;
-    public  int keyBackgroundPressedGreen = 255;
-    public  int keyBackgroundPressedBlue = 255;
+    public boolean keyBackground = true;
+    public int keyBackgroundAlpha = 120;
+    public int keyBackgroundRed = 0;
+    public int keyBackgroundGreen = 0;
+    public int keyBackgroundBlue = 0;
+    public int keyBackgroundPressedRed = 255;
+    public int keyBackgroundPressedGreen = 255;
+    public int keyBackgroundPressedBlue = 255;
 
     Gson gson = new Gson();
 
@@ -44,6 +44,7 @@ public class KeystrokeSettings {
         if (!directory.exists()) directory.mkdirs();
         theMod = mod;
         configFile = new File(directory, "keystrokes.json");
+        this.load();
     }
 
     public void load() {
@@ -71,8 +72,9 @@ public class KeystrokeSettings {
             if (!configFile.exists() && !configFile.createNewFile()) return;
 
             N11JsonObject object = new N11JsonObject();
-            object.addProperty("x", x);
-            object.addProperty("y", y);
+            object.addProperty("sector", pos.getSector());
+            object.addProperty("x", pos.getX());
+            object.addProperty("y", pos.getY());
             object.addProperty("red", red);
             object.addProperty("green", green);
             object.addProperty("blue", blue);
@@ -98,8 +100,7 @@ public class KeystrokeSettings {
     }
 
     public void parseSettings(N11JsonObject object) {
-        x = object.optInt("x");
-        y = object.optInt("y");
+        pos = new RelativePosition(object.optInt("sector"), object.optInt("x"), object.optInt("y"));
         red = object.optInt("red");
         green = object.optInt("green");
         blue = object.optInt("blue");
@@ -120,10 +121,8 @@ public class KeystrokeSettings {
         keyBackgroundPressedBlue = object.optInt("keyBackgroundPressedBlue");
     }
 
-    public int getX() { return x; }
-    public void setX(int x) { this.x = x; }
-    public int getY() { return y; }
-    public void setY(int y) { this.y = y; }
+    public RelativePosition getPos() { return pos; }
+    public void setPos(RelativePosition pos) { this.pos = pos; }
     public int getRed() { return red; }
     public void setRed(int red) { this.red = red; }
     public int getGreen() { return green; }

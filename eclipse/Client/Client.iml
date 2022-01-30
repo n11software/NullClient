@@ -190,15 +190,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="netty-all-4.0.23.Final.jar">
-        <CLASSES>
-          <root url="jar://$MCP_LOC$/jars/libraries/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="guava-17.0.jar">
         <CLASSES>
           <root url="jar://$MCP_LOC$/jars/libraries/com/google/guava/guava/17.0/guava-17.0.jar!/" />
@@ -372,8 +363,16 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="discord-rpc" level="project" />
     <orderEntry type="library" name="discord-rpc_1" level="project" />
     <orderEntry type="library" name="slick" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/AppData/Roaming/.minecraft/libraries/io/netty/netty-all/4.1.68.Final/netty-all-4.1.68.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

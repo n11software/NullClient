@@ -39,6 +39,7 @@ public class Client {
 
     public void shutdown() {
         discordRP.shutdown();
+        ModInstances.unregister();
     }
 
     public DiscordIntegration getDiscordRP() {
