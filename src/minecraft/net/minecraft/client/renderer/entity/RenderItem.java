@@ -70,11 +70,7 @@ import net.optifine.shaders.ShadersRender;
 public class RenderItem implements IResourceManagerReloadListener
 {
     private static final ResourceLocation RES_ITEM_GLINT = new ResourceLocation("textures/misc/enchanted_item_glint.png");
-
-    /** False when the renderer is rendering the item's effects into a GUI */
     private boolean notRenderingEffectsInGUI = true;
-
-    /** Defines the zLevel of rendering of item on GUI. */
     public float zLevel;
     private final ItemModelMesher itemModelMesher;
     private final TextureManager textureManager;
@@ -101,11 +97,6 @@ public class RenderItem implements IResourceManagerReloadListener
         this.registerItems();
     }
 
-    /**
-     * False when the renderer is rendering the item's effects into a GUI
-     *  
-     * @param isNot If the renderer is not rendering the effects in a GUI
-     */
     public void isNotRenderingEffectsInGUI(boolean isNot)
     {
         this.notRenderingEffectsInGUI = isNot;
@@ -464,11 +455,6 @@ public class RenderItem implements IResourceManagerReloadListener
         this.textureManager.getTexture(TextureMap.locationBlocksTexture).restoreLastBlurMipmap();
     }
 
-    /**
-     * Return true if only one scale is negative
-     *  
-     * @param itemTranformVec The ItemTransformVec3f instance
-     */
     private boolean isThereOneNegativeScale(ItemTransformVec3f itemTranformVec)
     {
         return itemTranformVec.scale.x < 0.0F ^ itemTranformVec.scale.y < 0.0F ^ itemTranformVec.scale.z < 0.0F;
@@ -584,9 +570,6 @@ public class RenderItem implements IResourceManagerReloadListener
         this.renderItemOverlayIntoGUI(fr, stack, xPosition, yPosition, (String)null);
     }
 
-    /**
-     * Renders the stack size and/or damage bar for the given ItemStack.
-     */
     public void renderItemOverlayIntoGUI(FontRenderer fr, ItemStack stack, int xPosition, int yPosition, String text)
     {
         if (stack != null)
@@ -600,11 +583,11 @@ public class RenderItem implements IResourceManagerReloadListener
                     s = EnumChatFormatting.RED + String.valueOf(stack.stackSize);
                 }
 
-//                GlStateManager.disableLighting();
+                GlStateManager.disableLighting();
                 GlStateManager.disableDepth();
                 GlStateManager.disableBlend();
                 fr.drawStringWithShadow(s, (float)(xPosition + 19 - 2 - fr.getStringWidth(s)), (float)(yPosition + 6 + 3), 16777215);
-//                GlStateManager.enableLighting();
+                GlStateManager.enableLighting();
                 GlStateManager.enableDepth();
                 GlStateManager.enableBlend();
             }
@@ -621,7 +604,7 @@ public class RenderItem implements IResourceManagerReloadListener
                     i = (int)Math.round(255.0D - d0 * 255.0D);
                 }
 
-//                GlStateManager.disableLighting();
+                GlStateManager.disableLighting();
                 GlStateManager.disableDepth();
                 GlStateManager.disableTexture2D();
                 GlStateManager.disableAlpha();
@@ -650,106 +633,12 @@ public class RenderItem implements IResourceManagerReloadListener
                 GlStateManager.enableBlend();
                 GlStateManager.enableAlpha();
                 GlStateManager.enableTexture2D();
-//                GlStateManager.enableLighting();
+                GlStateManager.enableLighting();
                 GlStateManager.enableDepth();
             }
         }
     }
 
-    /**
-     * Renders the stack size and/or damage bar for the given ItemStack.
-     */
-    public void renderItemOverlayIntoGUINoDurability(FontRenderer fr, ItemStack stack, int xPosition, int yPosition, String text)
-    {
-        if (stack != null)
-        {
-            if (stack.stackSize != 1 || text != null)
-            {
-                String s = text == null ? String.valueOf(stack.stackSize) : text;
-
-                if (text == null && stack.stackSize < 1)
-                {
-                    s = EnumChatFormatting.RED + String.valueOf(stack.stackSize);
-                }
-
-//                GlStateManager.disableLighting();
-                GlStateManager.disableDepth();
-                GlStateManager.disableBlend();
-                fr.drawStringWithShadow(s, (float)(xPosition + 19 - 2 - fr.getStringWidth(s)), (float)(yPosition + 6 + 3), 16777215);
-//                GlStateManager.enableLighting();
-                GlStateManager.enableDepth();
-                GlStateManager.enableBlend();
-            }
-        }
-    }
-
-    /**
-     * Renders the stack size and/or damage bar for the given ItemStack.
-     */
-    public void renderItemOverlayIntoGUINoCount(FontRenderer fr, ItemStack stack, int xPosition, int yPosition, String text)
-    {
-        if (stack != null)
-        {
-            if (ReflectorForge.isItemDamaged(stack))
-            {
-                int j1 = (int)Math.round(13.0D - (double)stack.getItemDamage() * 13.0D / (double)stack.getMaxDamage());
-                int i = (int)Math.round(255.0D - (double)stack.getItemDamage() * 255.0D / (double)stack.getMaxDamage());
-
-                if (Reflector.ForgeItem_getDurabilityForDisplay.exists())
-                {
-                    double d0 = Reflector.callDouble(stack.getItem(), Reflector.ForgeItem_getDurabilityForDisplay, new Object[] {stack});
-                    j1 = (int)Math.round(13.0D - d0 * 13.0D);
-                    i = (int)Math.round(255.0D - d0 * 255.0D);
-                }
-
-//                GlStateManager.disableLighting();
-                GlStateManager.disableDepth();
-                GlStateManager.disableTexture2D();
-                GlStateManager.disableAlpha();
-                GlStateManager.disableBlend();
-                Tessellator tessellator = Tessellator.getInstance();
-                WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-                this.draw(worldrenderer, xPosition + 2, yPosition + 13, 13, 2, 0, 0, 0, 255);
-                this.draw(worldrenderer, xPosition + 2, yPosition + 13, 12, 1, (255 - i) / 4, 64, 0, 255);
-                int j = 255 - i;
-                int k = i;
-                int l = 0;
-
-                if (Config.isCustomColors())
-                {
-                    int i1 = CustomColors.getDurabilityColor(i);
-
-                    if (i1 >= 0)
-                    {
-                        j = i1 >> 16 & 255;
-                        k = i1 >> 8 & 255;
-                        l = i1 >> 0 & 255;
-                    }
-                }
-
-                this.draw(worldrenderer, xPosition + 2, yPosition + 13, j1, 1, j, k, l, 255);
-                GlStateManager.enableBlend();
-                GlStateManager.enableAlpha();
-                GlStateManager.enableTexture2D();
-//                GlStateManager.enableLighting();
-                GlStateManager.enableDepth();
-            }
-        }
-    }
-
-    /**
-     * Draw with the WorldRenderer
-     *  
-     * @param renderer The WorldRenderer's instance
-     * @param x X position where the render begin
-     * @param y Y position where the render begin
-     * @param width The width of the render
-     * @param height The height of the render
-     * @param red Red component of the color
-     * @param green Green component of the color
-     * @param blue Blue component of the color
-     * @param alpha Alpha component of the color
-     */
     private void draw(WorldRenderer renderer, int x, int y, int width, int height, int red, int green, int blue, int alpha)
     {
         renderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
