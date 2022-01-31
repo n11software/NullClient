@@ -10,7 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
-      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/ModKeystrokes.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/ModKeystrokes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/n11client/mods/keystrokes/ModKeystrokes.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/keystrokes/ModKeystrokes.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/logs/latest.log" beforeDir="false" afterPath="$MCP_LOC$/jars/logs/latest.log" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages.dat" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_end.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_end.dat" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_nether.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_nether.dat" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/level.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/level.dat" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/level.dat_old" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/level.dat_old" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/region/r.0.0.mca" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/region/r.1.0.mca" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/region/r.1.0.mca" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/session.lock" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/session.lock" afterDir="false" />
+      <change beforePath="$MCP_LOC$/jars/usercache.json" beforeDir="false" afterPath="$MCP_LOC$/jars/usercache.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$MCP_LOC$/jars/libraries/org/newdawn/slick/slick.jar" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
