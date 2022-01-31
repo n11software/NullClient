@@ -16,7 +16,7 @@ public class Client {
         return INSTANCE;
     }
 
-    public static boolean isOldAnimationsEnabled = true, isBorderlessFullscreenEnabled = true;
+    public static boolean isOldAnimationsEnabled = true, isBorderlessFullscreenEnabled = true, isFullbrightEnabled = true;
 
     private final DiscordIntegration discordRP = new DiscordIntegration();
 
@@ -33,6 +33,9 @@ public class Client {
     public void start() throws Exception {
         HUDMan = HUDManager.getInstance();
         ModInstances.register(HUDMan);
+
+        if (!isFullbrightEnabled) Minecraft.getMinecraft().gameSettings.gammaSetting = 1;
+        else Minecraft.getMinecraft().gameSettings.gammaSetting = (((Minecraft.getMinecraft().gameSettings.gammaSetting+13)%28) + 1);
 
 //        Log.log(Login.getSessionMicrosoft());
     }
