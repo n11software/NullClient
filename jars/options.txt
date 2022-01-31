@@ -38,7 +38,7 @@ chatHeightFocused:1.0
 chatHeightUnfocused:0.44366196
 chatScale:1.0
 chatWidth:1.0
-showInventoryAchievementHint:true
+showInventoryAchievementHint:false
 mipmapLevels:4
 streamBytesPerPixel:0.5
 streamMicVolume:1.0
@@ -57,6 +57,7 @@ reducedDebugInfo:false
 useNativeTransport:true
 entityShadows:true
 realmsNotifications:true
+key_key.mods:54
 key_key.attack:-100
 key_key.use:-99
 key_key.forward:17

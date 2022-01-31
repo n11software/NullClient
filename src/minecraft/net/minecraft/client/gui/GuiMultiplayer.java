@@ -4,6 +4,8 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
+
+import n11client.Client;
 import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
@@ -41,6 +43,7 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
 
     public void initGui()
     {
+        Client.getInstance().getDiscordRP().update("Idle", "Multiplayer Menu");
         Keyboard.enableRepeatEvents(true);
         this.buttonList.clear();
 

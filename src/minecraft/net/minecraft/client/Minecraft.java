@@ -35,6 +35,12 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
+
+import n11client.Client;
+import n11client.event.impl.RenderEvent;
+import n11client.gui.SplashScreen;
+import n11client.mods.ModInstances;
+import n11client.mods.togglesprintsneak.MovementInput;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MusicTicker;
@@ -388,8 +394,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
     }
 
-    private void startGame() throws LWJGLException, IOException
-    {
+    private void startGame() throws Exception {
+        Client.getInstance().init();
         this.gameSettings = new GameSettings(this, this.mcDataDir);
         this.defaultResourcePacks.add(this.mcDefaultResourcePack);
         this.startTimerHackThread();
@@ -415,7 +421,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.refreshResources();
         this.renderEngine = new TextureManager(this.mcResourceManager);
         this.mcResourceManager.registerReloadListener(this.renderEngine);
-        this.drawSplashScreen(this.renderEngine);
+//        this.drawSplashScreen(this.renderEngine);
+        SplashScreen.drawSplash(getTextureManager());
         this.initStream();
         this.skinManager = new SkinManager(this.renderEngine, new File(this.fileAssets, "skins"), this.sessionService);
         this.saveLoader = new AnvilSaveConverter(new File(this.mcDataDir, "saves"));
@@ -468,6 +475,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.renderEngine.loadTickableTexture(TextureMap.locationBlocksTexture, this.textureMapBlocks);
         this.renderEngine.bindTexture(TextureMap.locationBlocksTexture);
         this.textureMapBlocks.setBlurMipmapDirect(false, this.gameSettings.mipmapLevels > 0);
+        SplashScreen.setProgress(2, "Initializing Model Manager...");
         this.modelManager = new ModelManager(this.textureMapBlocks);
         this.mcResourceManager.registerReloadListener(this.modelManager);
         this.renderItem = new RenderItem(this.renderEngine, this.modelManager);
@@ -515,6 +523,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
 
         this.renderGlobal.makeEntityOutlineShader();
+        Client.getInstance().start();
     }
 
     private void registerMetadataSerializers()
@@ -938,6 +947,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     {
         try
         {
+            Client.getInstance().shutdown();
             this.stream.shutdownStream();
             logger.info("Stopping!");
 
@@ -1132,6 +1142,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                 this.resize(this.displayWidth, this.displayHeight);
             }
+            ModInstances.ResizeEvent();
         }
     }
 
@@ -1366,7 +1377,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             this.leftClickCounter = 0;
         }
 
-        if (this.leftClickCounter <= 0 && !this.thePlayer.isUsingItem())
+        if ((this.leftClickCounter <= 0 || Client.isOldAnimationsEnabled) && !this.thePlayer.isUsingItem())
         {
             if (leftClick && this.objectMouseOver != null && this.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
             {
@@ -1512,14 +1523,14 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.displayWidth = Display.getDisplayMode().getWidth();
                 this.displayHeight = Display.getDisplayMode().getHeight();
 
-                if (this.displayWidth <= 0)
-                {
-                    this.displayWidth = 1;
-                }
+                if (!Client.isBorderlessFullscreenEnabled) {
+                    if (this.displayWidth <= 0) {
+                        this.displayWidth = 1;
+                    }
 
-                if (this.displayHeight <= 0)
-                {
-                    this.displayHeight = 1;
+                    if (this.displayHeight <= 0) {
+                        this.displayHeight = 1;
+                    }
                 }
             }
             else
@@ -1548,7 +1559,14 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.updateFramebufferSize();
             }
 
-            Display.setFullscreen(this.fullscreen);
+            if (!Client.isBorderlessFullscreenEnabled) Display.setFullscreen(this.fullscreen);
+            else {
+                System.setProperty("org.lwjgl.opengl.Window.undecorated", String.valueOf(fullscreen));
+                Display.setFullscreen(false);
+                Display.setResizable(!fullscreen);
+                Display.setDisplayMode(fullscreen ? Display.getDesktopDisplayMode() : new DisplayMode(displayWidth, displayHeight));
+            }
+            ModInstances.ResizeEvent();
             Display.setVSyncEnabled(this.gameSettings.enableVsync);
             this.updateDisplay();
         }
@@ -2115,7 +2133,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             this.mcProfiler.endStartSection("pendingConnection");
             this.myNetworkManager.processReceivedPackets();
         }
-
+        new RenderEvent().call();
         this.mcProfiler.endSection();
         this.systemTime = getSystemTime();
     }
@@ -2185,6 +2203,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         networkmanager.sendPacket(new C00Handshake(47, socketaddress.toString(), 0, EnumConnectionState.LOGIN));
         networkmanager.sendPacket(new C00PacketLoginStart(this.getSession().getProfile()));
         this.myNetworkManager = networkmanager;
+        Client.getInstance().getDiscordRP().update("Playing Single-player", "In-Game");
     }
 
     public void loadWorld(WorldClient worldClientIn)
@@ -2254,7 +2273,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
             this.thePlayer.preparePlayerToSpawn();
             worldClientIn.spawnEntityInWorld(this.thePlayer);
-            this.thePlayer.movementInput = new MovementInputFromOptions(this.gameSettings);
+            this.thePlayer.movementInput = new MovementInput(this.gameSettings);
             this.playerController.setPlayerCapabilities(this.thePlayer);
             this.renderViewEntity = this.thePlayer;
         }
@@ -2292,7 +2311,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.thePlayer.setClientBrand(s);
         this.theWorld.spawnEntityInWorld(this.thePlayer);
         this.playerController.flipPlayer(this.thePlayer);
-        this.thePlayer.movementInput = new MovementInputFromOptions(this.gameSettings);
+        this.thePlayer.movementInput = new MovementInput(this.gameSettings);
         this.thePlayer.setEntityId(i);
         this.playerController.setPlayerCapabilities(this.thePlayer);
         this.thePlayer.setReducedDebug(entityplayersp.hasReducedDebug());

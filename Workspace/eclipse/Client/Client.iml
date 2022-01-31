@@ -84,6 +84,7 @@
     <content url="file://$MCP_LOC$">
       <sourceFolder url="file://$MCP_LOC$/src/minecraft" isTestSource="false" />
       <sourceFolder url="file://$MCP_LOC$/src/minecraft/assets" type="java-resource" />
+      <sourceFolder url="file://$MCP_LOC$/src/n11client" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -360,5 +361,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="discord-rpc" level="project" />
+    <orderEntry type="library" name="slick" level="project" />
   </component>
 </module>
