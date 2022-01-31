@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="N11:jar">
+    <output-path>$MCP_LOC$/build/jar</output-path>
+    <root id="archive" name="N11.jar">
+      <element id="module-output" name="Client" />
+      <element id="library" level="project" name="discord-rpc" />
+      <element id="library" level="project" name="slick" />
+    </root>
+  </artifact>
+</component>

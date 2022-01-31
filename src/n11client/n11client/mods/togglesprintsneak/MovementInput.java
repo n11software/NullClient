@@ -7,7 +7,7 @@ import net.minecraft.client.settings.GameSettings;
 import net.minecraft.potion.Potion;
 
 public class MovementInput extends net.minecraft.util.MovementInput {
-    private GameSettings gameSettings;
+    private final GameSettings gameSettings;
     private int sneakWasPressed = 0, sprintWasPressed;
     private EntityPlayerSP player;
     private float originalFlySpeed = -1.0F;
@@ -25,14 +25,14 @@ public class MovementInput extends net.minecraft.util.MovementInput {
         player = mc.thePlayer;
         moveStrafe = 0.0F;
         moveForward = 0.0F;
-        if (gameSettings.keyBindLeft.isKeyDown()) moveForward++;
-        if (gameSettings.keyBindRight.isKeyDown()) moveForward--;
-        if (gameSettings.keyBindBack.isKeyDown()) moveStrafe++;
-        if (gameSettings.keyBindJump.isKeyDown()) moveStrafe--;
+        if (gameSettings.keyBindForward.isKeyDown()) moveForward++;
+        if (gameSettings.keyBindBack.isKeyDown()) moveForward--;
+        if (gameSettings.keyBindLeft.isKeyDown()) moveStrafe++;
+        if (gameSettings.keyBindRight.isKeyDown()) moveStrafe--;
 
-        jump = gameSettings.keyBindSneak.isKeyDown();
+        jump = gameSettings.keyBindJump.isKeyDown();
         if (ModInstances.getToggleSprintSneak().isEnabled() && ModInstances.getToggleSprintSneak().isSneakToggle) {
-            if (gameSettings.keyBindSprint.isKeyDown()) {
+            if (gameSettings.keyBindSneak.isKeyDown()) {
                 if (sneakWasPressed == 0) {
                     if (sneak) sneakWasPressed=-1;
                     else if (player.isRiding() || player.capabilities.isFlying) sneakWasPressed=ModInstances.getToggleSprintSneak().keyHoldTicks+1;
@@ -43,7 +43,7 @@ public class MovementInput extends net.minecraft.util.MovementInput {
                 if ((ModInstances.getToggleSprintSneak().keyHoldTicks>0)&&(sneakWasPressed>ModInstances.getToggleSprintSneak().keyHoldTicks)) sneak = false;
                 sneakWasPressed = 0;
             }
-        } else sneak = gameSettings.keyBindSprint.isKeyDown();
+        } else sneak = gameSettings.keyBindSneak.isKeyDown();
 
         if (sneak) {
             moveStrafe*=0.3f;
@@ -52,7 +52,7 @@ public class MovementInput extends net.minecraft.util.MovementInput {
 
 
         if (ModInstances.getToggleSprintSneak().isEnabled() && ModInstances.getToggleSprintSneak().isSprintToggle) {
-            if (gameSettings.keyBindInventory.isKeyDown()) {
+            if (gameSettings.keyBindSprint.isKeyDown()) {
                 if (sprintWasPressed == 0) {
                     if (ModInstances.getToggleSprintSneak().sprint) sprintWasPressed = -1;
                     else sprintWasPressed = 1;
@@ -71,8 +71,8 @@ public class MovementInput extends net.minecraft.util.MovementInput {
         String displayText = "";
         boolean isFlying=mc.thePlayer.capabilities.isFlying;
         boolean isRiding=mc.thePlayer.isRiding();
-        boolean isHoldingSneak = gameSettings.keyBindSprint.isKeyDown();
-        boolean isHoldingSprint = gameSettings.keyBindInventory.isKeyDown();
+        boolean isHoldingSneak = gameSettings.keyBindSneak.isKeyDown();
+        boolean isHoldingSprint = gameSettings.keyBindSprint.isKeyDown();
         if (isFlying) {
             if (originalFlySpeed>0.0F) displayText += "[Flying (Boosted)] ";
             else displayText += "[Flying] ";

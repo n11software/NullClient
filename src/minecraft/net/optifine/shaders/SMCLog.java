@@ -20,12 +20,12 @@ public abstract class SMCLog
 
     public static void info(String message)
     {
-        LOGGER.info("[Shaders] " + message);
+//        LOGGER.info("[Shaders] " + message);
     }
 
     public static void fine(String message)
     {
-        LOGGER.debug("[Shaders] " + message);
+//        LOGGER.debug("[Shaders] " + message);
     }
 
     public static void severe(String format, Object... args)
@@ -43,12 +43,12 @@ public abstract class SMCLog
     public static void info(String format, Object... args)
     {
         String s = String.format(format, args);
-        LOGGER.info("[Shaders] " + s);
+//        LOGGER.info("[Shaders] " + s);
     }
 
     public static void fine(String format, Object... args)
     {
         String s = String.format(format, args);
-        LOGGER.debug("[Shaders] " + s);
+//        LOGGER.debug("[Shaders] " + s);
     }
 }
