@@ -34,6 +34,7 @@ public class ModInstances {
         ClockMod = new Clock();
         manager.register(ClockMod);
         CPSMod = new CPS();
+        CPSMod.setEnabled(CPSMod.getSettings().enabled);
         manager.register(CPSMod);
     }
 
@@ -55,9 +56,12 @@ public class ModInstances {
         getToggleSprintSneak().getSettings().sneakToggle = getToggleSprintSneak().isSneakToggle;
         getToggleSprintSneak().getSettings().sprintToggle = getToggleSprintSneak().isSprintToggle;
         getToggleSprintSneak().getSettings().save();
-        getFPS().getSettings().pos = getKeyStrokes().getPos();
+        getFPS().getSettings().pos = getFPS().getPos();
         getFPS().getSettings().enabled = getFPS().isEnabled();
         getFPS().getSettings().save();
+        getCPSMod().getSettings().pos = getCPSMod().getPos();
+        getCPSMod().getSettings().enabled = getCPSMod().isEnabled();
+        getCPSMod().getSettings().save();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }

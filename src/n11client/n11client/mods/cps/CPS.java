@@ -3,8 +3,11 @@ package n11client.mods.cps;
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
+import n11client.mods.fps.FPSSettings;
 import org.lwjgl.input.Mouse;
 
+import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +20,15 @@ public class CPS extends ModDraggable {
     private boolean rwasPressed;
     private long rlastPressed;
 
-    private RelativePosition rp = new RelativePosition(7, -100 - getWidth(), 1 + font.FONT_HEIGHT);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+    private final CPSSettings config = new CPSSettings(this, new File("N11"));
+
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
+
+    public CPSSettings getSettings() {
+        return config;
+    }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
 
     public void ResizeEvent() {
         pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
@@ -26,7 +36,7 @@ public class CPS extends ModDraggable {
 
     @Override
     public int getWidth() {
-        return font.getStringWidth("[0 | 0]");
+        return font.getStringWidth(config.left&& config.right?"[999 | 999]":"[999]");
     }
 
     @Override
@@ -36,7 +46,7 @@ public class CPS extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        {
+        if (config.left) {
             final boolean isPressed = Mouse.isButtonDown(0);
 
             if (isPressed != this.lwasPressed) {
@@ -47,7 +57,7 @@ public class CPS extends ModDraggable {
                 }
             }
         }
-        {
+        if (config.right) {
             final boolean isPressed = Mouse.isButtonDown(1);
 
             if (isPressed != this.rwasPressed) {
@@ -59,7 +69,8 @@ public class CPS extends ModDraggable {
             }
         }
 
-        font.drawStringWithShadow("[" + getCPSLeft() + " | " + getCPSRight() + "]", pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFFFF);
+        if (config.right&&config.left) font.drawStringWithShadow("[" + getCPSLeft() + " | " + getCPSRight() + "]", (int)(pos.getAbsoluteX()+(getWidth()/2)-(font.getStringWidth(("[" + getCPSLeft() + " | " + getCPSRight() + "]"))/2)), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue, 255).getRGB());
+        else font.drawStringWithShadow("[" + (config.left ? getCPSLeft() : getCPSRight()) + "]", (int)(pos.getAbsoluteX()+(getWidth()/2)-(font.getStringWidth("[" + (config.left ? getCPSLeft() : getCPSRight()) + "]")/2)), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue, 255).getRGB());
     }
 
     private int getCPSLeft() {
