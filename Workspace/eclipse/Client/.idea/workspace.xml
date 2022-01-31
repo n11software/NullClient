@@ -11,11 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$MCP_LOC$/build/jar/N11.jar" beforeDir="false" afterPath="$MCP_LOC$/build/jar/N11.jar" afterDir="false" />
-      <change beforePath="$MCP_LOC$/build/src/assets/minecraft/lang/en_US.lang" beforeDir="false" afterPath="$MCP_LOC$/build/src/assets/minecraft/lang/en_US.lang" afterDir="false" />
-      <change beforePath="$MCP_LOC$/build/src/minecraft/lang/en_US.lang" beforeDir="false" afterPath="$MCP_LOC$/build/src/minecraft/lang/en_US.lang" afterDir="false" />
-      <change beforePath="$MCP_LOC$/build/src/n11client/Client.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/Client.class" afterDir="false" />
-      <change beforePath="$MCP_LOC$/src/minecraft/assets/minecraft/lang/en_US.lang" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/assets/minecraft/lang/en_US.lang" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/cosmetics/CosmeticController.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/cosmetics/CosmeticController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$MCP_LOC$/jars/libraries/org/newdawn/slick/slick.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />

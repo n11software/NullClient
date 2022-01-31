@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="N11:jar">
-    <output-path>$MCP_LOC$/build/jar</output-path>
+    <output-path>$MCP_LOC$/build/jar/</output-path>
     <root id="archive" name="N11.jar">
       <element id="module-output" name="Client" />
-      <element id="library" level="project" name="discord-rpc" />
-      <element id="library" level="project" name="slick" />
+      <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/net/arikia/dev/drpc/discord-rpc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/org/newdawn/slick/slick.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
