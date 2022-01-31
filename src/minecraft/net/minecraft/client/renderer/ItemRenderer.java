@@ -340,8 +340,8 @@ public class ItemRenderer
 
                         case EAT:
                         case DRINK:
+                            this.performDrinking(abstractclientplayer, partialTicks);
                             this.transformFirstPersonItem(f, Client.isOldAnimationsEnabled ? f1 : 0.0F);
-                            this.transformFirstPersonItem(f, 0.0F);
                             break;
 
                         case BLOCK:
