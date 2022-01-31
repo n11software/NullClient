@@ -8,18 +8,9 @@ public class Log
     private static final Logger LOGGER = LogManager.getLogger();
     public static final boolean logDetail = System.getProperty("log.detail", "false").equals("true");
 
-    public static void detail(String s)
-    {
-        if (logDetail)
-        {
-            LOGGER.info("[OptiFine] " + s);
-        }
-    }
+    public static void detail(String s) { }
 
-    public static void dbg(String s)
-    {
-        LOGGER.info("[OptiFine] " + s);
-    }
+    public static void dbg(String s) { }
 
     public static void warn(String s)
     {

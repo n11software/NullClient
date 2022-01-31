@@ -9,8 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.MovementInput;
-import org.newdawn.slick.Game;
+//import org.newdawn.slick.Game;
 
 public class ModToggleSprintSneak extends ModDraggable {
 

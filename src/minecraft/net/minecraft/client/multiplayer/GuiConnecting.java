@@ -68,7 +68,7 @@ public class GuiConnecting extends GuiScreen
                     GuiConnecting.this.networkManager.setNetHandler(new NetHandlerLoginClient(GuiConnecting.this.networkManager, GuiConnecting.this.mc, GuiConnecting.this.previousGuiScreen));
                     GuiConnecting.this.networkManager.sendPacket(new C00Handshake(47, ip, port, EnumConnectionState.LOGIN));
                     GuiConnecting.this.networkManager.sendPacket(new C00PacketLoginStart(GuiConnecting.this.mc.getSession().getProfile()));
-                    Client.getInstance().getDiscordRP().update("Playing " + ip + (port != 25565 ? ":" + port : ""), "In-Game");
+                    Client.getInstance().getDiscordRP().update("Playing " + ip + (port!=25565?":"+port:""), "In-Game");
                 }
                 catch (UnknownHostException unknownhostexception)
                 {
@@ -102,9 +102,6 @@ public class GuiConnecting extends GuiScreen
         }).start();
     }
 
-    /**
-     * Called from the main game loop to update the screen.
-     */
     public void updateScreen()
     {
         if (this.networkManager != null)
@@ -120,27 +117,16 @@ public class GuiConnecting extends GuiScreen
         }
     }
 
-    /**
-     * Fired when a key is typed (except F11 which toggles full screen). This is the equivalent of
-     * KeyListener.keyTyped(KeyEvent e). Args : character (character on the key), keyCode (lwjgl Keyboard key code)
-     */
     protected void keyTyped(char typedChar, int keyCode) throws IOException
     {
     }
 
-    /**
-     * Adds the buttons (and other controls) to the screen in question. Called when the GUI is displayed and when the
-     * window resizes, the buttonList is cleared beforehand.
-     */
     public void initGui()
     {
         this.buttonList.clear();
         this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120 + 12, I18n.format("gui.cancel", new Object[0])));
     }
 
-    /**
-     * Called by the controls from the buttonList when activated. (Mouse pressed for buttons)
-     */
     protected void actionPerformed(GuiButton button) throws IOException
     {
         if (button.id == 0)
@@ -156,9 +142,6 @@ public class GuiConnecting extends GuiScreen
         }
     }
 
-    /**
-     * Draws the screen and all the components in it. Args : mouseX, mouseY, renderPartialTicks
-     */
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
         this.drawDefaultBackground();
