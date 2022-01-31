@@ -3,18 +3,32 @@ package n11client.mods.clock;
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
+import n11client.mods.cps.CPSSettings;
 
+import java.awt.*;
+import java.io.File;
 import java.text.SimpleDateFormat;
 
 public class Clock extends ModDraggable {
 
-    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+    private final ClockSettings config = new ClockSettings(this, new File("N11"));
+//
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
+
+    public ClockSettings getSettings() {
+        return config;
+    }
+
+    public boolean hr24 = config.hr24;
+
+    public boolean is24hr() { return hr24; }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
+
+    SimpleDateFormat formatter = new SimpleDateFormat(hr24 ? "HH:mm" : "h:mm aa");
     public String getLocalTime() {
         return formatter.format(new java.util.Date());
     }
-
-    private RelativePosition rp = new RelativePosition(1, -font.getStringWidth(getLocalTime())/2-1, 20);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
 
     public void ResizeEvent() {
         pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
@@ -42,7 +56,7 @@ public class Clock extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow(getLocalTime(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow(getLocalTime(), pos.getAbsoluteX(), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue, 255).getRGB());
     }
 }
 

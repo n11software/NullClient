@@ -32,6 +32,7 @@ public class ModInstances {
         ToggleSprintSneak.setEnabled(ToggleSprintSneak.getSettings().enabled);
         manager.register(ToggleSprintSneak);
         ClockMod = new Clock();
+        ClockMod.setEnabled(ClockMod.getSettings().enabled);
         manager.register(ClockMod);
         CPSMod = new CPS();
         CPSMod.setEnabled(CPSMod.getSettings().enabled);
@@ -62,6 +63,10 @@ public class ModInstances {
         getCPSMod().getSettings().pos = getCPSMod().getPos();
         getCPSMod().getSettings().enabled = getCPSMod().isEnabled();
         getCPSMod().getSettings().save();
+        getClockMod().getSettings().pos = getClockMod().getPos();
+        getClockMod().getSettings().enabled = getClockMod().isEnabled();
+        getClockMod().getSettings().hr24 = getClockMod().is24hr();
+        getClockMod().getSettings().save();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }
