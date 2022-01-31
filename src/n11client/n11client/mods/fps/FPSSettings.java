@@ -1,7 +1,8 @@
-package n11client.mods.togglesprintsneak;
+package n11client.mods.fps;
 
 import com.google.gson.Gson;
 import n11client.gui.hud.RelativePosition;
+import n11client.mods.togglesprintsneak.ModToggleSprintSneak;
 import n11client.utils.Log;
 import n11client.utils.N11JsonObject;
 import net.minecraft.client.Minecraft;
@@ -12,13 +13,11 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ToggleSprintSneakSettings {
-    public ModToggleSprintSneak theMod;
+public class FPSSettings {
+    public ModFPS theMod;
     public File configFile;
-    public RelativePosition pos = new RelativePosition(6, 5, (Minecraft.getMinecraft().fontRendererObj.FONT_HEIGHT*2)+6);
+    public RelativePosition pos = new RelativePosition(0, 5, 5);
     public boolean enabled = true;
-    public boolean sprintToggle = true;
-    public boolean sneakToggle = false;
 
     public int red = 255;
     public int green = 255;
@@ -26,10 +25,10 @@ public class ToggleSprintSneakSettings {
 
     Gson gson = new Gson();
 
-    public ToggleSprintSneakSettings(ModToggleSprintSneak mod, File directory) {
+    public FPSSettings(ModFPS mod, File directory) {
         if (!directory.exists()) directory.mkdirs();
         theMod = mod;
-        configFile = new File(directory, "togglesprintsneak.json");
+        configFile = new File(directory, "fps.json");
         this.load();
     }
 
@@ -65,8 +64,6 @@ public class ToggleSprintSneakSettings {
             object.addProperty("green", green);
             object.addProperty("blue", blue);
             object.addProperty("enabled", enabled);
-            object.addProperty("sprintToggle", sprintToggle);
-            object.addProperty("sneakToggle", sneakToggle);
             object.writeToFile(configFile);
         } catch (Exception ex) {
             Log.warn(String.format("Could not save config file! (\"%s\")", configFile.getName()));
@@ -79,8 +76,5 @@ public class ToggleSprintSneakSettings {
         green = object.optInt("green");
         blue = object.optInt("blue");
         enabled = object.optBoolean("enabled");
-        sprintToggle = object.optBoolean("sprintToggle");
-        sneakToggle = object.optBoolean("sneakToggle");
     }
-
 }
