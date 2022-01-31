@@ -5,18 +5,28 @@ import n11client.gui.hud.ScreenPosition;
 import n11client.mods.Mod;
 import n11client.mods.ModDraggable;
 import n11client.mods.ModInstances;
+import n11client.mods.keystrokes.KeystrokeSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.potion.Potion;
-//import org.newdawn.slick.Game;
+
+import java.awt.*;
+import java.io.File;
 
 public class ModToggleSprintSneak extends ModDraggable {
 
-    private RelativePosition rp = new RelativePosition(6, 5, (font.FONT_HEIGHT*2)+6);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+    private final ToggleSprintSneakSettings config = new ToggleSprintSneakSettings(this, new File("N11"));
 
-    public boolean isSprintToggle = true, isSneakToggle = false;
+    public ToggleSprintSneakSettings getSettings() {
+        return config;
+    }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
+
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
+
+    public boolean isSprintToggle = config.sprintToggle, isSneakToggle = config.sneakToggle;
     public boolean sprint = true, sneak = true;
 
     public int keyHoldTicks = 7;
@@ -47,11 +57,11 @@ public class ModToggleSprintSneak extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow(mc.thePlayer.movementInput.getDisplayText(), pos.getAbsoluteX(), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue).getRGB());
     }
 
     @Override
     public void renderDummy(ScreenPosition pos) {
-        font.drawStringWithShadow("[Sprinting (Toggled)]", pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow("[Sprinting (Toggled)]", pos.getAbsoluteX(), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue).getRGB());
     }
 }

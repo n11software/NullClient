@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import n11client.gui.hud.RelativePosition;
 import n11client.utils.Log;
 import n11client.utils.N11JsonObject;
+import net.minecraft.client.Minecraft;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 public class KeystrokeSettings {
     public ModKeystrokes theMod;
     public File configFile;
-    public RelativePosition pos = new RelativePosition(0, 5, 5+9+20);
+    public RelativePosition pos = new RelativePosition(0, 5, 5+ Minecraft.getMinecraft().fontRendererObj.FONT_HEIGHT+20);
     public boolean enabled = true;
     public boolean mouseButtons = true;
     public boolean spaceBar = true;
