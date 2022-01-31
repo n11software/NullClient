@@ -20,6 +20,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import n11client.Client;
+import n11client.mods.ModInstances;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.client.gui.GuiNewChat;
@@ -486,6 +489,7 @@ public class GameSettings
             {
                 this.guiScale = 0;
             }
+            ModInstances.ResizeEvent();
         }
 
         if (settingsOption == GameSettings.Options.PARTICLES)
