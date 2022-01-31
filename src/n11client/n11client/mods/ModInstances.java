@@ -23,12 +23,13 @@ public class ModInstances {
         ArmorStatus = new ModArmorStatus();
         manager.register(ArmorStatus);
         FPS = new ModFPS();
+        FPS.setEnabled(FPS.getSettings().enabled);
         manager.register(FPS);
         KeyStrokes = new ModKeystrokes();
-        getKeyStrokes().setEnabled(getKeyStrokes().getSettings().enabled);
+        KeyStrokes.setEnabled(KeyStrokes.getSettings().enabled);
         manager.register(KeyStrokes);
         ToggleSprintSneak = new ModToggleSprintSneak();
-        getToggleSprintSneak().setEnabled(getToggleSprintSneak().getSettings().enabled);
+        ToggleSprintSneak.setEnabled(ToggleSprintSneak.getSettings().enabled);
         manager.register(ToggleSprintSneak);
         ClockMod = new Clock();
         manager.register(ClockMod);
@@ -51,7 +52,12 @@ public class ModInstances {
         getKeyStrokes().getSettings().save();
         getToggleSprintSneak().getSettings().pos = getToggleSprintSneak().getPos();
         getToggleSprintSneak().getSettings().enabled = getToggleSprintSneak().isEnabled();
+        getToggleSprintSneak().getSettings().sneakToggle = getToggleSprintSneak().isSneakToggle;
+        getToggleSprintSneak().getSettings().sprintToggle = getToggleSprintSneak().isSprintToggle;
         getToggleSprintSneak().getSettings().save();
+        getFPS().getSettings().pos = getKeyStrokes().getPos();
+        getFPS().getSettings().enabled = getFPS().isEnabled();
+        getFPS().getSettings().save();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }

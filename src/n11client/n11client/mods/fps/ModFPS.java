@@ -4,10 +4,20 @@ import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
 
+import java.awt.*;
+import java.io.File;
+
 public class ModFPS extends ModDraggable {
 
-    private RelativePosition rp = new RelativePosition(0, 5, 5);
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+    private final FPSSettings config = new FPSSettings(this, new File("N11"));
+
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
+
+    public FPSSettings getSettings() {
+        return config;
+    }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
 
     public void ResizeEvent() {
         pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));
@@ -35,6 +45,6 @@ public class ModFPS extends ModDraggable {
 
     @Override
     public void render(ScreenPosition pos) {
-        font.drawStringWithShadow("FPS: " + mc.getDebugFPS(), pos.getAbsoluteX(), pos.getAbsoluteY(), 0xFFFF5555);
+        font.drawStringWithShadow("FPS: " + mc.getDebugFPS(), pos.getAbsoluteX(), pos.getAbsoluteY(), new Color(config.red, config.green, config.blue).getRGB());
     }
 }
