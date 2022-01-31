@@ -21,6 +21,7 @@ public class ModInstances {
 
     public static void register(HUDManager manager) {
         ArmorStatus = new ModArmorStatus();
+        ArmorStatus.setEnabled(ArmorStatus.getSettings().enabled);
         manager.register(ArmorStatus);
         FPS = new ModFPS();
         FPS.setEnabled(FPS.getSettings().enabled);
@@ -49,6 +50,14 @@ public class ModInstances {
     }
 
     public static void unregister() {
+        getArmorStatus().getSettings().pos = getArmorStatus().getPos();
+        getArmorStatus().getSettings().enabled = getArmorStatus().isEnabled();
+        getArmorStatus().getSettings().itemCount = getArmorStatus().showItemCount;
+        getArmorStatus().getSettings().vertical = getArmorStatus().isVertical;
+        getArmorStatus().getSettings().rightAligned = getArmorStatus().isRightAligned;
+        getArmorStatus().getSettings().durability = getArmorStatus().isShowingDurability;
+        getArmorStatus().getSettings().durabilityText = getArmorStatus().isShowingDurabilityText;
+        getArmorStatus().getSettings().save();
         getKeyStrokes().getSettings().setPos(getKeyStrokes().getPos());
         getKeyStrokes().getSettings().enabled = getKeyStrokes().isEnabled();
         getKeyStrokes().getSettings().save();

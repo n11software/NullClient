@@ -10,11 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
-      <change afterPath="$MCP_LOC$/src/n11client/n11client/mods/clock/ClockSettings.java" afterDir="false" />
+      <change afterPath="$MCP_LOC$/src/n11client/n11client/mods/armorstatus/ArmorStatusSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$MCP_LOC$/build/src/n11client/mods/ModInstances.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/ModInstances.class" afterDir="false" />
-      <change beforePath="$MCP_LOC$/build/src/n11client/mods/clock/Clock.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/clock/Clock.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/n11client/mods/armorstatus/ModArmorStatus.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/armorstatus/ModArmorStatus.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$1.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$1.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$2.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$2.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$Options.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings$Options.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/net/minecraft/client/settings/GameSettings.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/client/settings/GameSettings.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/settings/GameSettings.java" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/ModInstances.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/ModInstances.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/armorstatus/ModArmorStatus.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/armorstatus/ModArmorStatus.java" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/clock/Clock.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/clock/Clock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +64,7 @@
       <recent name="C:\Users\fire\OneDrive\Documents\NullClient\src\minecraft\assets\minecraft\n11client" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="n11client.mods.armorstatus" />
       <recent name="n11client.mods.clock" />
       <recent name="n11client.mods.cps" />
     </key>
@@ -73,6 +80,17 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructuralSearchPlugin">
+    <searchConfiguration name="Unnamed" created="1643596588125" text="&quot;options.guiScale&quot;" recursive="true" caseInsensitive="false" type="JAVA" pattern_context="default" scope_type="PROJECT" scope_descriptor="" history="1">
+      <constraint name="__context__" within="" contains="" />
+    </searchConfiguration>
+    <searchConfiguration name="Unnamed" created="1643596317218" text="&quot;GUI&quot;" recursive="true" caseInsensitive="false" type="JAVA" pattern_context="default" scope_type="PROJECT" scope_descriptor="" history="1">
+      <constraint name="__context__" within="" contains="" />
+    </searchConfiguration>
+    <searchConfiguration name="Unnamed" created="1643596304564" text="&quot;GUI Scale:&quot;" recursive="true" caseInsensitive="false" type="JAVA" pattern_context="default" scope_type="PROJECT" scope_descriptor="" history="1">
+      <constraint name="__context__" within="" contains="" />
+    </searchConfiguration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="" />

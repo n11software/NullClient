@@ -3,22 +3,32 @@ package n11client.mods.armorstatus;
 import n11client.gui.hud.RelativePosition;
 import n11client.gui.hud.ScreenPosition;
 import n11client.mods.ModDraggable;
+import n11client.mods.clock.ClockSettings;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import java.awt.*;
+import java.io.File;
+
 public class ModArmorStatus extends ModDraggable {
 
-    public boolean isShowingDurability = true;
-    public boolean isShowingDurabilityText = false;
-    public boolean isVertical = true;
-    public boolean isRightAligned = true;
-    public boolean showItemCount = true;
+    private final ArmorStatusSettings config = new ArmorStatusSettings(this, new File("N11"));
 
-    private RelativePosition rp = new RelativePosition(8, getWidth(), getHeight());
+    private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
 
-    private ScreenPosition pos = ScreenPosition.fromRelative(rp);
+    public ArmorStatusSettings getSettings() {
+        return config;
+    }
+
+    public RelativePosition getPos() { return pos.getRelativePos(); }
+
+    public boolean isShowingDurability = config.durability;
+    public boolean isShowingDurabilityText = config.durabilityText;
+    public boolean isVertical = config.vertical;
+    public boolean isRightAligned = config.rightAligned;
+    public boolean showItemCount = config.itemCount;
 
     @Override
     public void save(ScreenPosition pos) {
@@ -70,7 +80,7 @@ public class ModArmorStatus extends ModDraggable {
     private void renderItemStack(ScreenPosition pos, int i, ItemStack item) {
         if (item == null) return;
         int off = (-16*i)+64;
-        if ((isShowingDurabilityText && isShowingDurability && isVertical) && item.getItem().isDamageable()) font.drawStringWithShadow(item.getMaxDamage()-item.getItemDamage()+"", isRightAligned ? (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20 : pos.getAbsoluteX()+20, pos.getAbsoluteY()+off+5, 0xFFFF5555);
+        if ((isShowingDurabilityText && isShowingDurability && isVertical) && item.getItem().isDamageable()) font.drawStringWithShadow(item.getMaxDamage()-item.getItemDamage()+"", isRightAligned ? (pos.getAbsoluteX()+getWidth())-font.getStringWidth(item.getMaxDamage()-item.getItemDamage()+"")-20 : pos.getAbsoluteX()+20, pos.getAbsoluteY()+off+5, new Color(config.red, config.green, config.blue, 255).getRGB());
         RenderHelper.enableGUIStandardItemLighting();
         GlStateManager.translate(0.0F, 0.0F, 32.0F);
         float zLevel;

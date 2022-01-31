@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class Clock extends ModDraggable {
 
     private final ClockSettings config = new ClockSettings(this, new File("N11"));
-//
+
     private ScreenPosition pos = ScreenPosition.fromRelative(config.pos);
 
     public ClockSettings getSettings() {
