@@ -7,6 +7,7 @@ import n11client.mods.cps.CPS;
 import n11client.mods.fps.ModFPS;
 import n11client.mods.keystrokes.ModKeystrokes;
 import n11client.mods.togglesprintsneak.ModToggleSprintSneak;
+import n11client.mods.togglesprintsneak.ToggleSprintSneakSettings;
 import n11client.utils.Log;
 
 public class ModInstances {
@@ -24,8 +25,10 @@ public class ModInstances {
         FPS = new ModFPS();
         manager.register(FPS);
         KeyStrokes = new ModKeystrokes();
+        getKeyStrokes().setEnabled(getKeyStrokes().getSettings().enabled);
         manager.register(KeyStrokes);
         ToggleSprintSneak = new ModToggleSprintSneak();
+        getToggleSprintSneak().setEnabled(getToggleSprintSneak().getSettings().enabled);
         manager.register(ToggleSprintSneak);
         ClockMod = new Clock();
         manager.register(ClockMod);
@@ -44,7 +47,11 @@ public class ModInstances {
 
     public static void unregister() {
         getKeyStrokes().getSettings().setPos(getKeyStrokes().getPos());
+        getKeyStrokes().getSettings().enabled = getKeyStrokes().isEnabled();
         getKeyStrokes().getSettings().save();
+        getToggleSprintSneak().getSettings().pos = getToggleSprintSneak().getPos();
+        getToggleSprintSneak().getSettings().enabled = getToggleSprintSneak().isEnabled();
+        getToggleSprintSneak().getSettings().save();
     }
 
     public static ModArmorStatus getArmorStatus() { return ArmorStatus; }

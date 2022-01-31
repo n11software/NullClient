@@ -10,23 +10,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
+      <change afterPath="$MCP_LOC$/src/n11client/n11client/mods/togglesprintsneak/ToggleSprintSneakSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/n11client/mods/ModInstances.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/ModInstances.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/n11client/mods/keystrokes/KeystrokeSettings.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/keystrokes/KeystrokeSettings.class" afterDir="false" />
       <change beforePath="$MCP_LOC$/build/src/n11client/mods/keystrokes/ModKeystrokes.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/keystrokes/ModKeystrokes.class" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/logs/latest.log" beforeDir="false" afterPath="$MCP_LOC$/jars/logs/latest.log" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages.dat" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_end.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_end.dat" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_nether.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/data/villages_nether.dat" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/level.dat" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/level.dat" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/level.dat_old" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/level.dat_old" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/region/r.0.0.mca" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/region/r.0.0.mca" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/region/r.1.0.mca" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/region/r.1.0.mca" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/saves/MCP Development World/session.lock" beforeDir="false" afterPath="$MCP_LOC$/jars/saves/MCP Development World/session.lock" afterDir="false" />
-      <change beforePath="$MCP_LOC$/jars/usercache.json" beforeDir="false" afterPath="$MCP_LOC$/jars/usercache.json" afterDir="false" />
+      <change beforePath="$MCP_LOC$/build/src/n11client/mods/togglesprintsneak/ModToggleSprintSneak.class" beforeDir="false" afterPath="$MCP_LOC$/build/src/n11client/mods/togglesprintsneak/ModToggleSprintSneak.class" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/ModInstances.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/ModInstances.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/KeystrokeSettings.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/KeystrokeSettings.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/ModKeystrokes.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/keystrokes/ModKeystrokes.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/mods/togglesprintsneak/ModToggleSprintSneak.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/mods/togglesprintsneak/ModToggleSprintSneak.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$MCP_LOC$" />
@@ -35,7 +40,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24R50by6bG3M5PGXJ8EW0eW7vrZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

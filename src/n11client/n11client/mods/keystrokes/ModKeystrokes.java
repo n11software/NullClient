@@ -15,7 +15,7 @@ import java.io.File;
 
 public class ModKeystrokes extends ModDraggable {
 
-    private KeystrokeSettings config = new KeystrokeSettings(this, new File("N11"));
+    private final KeystrokeSettings config = new KeystrokeSettings(this, new File("N11"));
 
     public KeystrokeSettings getSettings() {
         return config;
