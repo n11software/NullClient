@@ -30,6 +30,8 @@ public class GuiTextField extends Gui
     private int enabledColor = 14737632;
     private int disabledColor = 7368816;
     private boolean visible = true;
+    private boolean password;
+    public String value;
     private GuiPageButtonList.GuiResponder field_175210_x;
     private Predicate<String> validator = Predicates.<String>alwaysTrue();
 
@@ -41,6 +43,17 @@ public class GuiTextField extends Gui
         this.yPosition = y;
         this.width = par5Width;
         this.height = par6Height;
+        this.password = false;
+    }
+
+    public GuiTextField(int componentId, FontRenderer fontrendererObj, int x, int y, int par5Width, int par6Height, boolean password) {
+        this.id = componentId;
+        this.fontRendererInstance = fontrendererObj;
+        this.xPosition = x;
+        this.yPosition = y;
+        this.width = par5Width;
+        this.height = par6Height;
+        this.password = password;
     }
 
     public void func_175207_a(GuiPageButtonList.GuiResponder p_175207_1_)
@@ -120,6 +133,7 @@ public class GuiTextField extends Gui
         if (this.validator.apply(s))
         {
             this.text = s;
+            this.value = s;
             this.moveCursorBy(i - this.selectionEnd + l);
 
             if (this.field_175210_x != null)
@@ -462,7 +476,12 @@ public class GuiTextField extends Gui
             int i = this.isEnabled ? this.enabledColor : this.disabledColor;
             int j = this.cursorPosition - this.lineScrollOffset;
             int k = this.selectionEnd - this.lineScrollOffset;
-            String s = this.fontRendererInstance.trimStringToWidth(this.text.substring(this.lineScrollOffset), this.getWidth());
+            String s = null;
+            if (this.password) {
+                String r = "";
+                for (int x=0;x<=text.length();x++) r+="*";
+                s = this.fontRendererInstance.trimStringToWidth(r.substring(this.lineScrollOffset+1), this.getWidth());
+            } else s = this.fontRendererInstance.trimStringToWidth(this.text.substring(this.lineScrollOffset), this.getWidth());
             boolean flag = j >= 0 && j <= s.length();
             boolean flag1 = this.isFocused && this.cursorCounter / 6 % 2 == 0 && flag;
             int l = this.enableBackgroundDrawing ? this.xPosition + 4 : this.xPosition;

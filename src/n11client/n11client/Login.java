@@ -3,6 +3,8 @@ package n11client;
 import n11client.utils.Log;
 import n11client.utils.SessionChanger;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiLogin;
+import net.minecraft.client.gui.GuiMainMenu;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,6 +23,7 @@ public class Login {
     public static String Token = "";
     public static String UUID = "";
     public static String Username = "";
+    public static boolean done = false;
 
     public static void getSessionMicrosoft() throws Exception {
         HTTPServer.start();
@@ -29,8 +32,8 @@ public class Login {
         browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
     }
 
-    public static void microsoftLoginDone(String key) throws IOException {
-        browser.destroy();
+    public static void microsoftLoginDone(String key, GuiLogin loginGUI) throws IOException {
+        browser.destroyForcibly();
         String XBLAccessTok = "";
         {
             URL url = new URL("https://login.live.com/oauth20_token.srf");
@@ -163,14 +166,13 @@ public class Login {
             http.disconnect();
         }
 
-        MicrosoftCallback();
+        MicrosoftCallback(loginGUI);
+        done = true;
     }
 
-    private static void MicrosoftCallback() {
-        Log.log("Username: " + Login.Username + "\nToken: " + Login.Token + "\nUUID: " + Login.UUID);
+    private static void MicrosoftCallback(GuiLogin loginGUI) {
         SessionChanger.getInstance().setUser(Login.Username, Login.Token, Login.UUID);
-
-        Log.log("Username: " + Minecraft.getMinecraft().getSession().getUsername() + "\nToken: " + Minecraft.getMinecraft().getSession().getToken() + "\nUUID: " + Minecraft.getMinecraft().getSession().getPlayerID());
+        loginGUI.MSCB();
     }
 
 }

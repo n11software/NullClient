@@ -975,7 +975,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         System.gc();
     }
 
-    private void runGameLoop() throws IOException
+    private void runGameLoop() throws Exception
     {
         long i = System.nanoTime();
         this.mcProfiler.startSection("root");
@@ -1606,7 +1606,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         return this.mcMusicTicker;
     }
 
-    public void runTick() throws IOException
+    public void runTick() throws Exception
     {
         if (this.rightClickDelayTimer > 0)
         {

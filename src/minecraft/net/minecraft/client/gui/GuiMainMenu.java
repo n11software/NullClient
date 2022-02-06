@@ -194,6 +194,8 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
             this.addSingleplayerMultiplayerButtons(j, 24);
         }
 
+        this.buttonList.add(new GuiButton(1337, 5, 5, this.mc.session.getToken().equals("0") ? 40 : fontRendererObj.getStringWidth(this.mc.session.getUsername())+10, 20, this.mc.session.getToken().equals("0") ? "Login" : this.mc.session.getUsername()));
+
         this.buttonList.add(new GuiButton(0, this.width / 2 - 100, j + 72 + 12, 98, 20, I18n.format("menu.options", new Object[0])));
         this.buttonList.add(new GuiButton(4, this.width / 2 + 2, j + 72 + 12, 98, 20, I18n.format("menu.quit", new Object[0])));
         this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, j + 72 + 12));
@@ -306,6 +308,11 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
                 GuiYesNo guiyesno = GuiSelectWorld.makeDeleteWorldYesNo(this, worldinfo.getWorldName(), 12);
                 this.mc.displayGuiScreen(guiyesno);
             }
+        }
+
+        if (button.id == 1337) {
+            GuiLogin login = new GuiLogin();
+            this.mc.displayGuiScreen(login);
         }
     }
 

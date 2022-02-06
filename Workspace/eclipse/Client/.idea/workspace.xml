@@ -10,16 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
-      <change afterPath="$MCP_LOC$/src/n11client/n11client/utils/SessionChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/N11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/N11_jar.xml" afterDir="false" />
+      <change afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiLogin.java" afterDir="false" />
+      <change afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiLoginMojang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/Minecraft.java" afterDir="false" />
-      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/network/PacketBuffer.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/network/PacketBuffer.java" afterDir="false" />
-      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/util/Session.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/util/Session.java" afterDir="false" />
-      <change beforePath="$MCP_LOC$/src/minecraft/net/optifine/player/CapeUtils.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/optifine/player/CapeUtils.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiMainMenu.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiMainMenu.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiTextField.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/client/gui/GuiTextField.java" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/n11client/n11client/Client.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/Client.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/HTTPServer.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/HTTPServer.java" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/n11client/n11client/Login.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/Login.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/utils/SessionChanger.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/utils/SessionChanger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +79,7 @@
       <recent name="C:\Users\fire\OneDrive\Documents\NullClient\src\minecraft\assets\minecraft\n11client" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.minecraft.client.gui" />
       <recent name="n11client.mods.armorstatus" />
       <recent name="n11client.mods.clock" />
       <recent name="n11client.mods.cps" />
