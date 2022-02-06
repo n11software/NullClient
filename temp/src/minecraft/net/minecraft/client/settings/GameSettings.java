@@ -638,7 +638,7 @@ public class GameSettings {
                   this.field_74355_t = astring[1].equals("true");
                }
 
-               if(astring[0].equals("sk1er/mods/fullscreen")) {
+               if(astring[0].equals("fullscreen")) {
                   this.field_74353_u = astring[1].equals("true");
                }
 

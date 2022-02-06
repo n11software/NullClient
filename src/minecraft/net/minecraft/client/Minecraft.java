@@ -13,7 +13,6 @@ import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +38,6 @@ import javax.imageio.ImageIO;
 
 import n11client.Client;
 import n11client.event.impl.RenderEvent;
-import n11client.event.impl.TickEvent;
 import n11client.gui.SplashScreen;
 import n11client.mods.ModInstances;
 import n11client.mods.togglesprintsneak.MovementInput;
@@ -159,6 +157,7 @@ import net.minecraft.util.IThreadListener;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MinecraftError;
 import net.minecraft.util.MouseHelper;
+import net.minecraft.util.MovementInputFromOptions;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.ResourceLocation;
@@ -1038,11 +1037,9 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         if (!this.skipRenderWorld)
         {
-            new TickEvent.RenderTickEvent(TickEvent.Phase.START, this.timer.renderPartialTicks);
             this.mcProfiler.endStartSection("gameRenderer");
             this.entityRenderer.updateCameraAndRender(this.timer.renderPartialTicks, i);
             this.mcProfiler.endSection();
-            new TickEvent.RenderTickEvent(TickEvent.Phase.END, this.timer.renderPartialTicks);
         }
 
         this.mcProfiler.endSection();
@@ -1526,12 +1523,14 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.displayWidth = Display.getDisplayMode().getWidth();
                 this.displayHeight = Display.getDisplayMode().getHeight();
 
-                if (this.displayWidth <= 0) {
-                    this.displayWidth = 1;
-                }
+                if (!Client.isBorderlessFullscreenEnabled) {
+                    if (this.displayWidth <= 0) {
+                        this.displayWidth = 1;
+                    }
 
-                if (this.displayHeight <= 0) {
-                    this.displayHeight = 1;
+                    if (this.displayHeight <= 0) {
+                        this.displayHeight = 1;
+                    }
                 }
             }
             else
@@ -1560,7 +1559,13 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.updateFramebufferSize();
             }
 
-            Display.setFullscreen(this.fullscreen);
+            if (!Client.isBorderlessFullscreenEnabled) Display.setFullscreen(this.fullscreen);
+            else {
+                System.setProperty("org.lwjgl.opengl.Window.undecorated", String.valueOf(fullscreen));
+                Display.setFullscreen(false);
+                Display.setResizable(!fullscreen);
+                Display.setDisplayMode(fullscreen ? Display.getDesktopDisplayMode() : new DisplayMode(displayWidth, displayHeight));
+            }
             ModInstances.ResizeEvent();
             Display.setVSyncEnabled(this.gameSettings.enableVsync);
             this.updateDisplay();
@@ -1607,7 +1612,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         {
             --this.rightClickDelayTimer;
         }
-        new TickEvent.ClientTickEvent(TickEvent.Phase.START);
 
         this.mcProfiler.startSection("gui");
 
@@ -2129,7 +2133,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             this.mcProfiler.endStartSection("pendingConnection");
             this.myNetworkManager.processReceivedPackets();
         }
-        ModInstances.getBorderlessFullscreen().tick(new TickEvent.ClientTickEvent(TickEvent.Phase.END));
         new RenderEvent().call();
         this.mcProfiler.endSection();
         this.systemTime = getSystemTime();
@@ -2635,7 +2638,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         playerSnooper.addClientStat("fps", Integer.valueOf(debugFPS));
         playerSnooper.addClientStat("vsync_enabled", Boolean.valueOf(this.gameSettings.enableVsync));
         playerSnooper.addClientStat("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
-        playerSnooper.addClientStat("display_type", this.fullscreen ? "sk1er/mods/fullscreen" : "windowed");
+        playerSnooper.addClientStat("display_type", this.fullscreen ? "fullscreen" : "windowed");
         playerSnooper.addClientStat("run_time", Long.valueOf((MinecraftServer.getCurrentTimeMillis() - playerSnooper.getMinecraftStartTimeMillis()) / 60L * 1000L));
         playerSnooper.addClientStat("current_action", this.getCurrentAction());
         String s = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? "little" : "big";

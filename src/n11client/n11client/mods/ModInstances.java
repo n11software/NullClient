@@ -2,7 +2,6 @@ package n11client.mods;
 
 import n11client.gui.hud.HUDManager;
 import n11client.mods.armorstatus.ModArmorStatus;
-import n11client.mods.borderlessfullscreen.ModBorderlessFullscreen;
 import n11client.mods.clock.Clock;
 import n11client.mods.cps.CPS;
 import n11client.mods.fps.ModFPS;
@@ -19,7 +18,6 @@ public class ModInstances {
     private static ModToggleSprintSneak ToggleSprintSneak;
     private static Clock ClockMod;
     private static CPS CPSMod;
-    private static ModBorderlessFullscreen BorderlessFullscreen;
 
     public static void register(HUDManager manager) {
         ArmorStatus = new ModArmorStatus();
@@ -40,7 +38,6 @@ public class ModInstances {
         CPSMod = new CPS();
         CPSMod.setEnabled(CPSMod.getSettings().enabled);
         manager.register(CPSMod);
-        BorderlessFullscreen = new ModBorderlessFullscreen();
     }
 
     public static void ResizeEvent() {
@@ -87,5 +84,4 @@ public class ModInstances {
     public static ModToggleSprintSneak getToggleSprintSneak() { return ToggleSprintSneak; }
     public static Clock getClockMod() { return ClockMod; }
     public static CPS getCPSMod() { return CPSMod; }
-    public static ModBorderlessFullscreen getBorderlessFullscreen() { return BorderlessFullscreen; }
 }
