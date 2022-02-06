@@ -30,7 +30,7 @@ public class CapeUtils
         {
             String s1 = "http://s.optifine.net/capes/" + s + ".png";
             if (player.getUniqueID().toString().equals("aade6417-0436-4ba7-92c3-6b1d6799d5e2")) s1 = "https://i.imgur.com/xdbexNI.png";
-            else Log.log(player.getUniqueID().toString());
+            else if (player.getUniqueID().toString().equals("fff76f1a-c09d-47c8-bdf1-5f2481b3f779")) s1 = "https://i.imgur.com/O459sBi.png";
             ResourceLocation resourcelocation = new ResourceLocation("capeof/" + s);
             TextureManager texturemanager = Minecraft.getMinecraft().getTextureManager();
             ITextureObject itextureobject = texturemanager.getTexture(resourcelocation);
