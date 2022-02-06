@@ -6,6 +6,8 @@ import com.mojang.authlib.GameProfile;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+
+import n11client.event.impl.TickEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.BlockDirectional;
@@ -193,6 +195,7 @@ public abstract class EntityPlayer extends EntityLivingBase
 
     public void onUpdate()
     {
+        new TickEvent.PlayerTickEvent(TickEvent.Phase.START, this);
         this.noClip = this.isSpectator();
 
         if (this.isSpectator())
@@ -337,6 +340,7 @@ public abstract class EntityPlayer extends EntityLivingBase
         {
             this.setPosition(d3, this.posY, d4);
         }
+        new TickEvent.PlayerTickEvent(TickEvent.Phase.END, this);
     }
 
     public int getMaxInPortalTime()
