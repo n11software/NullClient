@@ -2086,7 +2086,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage {
       p_70000_1_.func_152768_a("fps", Integer.valueOf(field_71470_ab));
       p_70000_1_.func_152768_a("vsync_enabled", Boolean.valueOf(this.field_71474_y.field_74352_v));
       p_70000_1_.func_152768_a("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
-      p_70000_1_.func_152768_a("display_type", this.field_71431_Q?"fullscreen":"windowed");
+      p_70000_1_.func_152768_a("display_type", this.field_71431_Q? "sk1er/mods/fullscreen" :"windowed");
       p_70000_1_.func_152768_a("run_time", Long.valueOf((MinecraftServer.func_130071_aq() - p_70000_1_.func_130105_g()) / 60L * 1000L));
       p_70000_1_.func_152768_a("current_action", this.func_181538_aA());
       String s = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN?"little":"big";

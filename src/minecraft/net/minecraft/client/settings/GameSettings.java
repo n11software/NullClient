@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import n11client.Client;
 import n11client.mods.ModInstances;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundCategory;
@@ -993,7 +992,7 @@ public class GameSettings
                                 this.snooperEnabled = astring[1].equals("true");
                             }
 
-                            if (astring[0].equals("fullscreen"))
+                            if (astring[0].equals("sk1er/mods/fullscreen"))
                             {
                                 this.fullScreen = astring[1].equals("true");
                             }
