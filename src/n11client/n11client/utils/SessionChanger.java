@@ -30,7 +30,7 @@ public class SessionChanger {
         authService.createMinecraftSessionService();
     }
 
-    public void setUser(String email, String password) {
+    public int setUser(String email, String password) {
         if(!Minecraft.getMinecraft().getSession().getUsername().equals(email) || Minecraft.getMinecraft().getSession().getToken().equals("0")){
 
             this.auth.logOut();
@@ -42,20 +42,17 @@ public class SessionChanger {
                 setSession(session);
             }
             catch (Exception e) {
-                e.printStackTrace();
+                return -1;
             }
         }
 
+        return 0;
     }
 
     public void setUser(String username, String sessionID, String uuid) {
         if(!Minecraft.getMinecraft().getSession().getUsername().equals(username) || Minecraft.getMinecraft().getSession().getToken().equals("0")){
             try {
-                Session session = new Session(
-                        username,
-                        uuid,
-                        sessionID,
-                        "minecraft");
+                Session session = new Session(username, uuid, sessionID, "minecraft");
                 setSession(session);
             }
             catch (Exception e) {
