@@ -33,8 +33,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
-
-import n11client.event.impl.TickEvent;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandResultStats;
 import net.minecraft.command.ICommandManager;
@@ -603,7 +601,6 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
         if (i - this.nanoTimeSinceStatusRefresh >= 5000000000L)
         {
             this.nanoTimeSinceStatusRefresh = i;
-            new TickEvent.ServerTickEvent(TickEvent.Phase.START);
             this.statusResponse.setPlayerCountData(new ServerStatusResponse.PlayerCountData(this.getMaxPlayers(), this.getCurrentPlayerCount()));
             GameProfile[] agameprofile = new GameProfile[Math.min(this.getCurrentPlayerCount(), 12)];
             int j = MathHelper.getRandomIntegerInRange(this.random, 0, this.getCurrentPlayerCount() - agameprofile.length);
@@ -642,7 +639,6 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
 
         this.theProfiler.endSection();
         this.theProfiler.endSection();
-        new TickEvent.ServerTickEvent(TickEvent.Phase.END);
     }
 
     public void updateTimeLightAndEntities()
@@ -676,7 +672,6 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
                 }
 
                 this.theProfiler.startSection("tick");
-                new TickEvent.WorldTickEvent(TickEvent.Side.SERVER, TickEvent.Phase.START, worldserver);
 
                 try
                 {
@@ -699,7 +694,6 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
                     worldserver.addWorldInfoToCrashReport(crashreport1);
                     throw new ReportedException(crashreport1);
                 }
-                new TickEvent.WorldTickEvent(TickEvent.Side.SERVER, TickEvent.Phase.END, worldserver);
 
                 this.theProfiler.endSection();
                 this.theProfiler.startSection("tracker");

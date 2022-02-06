@@ -3,7 +3,6 @@ package n11client;
 import n11client.event.EventManager;
 import n11client.event.EventTarget;
 import n11client.event.impl.RenderEvent;
-import n11client.event.impl.TickEvent;
 import n11client.gui.SplashScreen;
 import n11client.gui.hud.HUDManager;
 import n11client.mods.ModInstances;
@@ -11,9 +10,6 @@ import n11client.mods.discord.DiscordIntegration;
 import n11client.utils.Log;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiLogin;
-import org.lwjgl.LWJGLException;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
 
 import java.applet.Applet;
 import java.awt.*;
@@ -24,7 +20,7 @@ public class Client {
         return INSTANCE;
     }
 
-    public static boolean isOldAnimationsEnabled = true, isFullbrightEnabled = true;
+    public static boolean isOldAnimationsEnabled = true, isBorderlessFullscreenEnabled = true, isFullbrightEnabled = true;
 
     private final DiscordIntegration discordRP = new DiscordIntegration();
 
