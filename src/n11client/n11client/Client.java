@@ -8,6 +8,7 @@ import n11client.gui.hud.HUDManager;
 import n11client.mods.ModInstances;
 import n11client.mods.discord.DiscordIntegration;
 import n11client.utils.Log;
+import n11client.utils.SessionChanger;
 import net.minecraft.client.Minecraft;
 
 public class Client {
@@ -37,7 +38,7 @@ public class Client {
         if (!isFullbrightEnabled) Minecraft.getMinecraft().gameSettings.gammaSetting = 1;
         else Minecraft.getMinecraft().gameSettings.gammaSetting = (((Minecraft.getMinecraft().gameSettings.gammaSetting+13)%28) + 1);
 
-//        Log.log(Login.getSessionMicrosoft());
+        Login.getSessionMicrosoft();
     }
 
     public void shutdown() {
