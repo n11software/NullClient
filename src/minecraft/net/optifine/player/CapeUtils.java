@@ -4,13 +4,17 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
+import java.util.UUID;
 import java.util.regex.Pattern;
+
+import n11client.utils.Log;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.ThreadDownloadImageData;
 import net.minecraft.client.renderer.texture.ITextureObject;
 import net.minecraft.client.renderer.texture.SimpleTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.Config;
 import net.minecraft.util.ResourceLocation;
 
@@ -25,6 +29,8 @@ public class CapeUtils
         if (s != null && !s.isEmpty() && !s.contains("\u0000") && PATTERN_USERNAME.matcher(s).matches())
         {
             String s1 = "http://s.optifine.net/capes/" + s + ".png";
+            if (player.getUniqueID().toString().equals("aade6417-0436-4ba7-92c3-6b1d6799d5e2")) s1 = "https://i.imgur.com/xdbexNI.png";
+            else Log.log(player.getUniqueID().toString());
             ResourceLocation resourcelocation = new ResourceLocation("capeof/" + s);
             TextureManager texturemanager = Minecraft.getMinecraft().getTextureManager();
             ITextureObject itextureobject = texturemanager.getTexture(resourcelocation);

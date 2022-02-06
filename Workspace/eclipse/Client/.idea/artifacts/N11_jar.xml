@@ -5,6 +5,7 @@
       <element id="module-output" name="Client" />
       <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/net/arikia/dev/drpc/discord-rpc.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MCP_LOC$/jars/libraries/org/newdawn/slick/slick.jar" path-in-jar="/" />
+      <element id="library" level="project" name="netty-all-4.1.68.Final.jar" />
     </root>
   </artifact>
 </component>

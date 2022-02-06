@@ -1,6 +1,8 @@
 package n11client;
 
 import n11client.utils.Log;
+import n11client.utils.SessionChanger;
+import net.minecraft.client.Minecraft;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,13 +19,14 @@ public class Login {
 
     private static Process browser = null;
     public static String Token = "";
+    public static String UUID = "";
+    public static String Username = "";
 
-    public static String getSessionMicrosoft() throws Exception {
-        Runtime rt = Runtime.getRuntime();
-        String url = "https://login.live.com/oauth20_authorize.srf?client_id=41b85c73-302f-4ddb-9a40-d18c73c4bfaa&response_type=code&redirect_uri=http://localhost:25564/&scope=XboxLive.signin%20offline_access";
-        browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+    public static void getSessionMicrosoft() throws Exception {
         HTTPServer.start();
-        return Token;
+        Runtime rt = Runtime.getRuntime();
+        String url = "https://login.live.com/oauth20_authorize.srf?client_id=41b85c73-302f-4ddb-9a40-d18c73c4bfaa&response_type=code&redirect_uri=http://localhost:25564/&scope=XboxLive.signin%20offline_access&prompt=login";
+        browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
     }
 
     public static void microsoftLoginDone(String key) throws IOException {
@@ -135,12 +138,39 @@ public class Login {
             } else {
                 br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
             }
-            String tokRes = br.lines().collect(Collectors.joining(System.lineSeparator()));;
+            String tokRes = br.lines().collect(Collectors.joining(System.lineSeparator()));
             tokRes = tokRes.substring(tokRes.indexOf("\"access_token\" : \"")+18);
             Token = tokRes.substring(0, tokRes.indexOf("\""));
-            Log.log(Token);
             http.disconnect();
         }
+        {
+            URL url = new URL("https://api.minecraftservices.com/minecraft/profile");
+            HttpURLConnection http = (HttpURLConnection)url.openConnection();
+            http.setRequestProperty("Authorization", "Bearer " + Token);
+
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+
+            String json = br.lines().collect(Collectors.joining(System.lineSeparator()));
+            String uuid = json.substring(json.indexOf("\"id\" : \"")+8);
+            UUID = uuid.substring(0, uuid.indexOf("\""));
+            String username = json.substring(json.indexOf("\"name\" : \"")+10);
+            Username = username.substring(0, username.indexOf("\""));
+            http.disconnect();
+        }
+
+        MicrosoftCallback();
+    }
+
+    private static void MicrosoftCallback() {
+        Log.log("Username: " + Login.Username + "\nToken: " + Login.Token + "\nUUID: " + Login.UUID);
+        SessionChanger.getInstance().setUser(Login.Username, Login.Token, Login.UUID);
+
+        Log.log("Username: " + Minecraft.getMinecraft().getSession().getUsername() + "\nToken: " + Minecraft.getMinecraft().getSession().getToken() + "\nUUID: " + Minecraft.getMinecraft().getSession().getPlayerID());
     }
 
 }
