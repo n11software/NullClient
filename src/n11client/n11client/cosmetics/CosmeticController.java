@@ -15,10 +15,12 @@ import java.util.UUID;
 
 public class CosmeticController {
 
-    public static Map<String, Boolean> topHatOwners = new HashMap<String, Boolean>();
+    public static class HatChecker extends Thread {
+        public EntityPlayer player;
 
-    public static boolean shouldRenderTopHat(AbstractClientPlayer player) {
-        if (!topHatOwners.containsKey(EntityPlayer.getUUID(player.getGameProfile()).toString())) {
+        HatChecker(EntityPlayer player) { this.player = player; }
+
+        public void run() {
             try {
                 URL url = new URL("https://github.com/Null-N11/N11-Cosmetics/blob/main/" + EntityPlayer.getUUID(player.getGameProfile()) + "/tophat");
                 HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -29,6 +31,15 @@ public class CosmeticController {
             } catch (IOException error) {
                 Log.log(error.getMessage());
             }
+        }
+    }
+
+    public static Map<String, Boolean> topHatOwners = new HashMap<String, Boolean>();
+
+    public static boolean shouldRenderTopHat(AbstractClientPlayer player) {
+        if (!topHatOwners.containsKey(EntityPlayer.getUUID(player.getGameProfile()).toString())) {
+            HatChecker checker = new HatChecker(player);
+            checker.start();
         }
         return topHatOwners.get(EntityPlayer.getUUID(player.getGameProfile()).toString());
     }

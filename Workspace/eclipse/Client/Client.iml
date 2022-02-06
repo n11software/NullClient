@@ -356,6 +356,6 @@
     </orderEntry>
     <orderEntry type="library" name="discord-rpc" level="project" />
     <orderEntry type="library" name="slick" level="project" />
-    <orderEntry type="library" name="netty-all-4.1.68.Final.jar" level="project" />
+    <orderEntry type="library" name="netty-all-4.0.23.Final.jar" level="project" />
   </component>
 </module>
