@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="N11:jar" />
+      <artifact name="Client:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6bf3bd-47b3-4bed-b7e3-dd5c8f58bb7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/netty_all_4_0_23_Final_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/N11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Client_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/netty_all_4_1_68_Final_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
-      <change beforePath="$MCP_LOC$/src/minecraft/net/minecraft/network/PacketBuffer.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/minecraft/network/PacketBuffer.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/minecraft/net/optifine/player/CapeUtils.java" beforeDir="false" afterPath="$MCP_LOC$/src/minecraft/net/optifine/player/CapeUtils.java" afterDir="false" />
       <change beforePath="$MCP_LOC$/src/n11client/n11client/cosmetics/CosmeticController.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/cosmetics/CosmeticController.java" afterDir="false" />
+      <change beforePath="$MCP_LOC$/src/n11client/n11client/cosmetics/hats/CosmeticTopHat.java" beforeDir="false" afterPath="$MCP_LOC$/src/n11client/n11client/cosmetics/hats/CosmeticTopHat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

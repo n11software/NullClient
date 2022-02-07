@@ -22,9 +22,8 @@ public class CosmeticController {
 
         public void run() {
             try {
-                URL url = new URL("https://github.com/Null-N11/N11-Cosmetics/blob/main/" + EntityPlayer.getUUID(player.getGameProfile()) + "/tophat");
+                URL url = new URL("https://cosmetics-n11.firelscar1.repl.co/" + EntityPlayer.getUUID(player.getGameProfile()) + "/tophat");
                 HttpURLConnection http = (HttpURLConnection) url.openConnection();
-                System.out.println(http.getResponseCode() + " " + http.getResponseMessage());
                 if (http.getResponseCode() == 200) topHatOwners.put(EntityPlayer.getUUID(player.getGameProfile()).toString(), true);
                 else topHatOwners.put(EntityPlayer.getUUID(player.getGameProfile()).toString(), false);
                 http.disconnect();
