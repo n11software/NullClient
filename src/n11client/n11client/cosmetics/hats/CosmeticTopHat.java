@@ -3,6 +3,7 @@ package n11client.cosmetics.hats;
 import n11client.cosmetics.CosmeticBase;
 import n11client.cosmetics.CosmeticController;
 import n11client.cosmetics.CosmeticModelBase;
+import n11client.utils.Log;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -30,7 +31,9 @@ public class CosmeticTopHat extends CosmeticBase {
             if (player.isSneaking()) GL11.glTranslated(0, 0.225D, 0);
             float[] color = CosmeticController.getTopHatColor(player);
             GL11.glColor3f(color[0], color[1], color[2]);
-            TopHat.render(player, limbSwing, limbSwingAmount, ageInTicks, headYaw, headPitch, scale);
+            try {
+                TopHat.render(player, limbSwing, limbSwingAmount, ageInTicks, headYaw, headPitch, scale);
+            } catch (Exception ignored) { }
             GL11.glColor3f(1, 1, 1);
             GlStateManager.popMatrix();
         }
