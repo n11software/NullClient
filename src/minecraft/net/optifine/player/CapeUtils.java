@@ -28,7 +28,8 @@ public class CapeUtils
 
         if (s != null && !s.isEmpty() && !s.contains("\u0000") && PATTERN_USERNAME.matcher(s).matches())
         {
-            String s1 = "https://cosmetics-n11.firelscar1.repl.co/" + EntityPlayer.getUUID(player.getGameProfile()).toString() + "/cape.png";
+            String s1 = "http://n11client.000webhostapp.com/" + EntityPlayer.getUUID(player.getGameProfile()).toString() + "/cape.png";
+            Log.warn(s1);
             ResourceLocation resourcelocation = new ResourceLocation("capeof/" + s);
             TextureManager texturemanager = Minecraft.getMinecraft().getTextureManager();
             ITextureObject itextureobject = texturemanager.getTexture(resourcelocation);

@@ -1,6 +1,5 @@
 package net.minecraft.client.renderer.entity;
 
-import n11client.cosmetics.hats.CosmeticTopHat;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.model.ModelPlayer;
@@ -38,7 +37,6 @@ public class RenderPlayer extends RendererLivingEntity<AbstractClientPlayer>
         this.addLayer(new LayerDeadmau5Head(this));
         this.addLayer(new LayerCape(this));
         this.addLayer(new LayerCustomHead(this.getMainModel().bipedHead));
-        this.addLayer(new CosmeticTopHat(this));
     }
 
     public ModelPlayer getMainModel()
