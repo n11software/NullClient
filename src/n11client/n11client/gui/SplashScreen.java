@@ -90,7 +90,7 @@ public class SplashScreen {
         ufr.drawString(CURRENT, 20, sr.getScaledHeight() - 25, 0xFFFFFFFF);
 
         String step = PROGRESS + "/" + MAX;
-        ufr.drawString(step, sr.getScaledWidth() - 20 - ufr.getStringWidth(step), sr.getScaledHeight() - 25, 0xe1e1e1FF);
+        //ufr.drawString(step, sr.getScaledWidth() - 20 - ufr.getStringWidth(step), sr.getScaledHeight() - 25, 0xe1e1e1FF);
 
         GlStateManager.resetColor();
         resetTextureState();

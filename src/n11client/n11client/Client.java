@@ -28,7 +28,7 @@ public class Client {
 
     public void init() {
         Log.log("Initializing client...");
-        SplashScreen.setProgress(1, "Initializing Discord RPC...");
+        //SplashScreen.setProgress(1, "Initializing Discord RPC...");
         discordRP.start();
         EventManager.register(this);
     }
