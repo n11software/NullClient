@@ -1,9 +1,13 @@
 package n11client.gui.hud;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiLoginMojang;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import org.lwjgl.input.Keyboard;
+
+import n11client.Client;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -16,10 +20,13 @@ import static java.lang.Integer.parseInt;
 public class HUDConfigScreen extends GuiScreen {
     private final HashMap<IRenderer, ScreenPosition> renderers = new HashMap<>();
     private Optional<IRenderer> selectedRenderer = Optional.empty();
+    
+    private HUDManager manager;
 
     private int prevX, prevY;
 
     public HUDConfigScreen(HUDManager manager) {
+    	this.manager = manager;
         Collection<IRenderer> registeredRenderers = manager.getRegisteredRenderers();
         for (IRenderer renderer: registeredRenderers) {
             if (!renderer.isEnabled()) continue;
@@ -27,6 +34,27 @@ public class HUDConfigScreen extends GuiScreen {
             if (pos == null) pos = ScreenPosition.fromRelativePosition(0.5, 0.5);
             adjustBounds(renderer, pos);
             this.renderers.put(renderer, pos);
+        }
+    }
+    
+    @Override
+    public void initGui() {
+        super.initGui();  // Ensure parent GUI is initialized
+        this.buttonList.clear();  // Clear previous buttons to avoid duplicates
+        final float zBackup = this.zLevel;
+        this.zLevel = 201;
+        ScaledResolution res = new ScaledResolution(mc);
+        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 2, "Settings"));
+        this.zLevel = zBackup;
+    }
+    
+    @Override
+    protected void actionPerformed(GuiButton button) throws IOException {
+        if (button.id == 0) {
+        	this.buttonList.remove(0);
+        	this.mc.displayGuiScreen(new ModListView(manager));
+        	// Add scrollable list of mods
+        	
         }
     }
 
@@ -43,6 +71,7 @@ public class HUDConfigScreen extends GuiScreen {
 
         ScaledResolution res = new ScaledResolution(mc);
         this.zLevel = zBackup;
+        super.drawScreen(mouseX, mouseY, particalTicks);
     }
 
     private void drawHollowRect(int x, int y, int w, int h, int i) {
@@ -97,6 +126,7 @@ public class HUDConfigScreen extends GuiScreen {
 
     @Override
     protected void mouseClicked(int x, int y, int button) throws IOException {
+    	super.mouseClicked(x, y, button);
         this.prevX = x;
         this.prevY = y;
 

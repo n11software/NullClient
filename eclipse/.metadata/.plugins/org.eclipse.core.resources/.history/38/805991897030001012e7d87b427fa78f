@@ -1,0 +1,181 @@
+package n11client;
+
+import n11client.utils.Log;
+import n11client.utils.SessionChanger;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiLogin;
+import net.minecraft.client.gui.GuiMainMenu;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+public class Login {
+
+    private static Process browser = null;
+    public static String Token = "";
+    public static String UUID = "";
+    public static String Username = "";
+    public static boolean done = false;
+
+    public static void getSessionMicrosoft() throws Exception {
+        HTTPServer.start();
+        Runtime rt = Runtime.getRuntime();
+        String url = "https://login.live.com/oauth20_authorize.srf?client_id=41b85c73-302f-4ddb-9a40-d18c73c4bfaa&response_type=code&redirect_uri=http://localhost:25564/&scope=XboxLive.signin%20offline_access&prompt=login";
+        browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+    }
+
+    public static void microsoftLoginDone(String key, GuiLogin loginGUI) throws IOException {
+        browser.destroyForcibly();
+        String XBLAccessTok = "";
+        {
+            URL url = new URL("https://login.live.com/oauth20_token.srf");
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoOutput(true);
+            http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            String data = "client_id=41b85c73-302f-4ddb-9a40-d18c73c4bfaa&code=" + key + "&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A25564%2F";
+
+            byte[] out = data.getBytes(StandardCharsets.UTF_8);
+
+            OutputStream stream = http.getOutputStream();
+            stream.write(out);
+
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+            String tokRes = br.readLine();
+            http.disconnect();
+
+            String pattern = "\"access_token\":\"((?:[^\\\\\"]|\\\\.)*)\"";
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(tokRes);
+            if (m.find()) XBLAccessTok = m.group(1);
+        }
+        String MicrosoftToken = "";
+        {
+            URL url = new URL("https://user.auth.xboxlive.com/user/authenticate");
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoOutput(true);
+            http.setRequestProperty("Content-Type", "application/json");
+
+            String data = "{\n\"Properties\": {\n\"AuthMethod\": \"RPS\",\n\"SiteName\": \"user.auth.xboxlive.com\",\n\"RpsTicket\": \"d=" + XBLAccessTok + "\"\n},\n\"RelyingParty\":\"http://auth.xboxlive.com\",\n\"TokenType\":\"JWT\"\n}";
+
+            byte[] out = data.getBytes(StandardCharsets.UTF_8);
+
+            OutputStream stream = http.getOutputStream();
+            stream.write(out);
+
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+            String tokRes = br.readLine();
+
+            String pattern = "\"Token\":\"((?:[^\\\\\"]|\\\\.)*)\"";
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(tokRes);
+            if (m.find()) MicrosoftToken = m.group(1);
+            http.disconnect();
+        }
+        String XSTSToken = "";
+        String UHS = "";
+        {
+            URL url = new URL("https://xsts.auth.xboxlive.com/xsts/authorize");
+            HttpURLConnection http = (HttpURLConnection)url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoOutput(true);
+            http.setRequestProperty("Content-Type", "application/json");
+
+            String data = "{\"Properties\":{\"SandboxId\": \"RETAIL\",\"UserTokens\":[\"" + MicrosoftToken + "\"]},\"RelyingParty\": \"rp://api.minecraftservices.com/\",\"TokenType\": \"JWT\"}";
+
+            byte[] out = data.getBytes(StandardCharsets.UTF_8);
+
+            OutputStream stream = http.getOutputStream();
+            stream.write(out);
+
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+            String tokRes = br.readLine();
+            tokRes = tokRes.substring(tokRes.indexOf("\"Token\":\"")+9);
+
+            XSTSToken = tokRes.substring(0, tokRes.indexOf("\""));
+
+            String pattern1 = "\"uhs\":\"(.+)\"";
+            Pattern r1 = Pattern.compile(pattern1);
+            Matcher m1 = r1.matcher(tokRes);
+            if (m1.find()) UHS = m1.group(1);
+            http.disconnect();
+        }
+        {
+            URL url = new URL("https://api.minecraftservices.com/authentication/login_with_xbox");
+            HttpURLConnection http = (HttpURLConnection)url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoOutput(true);
+            http.setRequestProperty("Content-Type", "application/json");
+            String data = "{\"identityToken\":\"XBL3.0 x="+ UHS +";"+ XSTSToken +"\"}";
+            byte[] out = data.getBytes(StandardCharsets.UTF_8);
+            OutputStream stream = http.getOutputStream();
+            stream.write(out);
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+            System.out.println(br);
+            String tokRes = br.lines().collect(Collectors.joining(System.lineSeparator()));
+            System.out.println(tokRes);
+            tokRes = tokRes.substring(tokRes.indexOf("\"access_token\" : \"")+18);
+            Token = tokRes.substring(0, tokRes.indexOf("\""));
+            http.disconnect();
+        }
+        {
+            URL url = new URL("https://api.minecraftservices.com/minecraft/profile");
+            HttpURLConnection http = (HttpURLConnection)url.openConnection();
+            http.setRequestProperty("Authorization", "Bearer " + Token);
+
+            BufferedReader br = null;
+            if (100 <= http.getResponseCode() && http.getResponseCode() <= 399) {
+                br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(http.getErrorStream()));
+            }
+
+            String json = br.lines().collect(Collectors.joining(System.lineSeparator()));
+            String uuid = json.substring(json.indexOf("\"id\" : \"")+8);
+            UUID = uuid.substring(0, uuid.indexOf("\""));
+            String username = json.substring(json.indexOf("\"name\" : \"")+10);
+            Username = username.substring(0, username.indexOf("\""));
+            http.disconnect();
+        }
+
+        MicrosoftCallback(loginGUI);
+        done = true;
+    }
+
+    private static void MicrosoftCallback(GuiLogin loginGUI) {
+        SessionChanger.getInstance().setUser(Login.Username, Login.Token, Login.UUID);
+        System.out.println(Login.Username + " : " + Login.Token + " : " + Login.UUID);
+        loginGUI.MSCB();
+    }
+
+}

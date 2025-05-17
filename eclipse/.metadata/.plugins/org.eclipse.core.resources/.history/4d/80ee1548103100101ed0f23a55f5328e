@@ -1,0 +1,47 @@
+package n11client;
+
+import n11client.utils.Log;
+import n11client.utils.SessionChanger;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiLogin;
+import net.minecraft.client.gui.GuiMainMenu;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+public class Login {
+
+    private static Process browser = null;
+    public static String Token = "";
+    public static String UUID = "";
+    public static String Username = "";
+    public static boolean done = false;
+
+    public static void getSessionMicrosoft() throws Exception {
+        HTTPServer.start();
+        Runtime rt = Runtime.getRuntime();
+        String url = "https://login.live.com/oauth20_authorize.srf?client_id=6c5ec31a-2630-458e-bf5e-eca4db7f1f5d&response_type=code&redirect_uri=http://localhost:25564/&scope=XboxLive.signin%20offline_access&prompt=login";
+        browser = rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+    }
+
+    public static void microsoftLoginDone(String key, GuiLogin loginGUI) throws IOException {
+        browser.destroyForcibly();
+
+        MicrosoftCallback(loginGUI);
+        done = true;
+    }
+
+    private static void MicrosoftCallback(GuiLogin loginGUI) {
+        SessionChanger.getInstance().setUser(Login.Username, Login.Token, Login.UUID);
+        loginGUI.MSCB();
+    }
+
+}

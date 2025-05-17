@@ -25,8 +25,8 @@ public class Clock extends ModDraggable {
 
     public RelativePosition getPos() { return pos.getRelativePos(); }
 
-    SimpleDateFormat formatter = new SimpleDateFormat(hr24 ? "HH:mm" : "h:mm aa");
     public String getLocalTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat(hr24 ? "HH:mm" : "h:mm aa");
         return formatter.format(new java.util.Date());
     }
 

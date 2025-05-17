@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ModListView.java&apos; to &apos;n11client.gui.hud.ModListView.java&apos;&#x0D;&#x0A;- Original project: &apos;Client&apos;&#x0D;&#x0A;- Destination element: &apos;n11client.gui.hud.ModListView.java&apos;&#x0D;&#x0A;- Original element: &apos;n11client.gui.hud.ModListView.java&apos;" description="Copy compilation unit" destination="/n11client&lt;n11client.gui.hud{ModListView.java" element1="/n11client&lt;n11client.gui.hud{ModListView.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1747281227537" units="1" version="1.0"/>
+</session>

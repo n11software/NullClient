@@ -1,0 +1,5 @@
+package net.optifine.player;
+
+public class SSLUtil {
+
+}

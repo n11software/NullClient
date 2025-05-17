@@ -163,7 +163,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
     public void initGui()
     {
-        Client.getInstance().getDiscordRP().update("Idle", "Main Menu");
+//        Client.getInstance().getDiscordRP().update("Idle", "Main Menu");
         this.viewportTexture = new DynamicTexture(256, 256);
         this.backgroundTexture = this.mc.getTextureManager().getDynamicTextureLocation("background", this.viewportTexture);
         Calendar calendar = Calendar.getInstance();

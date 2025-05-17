@@ -41,12 +41,12 @@ public class ModInstances {
     }
 
     public static void ResizeEvent() {
-        ArmorStatus.ResizeEvent();
-        FPS.ResizeEvent();
-        KeyStrokes.ResizeEvent();
-        ToggleSprintSneak.ResizeEvent();
-        ClockMod.ResizeEvent();
-        CPSMod.ResizeEvent();
+        if (ArmorStatus != null) ArmorStatus.ResizeEvent();
+        if (FPS != null) FPS.ResizeEvent();
+        if (KeyStrokes != null) KeyStrokes.ResizeEvent();
+        if (ToggleSprintSneak != null) ToggleSprintSneak.ResizeEvent();
+        if (ClockMod != null) ClockMod.ResizeEvent();
+        if (CPSMod != null) CPSMod.ResizeEvent();
     }
 
     public static void unregister() {

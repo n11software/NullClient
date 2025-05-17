@@ -48,17 +48,17 @@ public class ModKeystrokes extends ModDraggable {
         }
     }
 
-    private static class Key {
+    public static class Key {
 
-        private static final Key W = new Key("W", Minecraft.getMinecraft().gameSettings.keyBindForward, 26, 2, 22, 22);
-        private static final Key A = new Key("A", Minecraft.getMinecraft().gameSettings.keyBindLeft, 2, 26, 22, 22);
-        private static final Key S = new Key("S", Minecraft.getMinecraft().gameSettings.keyBindBack, 26, 26,22, 22);
-        private static final Key D = new Key("D", Minecraft.getMinecraft().gameSettings.keyBindRight, 50, 26, 22, 22);
+        public static final Key W = new Key("W", Minecraft.getMinecraft().gameSettings.keyBindForward, 26, 2, 22, 22);
+        public static final Key A = new Key("A", Minecraft.getMinecraft().gameSettings.keyBindLeft, 2, 26, 22, 22);
+        public static final Key S = new Key("S", Minecraft.getMinecraft().gameSettings.keyBindBack, 26, 26,22, 22);
+        public static final Key D = new Key("D", Minecraft.getMinecraft().gameSettings.keyBindRight, 50, 26, 22, 22);
 
-        private static final Key LMB = new Key("LMB", 0, 2, 50, 34, 18);
-        private static final Key RMB = new Key("RMB", 1, 38, 50, 34, 18);
+        public static final Key LMB = new Key("LMB", 0, 2, 50, 34, 18);
+        public static final Key RMB = new Key("RMB", 1, 38, 50, 34, 18);
 
-        private static final Key SPACE = new Key("-----", Minecraft.getMinecraft().gameSettings.keyBindJump, 2, 70, 70, 18);
+        public static final Key SPACE = new Key("-----", Minecraft.getMinecraft().gameSettings.keyBindJump, 2, 70, 70, 18);
 
         private final String name;
         private final KeyBinding keyBind;
@@ -112,6 +112,11 @@ public class ModKeystrokes extends ModDraggable {
 
     private KeyStrokesMode mode = new KeyStrokesMode(config.isWASD() ? Key.W : null, config.isWASD() ? Key.A : null, config.isWASD() ? Key.S : null, config.isWASD() ? Key.D : null,
             config.isMouseButtons() ? Key.LMB : null, config.isMouseButtons() ? Key.RMB : null, config.isSpaceBar() ? Key.SPACE : null);
+    
+    public void reloadMode() {
+    	setMode(new KeyStrokesMode(config.isWASD() ? Key.W : null, config.isWASD() ? Key.A : null, config.isWASD() ? Key.S : null, config.isWASD() ? Key.D : null,
+				config.isMouseButtons() ? Key.LMB : null, config.isMouseButtons() ? Key.RMB : null, config.isSpaceBar() ? Key.SPACE : null));
+    }
 
     public void ResizeEvent() {
         pos.setRelativePos(new RelativePosition(pos.getRelativePos().getSector(), pos.getRelativePos().getX(), pos.getRelativePos().getY()));

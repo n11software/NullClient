@@ -11,8 +11,8 @@ import java.util.Map;
 
 import n11client.Client;
 import org.lwjgl.opengl.GL11;
-import org.newdawn.slick.UnicodeFont;
-import org.newdawn.slick.font.effects.ColorEffect;
+//import org.newdawn.slick.UnicodeFont;
+//import org.newdawn.slick.font.effects.ColorEffect;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.StringUtils;
@@ -48,7 +48,8 @@ public class UnicodeFontRenderer {
     }
 
     public static UnicodeFontRenderer getFontFromAssets(String name, int size, int fontType,  float kerning, float antiAliasingFactor) {
-        return new UnicodeFontRenderer(name, fontType, size, kerning, antiAliasingFactor);
+//        return new UnicodeFontRenderer(name, fontType, size, kerning, antiAliasingFactor);
+    	return null;
     }
 
 
@@ -59,59 +60,59 @@ public class UnicodeFontRenderer {
     private final float kerning;
     private final Map<String, Float> cachedStringWidth = new HashMap<>();
     private final float antiAliasingFactor;
-    private UnicodeFont unicodeFont;
+//    private UnicodeFont unicodeFont;
 
-    private UnicodeFontRenderer(String fontName, int fontType, float fontSize, float kerning, float antiAliasingFactor) {
-        this.antiAliasingFactor = antiAliasingFactor;
-        try {
-            this.unicodeFont = new UnicodeFont(getFontByName(fontName).deriveFont(fontSize * this.antiAliasingFactor));
-        } catch (FontFormatException | IOException e) {
-            e.printStackTrace();
-        }
-        this.kerning = kerning;
-
-        this.unicodeFont.addAsciiGlyphs();
-        this.unicodeFont.getEffects().add(new ColorEffect(java.awt.Color.WHITE));
-
-        try {
-            this.unicodeFont.loadGlyphs();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        for (int i = 0; i < 32; i++) {
-            int shadow = (i >> 3 & 1) * 85;
-            int red = (i >> 2 & 1) * 170 + shadow;
-            int green = (i >> 1 & 1) * 170 + shadow;
-            int blue = (i & 1) * 170 + shadow;
-
-            if (i == 6) {
-                red += 85;
-            }
-
-            if (i >= 16) {
-                red /= 4;
-                green /= 4;
-                blue /= 4;
-            }
-
-            this.colorCodes[i] = (red & 255) << 16 | (green & 255) << 8 | blue & 255;
-        }
-    }
+//    private UnicodeFontRenderer(String fontName, int fontType, float fontSize, float kerning, float antiAliasingFactor) {
+//        this.antiAliasingFactor = antiAliasingFactor;
+////        try {
+////            this.unicodeFont = new UnicodeFont(getFontByName(fontName).deriveFont(fontSize * this.antiAliasingFactor));
+////        } catch (FontFormatException | IOException e) {
+////            e.printStackTrace();
+////        }
+////        this.kerning = kerning;
+////
+////        this.unicodeFont.addAsciiGlyphs();
+////        this.unicodeFont.getEffects().add(new ColorEffect(java.awt.Color.WHITE));
+////
+////        try {
+////            this.unicodeFont.loadGlyphs();
+////        } catch (Exception e) {
+////            e.printStackTrace();
+////        }
+//
+//        for (int i = 0; i < 32; i++) {
+//            int shadow = (i >> 3 & 1) * 85;
+//            int red = (i >> 2 & 1) * 170 + shadow;
+//            int green = (i >> 1 & 1) * 170 + shadow;
+//            int blue = (i & 1) * 170 + shadow;
+//
+//            if (i == 6) {
+//                red += 85;
+//            }
+//
+//            if (i >= 16) {
+//                red /= 4;
+//                green /= 4;
+//                blue /= 4;
+//            }
+//
+//            this.colorCodes[i] = (red & 255) << 16 | (green & 255) << 8 | blue & 255;
+//        }
+//    }
 
     private UnicodeFontRenderer(Font font, float kerning, float antiAliasingFactor) {
         this.antiAliasingFactor = antiAliasingFactor;
-        this.unicodeFont = new UnicodeFont(new Font(font.getName(), font.getStyle(), (int) (font.getSize() * antiAliasingFactor)));
+//        this.unicodeFont = new UnicodeFont(new Font(font.getName(), font.getStyle(), (int) (font.getSize() * antiAliasingFactor)));
         this.kerning = kerning;
 
-        this.unicodeFont.addAsciiGlyphs();
-        this.unicodeFont.getEffects().add(new ColorEffect(java.awt.Color.WHITE));
-
-        try {
-            this.unicodeFont.loadGlyphs();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        this.unicodeFont.addAsciiGlyphs();
+//        this.unicodeFont.getEffects().add(new ColorEffect(java.awt.Color.WHITE));
+//
+//        try {
+//            this.unicodeFont.loadGlyphs();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         for (int i = 0; i < 32; i++) {
             int shadow = (i >> 3 & 1) * 85;
@@ -190,14 +191,14 @@ public class UnicodeFontRenderer {
                 x = originalX;
             }
             if (c == '\n') {
-                y += getHeight(Character.toString(c)) * 2.0F;
+//                y += getHeight(Character.toString(c)) * 2.0F;
             }
             if (c != '\247' && (index == 0 || index == characters.length - 1 || characters[index - 1] != '\247')) {
                 //Line causing error
-                unicodeFont.drawString(x, y, Character.toString(c), new org.newdawn.slick.Color(currentColor));
+//                unicodeFont.drawString(x, y, Character.toString(c), new org.newdawn.slick.Color(currentColor));
                 x += (getWidth(Character.toString(c)) * 2.0F * antiAliasingFactor);
             } else if (c == ' ') {
-                x += unicodeFont.getSpaceWidth();
+//                x += unicodeFont.getSpaceWidth();
             } else if (c == '\247' && index != characters.length - 1) {
                 int codeIndex = "0123456789abcdefg".indexOf(text.charAt(index + 1));
                 if (codeIndex < 0) continue;
@@ -251,7 +252,7 @@ public class UnicodeFontRenderer {
             float width = 0.0F;
             String str = StringUtils.stripControlCodes(s);
             for (char c : str.toCharArray()) {
-                width += unicodeFont.getWidth(Character.toString(c)) + this.kerning;
+//                width += unicodeFont.getWidth(Character.toString(c)) + this.kerning;
             }
 
             return width / 2.0F / antiAliasingFactor;
@@ -296,17 +297,17 @@ public class UnicodeFontRenderer {
         }
     }
 
-    public float getCharWidth(char c) {
-        return unicodeFont.getWidth(String.valueOf(c));
-    }
+//    public float getCharWidth(char c) {
+////        return unicodeFont.getWidth(String.valueOf(c));
+//    }
+//
+//    public float getHeight(String s) {
+////        return unicodeFont.getHeight(s) / 2.0F;
+//    }
 
-    public float getHeight(String s) {
-        return unicodeFont.getHeight(s) / 2.0F;
-    }
-
-    public UnicodeFont getFont() {
-        return this.unicodeFont;
-    }
+//    public UnicodeFont getFont() {
+////        return this.unicodeFont;
+//    }
 
     public String trimStringToWidth(String par1Str, int par2) {
         StringBuilder var4 = new StringBuilder();
@@ -318,33 +319,33 @@ public class UnicodeFontRenderer {
 
         for (int var10 = var6; var10 >= 0 && var10 < par1Str.length() && var5 < (float) par2; var10 += var7) {
             char var11 = par1Str.charAt(var10);
-            float var12 = this.getCharWidth(var11);
+//            float var12 = this.getCharWidth(var11);
 
-            if (var8) {
-                var8 = false;
-
-                if (var11 != 108 && var11 != 76) {
-                    if (var11 == 114 || var11 == 82) {
-                        var9 = false;
-                    }
-                } else {
-                    var9 = true;
-                }
-            } else if (var12 < 0.0F) {
-                var8 = true;
-            } else {
-                var5 += var12;
-
-                if (var9) {
-                    ++var5;
-                }
-            }
-
-            if (var5 > (float) par2) {
-                break;
-            } else {
-                var4.append(var11);
-            }
+//            if (var8) {
+//                var8 = false;
+//
+//                if (var11 != 108 && var11 != 76) {
+//                    if (var11 == 114 || var11 == 82) {
+//                        var9 = false;
+//                    }
+//                } else {
+//                    var9 = true;
+//                }
+//            } else if (var12 < 0.0F) {
+//                var8 = true;
+//            } else {
+//                var5 += var12;
+//
+//                if (var9) {
+//                    ++var5;
+//                }
+//            }
+//
+//            if (var5 > (float) par2) {
+//                break;
+//            } else {
+//                var4.append(var11);
+//            }
         }
 
         return var4.toString();

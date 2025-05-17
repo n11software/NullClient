@@ -2203,7 +2203,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         networkmanager.sendPacket(new C00Handshake(47, socketaddress.toString(), 0, EnumConnectionState.LOGIN));
         networkmanager.sendPacket(new C00PacketLoginStart(this.getSession().getProfile()));
         this.myNetworkManager = networkmanager;
-        Client.getInstance().getDiscordRP().update("Playing Single-player", "In-Game");
+//        Client.getInstance().getDiscordRP().update("Playing Single-player", "In-Game");
     }
 
     public void loadWorld(WorldClient worldClientIn)

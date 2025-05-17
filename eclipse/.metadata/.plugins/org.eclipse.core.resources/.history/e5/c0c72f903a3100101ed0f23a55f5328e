@@ -1,0 +1,111 @@
+package n11client.gui.hud;
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiSlot;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ModListView extends GuiScreen {
+    private ScrollList scrollList;
+    private List<String> entries = new ArrayList<>();
+
+    @Override
+    public void initGui() {
+        super.initGui();
+        entries.clear();
+        entries.add("");
+        entries.add("");
+        entries.add("Armor Status");
+        entries.add("Clock");
+        entries.add("CPS");
+        entries.add("Discord");
+        entries.add("FPS");
+        entries.add("Keystrokes");
+        entries.add("Toggle Sprint/Sneak");
+        entries.add("Fullbright");
+        entries.add("Borderless Fullscreen");
+        entries.add("");
+        entries.add("");
+        scrollList = new ScrollList();
+    }
+
+    @Override
+    public void handleMouseInput() throws IOException {
+        super.handleMouseInput();
+        int scrollAmount = Mouse.getEventDWheel();
+        if (scrollAmount != 0) {
+            if (scrollAmount > 0) scrollAmount = -1;
+            else if (scrollAmount < 0) scrollAmount = 1;
+            scrollList.scrollBy(scrollAmount * 20);
+        }
+    }
+
+    @Override
+    protected void actionPerformed(GuiButton button) throws IOException {
+        System.out.println("Clicked: " + button.displayString);
+    }
+
+    @Override
+    public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+        scrollList.drawScreen(mouseX, mouseY, partialTicks);
+        drawCenteredString(mc.fontRendererObj, "Mod List", width / 2, 14, 0xFFFFFF);
+        super.drawScreen(mouseX, mouseY, partialTicks);
+    }
+
+    @Override
+    protected void keyTyped(char typedChar, int keyCode) throws IOException {
+        if (keyCode == Keyboard.KEY_ESCAPE) {
+            mc.displayGuiScreen(new HUDConfigScreen());
+        }
+        super.keyTyped(typedChar, keyCode);
+    }
+
+    @Override
+    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+        super.mouseClicked(mouseX, mouseY, mouseButton);
+        int clickedIndex = scrollList.getSlotIndexFromScreenCoords(mouseX, mouseY);
+        if (clickedIndex >= 0) {
+            scrollList.elementClicked(clickedIndex, false, mouseX, mouseY);
+        }
+    }
+
+    private class ScrollList extends GuiSlot {
+
+        public ScrollList() {
+            super(ModListView.this.mc, ModListView.this.width, ModListView.this.height, 32, ModListView.this.height, 20);
+        }
+
+        @Override
+        protected int getSize() {
+            return entries.size();
+        }
+
+        @Override
+        protected void elementClicked(int index, boolean doubleClick, int mouseX, int mouseY) {
+            System.out.println("Clicked: " + entries.get(index));
+        }
+
+        @Override
+        protected boolean isSelected(int index) {
+            return false;
+        }
+
+        @Override
+        protected void drawBackground() {}
+
+        @Override
+        protected void drawSlot(int index, int x, int y, int height, int mouseX, int mouseY) {
+            drawCenteredString(mc.fontRendererObj, entries.get(index), width / 2, y, 0xFFFFFF);
+        }
+    }
+
+    @Override
+    public boolean doesGuiPauseGame() {
+        return true;
+    }
+}

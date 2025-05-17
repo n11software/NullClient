@@ -1,0 +1,88 @@
+package n11client;
+
+import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
+import net.minecraft.client.Minecraft;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.util.List;
+import java.util.Map;
+
+public class HTTPServer {
+
+    private static HttpServer server;
+
+    public static void start() throws Exception {
+        server = HttpServer.create(new InetSocketAddress(25564), 0);
+        server.createContext("/", new Handler());
+        server.setExecutor(null);
+        server.start();
+    }
+
+    public static void stop() {
+        server.stop(0);
+    }
+
+    static class Handler implements HttpHandler {
+        @Override
+        public void handle(HttpExchange t) throws IOException {
+        	if (t.getRequestURI().getPath().contains("success")) {
+        		System.out.println(t.getRequestURI().getPath());
+        		String query = t.getRequestURI().getQuery();
+        		String Token="", UUID="", Username="";
+        		
+        		String[] pairs = query.split("&");
+        		for (String pair : pairs) {
+        		    String[] keyValue = pair.split("=", 2); // limit=2 to avoid splitting values with '='
+        		    String key = keyValue[0];
+        		    String value = keyValue.length > 1 ? keyValue[1] : "";
+        		    System.out.println("Key: " + key + ", Value: " + value);
+        		    if (key == "Token") Token = value;
+        		    else if (key == "uuid") UUID = value;
+        		    else if (key == "username") Username = value;
+        		}
+                stop();
+                Login.microsoftLoginDone(t.getRequestURI().getQuery().substring(5), Client.getInstance().loginGUI);
+        	} else {
+	            String css = "body { display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; background-color: #2D2D2A; }\n.title { font-size: 22pt; font-weight: bold; color: #EDF6F9; font-family: Arial; }\n.subtitle { font-size: 16pt; color: #C7CEDB; font-family: Arial; }";
+	            String js = "<script>\n"
+	            		+ "    const key = new URLSearchParams(window.location.search).get('code');\n"
+	            		+ "    if (!key) {\n"
+	            		+ "        alert('No key provided!');\n"
+	            		+ "        window.close();\n"
+	            		+ "    }\n"
+	            		+ "    const xhr = new XMLHttpRequest();\n"
+	            		+ "    xhr.open('POST', 'http://localhost:25566/auth', true);\n"
+	            		+ "    xhr.setRequestHeader('Content-Type', 'application/json');\n"
+	            		+ "    xhr.onreadystatechange = function() {\n"
+	            		+ "        if (xhr.readyState === XMLHttpRequest.DONE) {\n"
+	            		+ "            if (xhr.status === 200) {\n"
+	            		+ "                const response = JSON.parse(xhr.responseText);\n"
+	            		+ "                console.log(response);\n"
+	            		+ "                const token = response.Token;\n"
+	            		+ "                const uuid = response.UUID;\n"
+	            		+ "                const username = response.Username;\n"
+	            		+ "                const successUrl = `http://localhost:25564/success?token=${token}&uuid=${uuid}&username=${username}`;\n"
+	            		+ "                window.location.href = successUrl;\n"
+	            		+ "            } else {\n"
+	            		+ "                alert('Login failed!');\n"
+	            		+ "            }\n"
+	            		+ "            window.close();\n"
+	            		+ "        }\n"
+	            		+ "    };\n"
+	            		+ "    xhr.send(JSON.stringify({ key: key }));\n"
+	            		+ "</script>";
+	            String response = "<html><head><title>N11 Client</title></head><body><span class=\"title\">Logged In!</span><span class=\"subtitle\">You can close this window!</span></body><style>" + css + "</style>"+js+"</html>";
+	            t.sendResponseHeaders(200, response.length());
+	            OutputStream os = t.getResponseBody();
+	            os.write(response.getBytes());
+	            os.close();
+        	}
+        }
+    }
+
+}

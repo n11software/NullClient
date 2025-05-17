@@ -3,6 +3,7 @@ package net.minecraft.client.gui;
 import n11client.Client;
 import n11client.Login;
 import n11client.utils.Log;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 
 import java.io.IOException;
@@ -16,8 +17,10 @@ public class GuiLogin extends GuiScreen {
     }
 
     public void initGui() {
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height/2, "Microsoft"));
-        this.buttonList.add(new GuiButton(1, this.width / 2 - 100, 25 + this.height/2, "Mojang"));
+    	Client.getInstance().loginGUI = this;
+        Client.loginMicrosoft();
+//        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height/2, "Microsoft"));
+//        this.buttonList.add(new GuiButton(1, this.width / 2 - 100, 25 + this.height/2, "Mojang"));
     }
 
     protected void actionPerformed(GuiButton button) throws IOException {
@@ -30,6 +33,9 @@ public class GuiLogin extends GuiScreen {
     }
 
     public void MSCB() {
+    	Minecraft.getMinecraft().addScheduledTask(() -> {
+    	    mc.displayGuiScreen(new GuiMainMenu());
+    	});
         // Exit the gui
     }
 

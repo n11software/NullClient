@@ -91,6 +91,7 @@ public class SplashScreen {
 
         String step = PROGRESS + "/" + MAX;
         //ufr.drawString(step, sr.getScaledWidth() - 20 - ufr.getStringWidth(step), sr.getScaledHeight() - 25, 0xe1e1e1FF);
+        if (Minecraft.getMinecraft().fontRendererObj!=null) Minecraft.getMinecraft().fontRendererObj.drawString(step, sr.getScaledWidth() - 20 - ufr.getStringWidth(step), sr.getScaledHeight() - 25, 0xffffff);
 
         GlStateManager.resetColor();
         resetTextureState();

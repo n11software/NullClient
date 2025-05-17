@@ -25,7 +25,7 @@ public class HUDManager {
         return instance;
     }
 
-    private Set<IRenderer> registeredRenderers = Sets.newHashSet();
+    public Set<IRenderer> registeredRenderers = Sets.newHashSet();
     private Minecraft mc = Minecraft.getMinecraft();
 
     public void register(IRenderer... renderers) { for (IRenderer renderer: renderers) this.registeredRenderers.add(renderer); }

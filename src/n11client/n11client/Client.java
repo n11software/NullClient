@@ -22,14 +22,14 @@ public class Client {
 
     public static boolean isOldAnimationsEnabled = true, isBorderlessFullscreenEnabled = true, isFullbrightEnabled = true;
 
-    private final DiscordIntegration discordRP = new DiscordIntegration();
+//    private final DiscordIntegration discordRP = new DiscordIntegration();
 
     private HUDManager HUDMan;
 
     public void init() {
         Log.log("Initializing client...");
         //SplashScreen.setProgress(1, "Initializing Discord RPC...");
-        discordRP.start();
+//        discordRP.start();
         EventManager.register(this);
     }
 
@@ -53,13 +53,13 @@ public class Client {
     }
 
     public void shutdown() {
-        discordRP.shutdown();
+//        discordRP.shutdown();
         ModInstances.unregister();
     }
 
-    public DiscordIntegration getDiscordRP() {
-        return discordRP;
-    }
+//    public DiscordIntegration getDiscordRP() {
+//        return discordRP;
+//    }
 
     @EventTarget
     public void onTick(RenderEvent event) {

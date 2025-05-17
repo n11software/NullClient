@@ -26,9 +26,14 @@
 			<locationURI>MCP_LOC/lib</locationURI>
 		</link>
 		<link>
-			<name>src</name>
+			<name>minecraft</name>
 			<type>2</type>
-			<locationURI>MCP_LOC/src/minecraft</locationURI>
+			<location>C:/Users/fire/Downloads/NullClient-17e2bfa88951ef021ec7c784947c773130398b91/NullClient-17e2bfa88951ef021ec7c784947c773130398b91/src/minecraft</location>
+		</link>
+		<link>
+			<name>n11client</name>
+			<type>2</type>
+			<location>C:/Users/fire/Downloads/NullClient-17e2bfa88951ef021ec7c784947c773130398b91/NullClient-17e2bfa88951ef021ec7c784947c773130398b91/src/n11client</location>
 		</link>
 	</linkedResources>
 	<filteredResources>

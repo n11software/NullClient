@@ -1,6 +1,7 @@
 package net.minecraft.network;
 
 import com.google.common.collect.Lists;
+import io.netty.channel.ServerChannel;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -23,6 +24,7 @@ import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.SocketAddress;
 import java.util.Collections;
@@ -87,14 +89,30 @@ public class NetworkSystem
             Class <? extends ServerSocketChannel > oclass;
             LazyLoadBase <? extends EventLoopGroup > lazyloadbase;
 
-            if (Epoll.isAvailable() && this.mcServer.shouldUseNativeTransport())
-            {
-                oclass = EpollServerSocketChannel.class;
-                lazyloadbase = SERVER_EPOLL_EVENTLOOP;
-                logger.info("Using epoll channel type");
+            boolean useEpoll = false;
+
+            try {
+                Class<?> epollClass = Class.forName("io.netty.channel.epoll.Epoll");
+                Method isAvailable = epollClass.getMethod("isAvailable");
+                useEpoll = (Boolean) isAvailable.invoke(null) && this.mcServer.shouldUseNativeTransport();
+            } catch (ClassNotFoundException e) {
+                // Epoll class not found — expected on Windows
+            } catch (Exception e) {
+                e.printStackTrace(); // Log or handle unexpected reflection issues
             }
-            else
-            {
+
+            if (useEpoll) {
+                try {
+                	oclass = (Class<? extends ServerSocketChannel>) Class.forName("io.netty.channel.epoll.EpollServerSocketChannel");
+                    lazyloadbase = SERVER_EPOLL_EVENTLOOP;
+                    logger.info("Using epoll channel type");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // Fallback to NIO
+                    oclass = NioServerSocketChannel.class;
+                    lazyloadbase = eventLoops;
+                }
+            } else {
                 oclass = NioServerSocketChannel.class;
                 lazyloadbase = eventLoops;
                 logger.info("Using default channel type");
