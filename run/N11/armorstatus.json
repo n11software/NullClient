@@ -1,0 +1,14 @@
+{
+  "sector": 8,
+  "x": 16,
+  "y": 80,
+  "red": 255,
+  "green": 255,
+  "blue": 255,
+  "enabled": true,
+  "durability": true,
+  "durabilityText": false,
+  "vertical": true,
+  "rightAligned": true,
+  "itemCount": true
+}

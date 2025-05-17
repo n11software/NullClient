@@ -1,0 +1,30 @@
+[01:22:58] [Client thread/INFO]: Setting user: Player
+[01:22:58] [Client thread/INFO]: (Session ID is token:0:Player)
+[01:22:59] [Client thread/INFO]: [N11] Initializing client...
+[01:22:59] [Client thread/INFO]: LWJGL Version: 2.9.2
+[01:23:00] [Client thread/INFO]: Reloading ResourceManager: Default
+[01:23:00] [Client thread/ERROR]: Couldn't initialize twitch stream
+[01:23:00] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[01:23:00] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[01:23:00] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[01:23:00] [Thread-7/INFO]: OpenAL initialized.
+[01:23:00] [Sound Library Loader/INFO]: Sound engine started
+[01:23:01] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[01:23:02] [Client thread/ERROR]: Realms module missing
+java.lang.ClassNotFoundException: com.mojang.realmsclient.gui.screens.RealmsNotificationsScreen
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[?:1.8.0_202]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_202]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[?:1.8.0_202]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_202]
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_202]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_202]
+	at net.minecraft.realms.RealmsBridge.getNotificationScreen(RealmsBridge.java:38) [NullClient/:?]
+	at net.minecraft.client.gui.GuiMainMenu.initGui(GuiMainMenu.java:219) [NullClient/:?]
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:483) [NullClient/:?]
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:920) [NullClient/:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:503) [NullClient/:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:333) [NullClient/:?]
+	at net.minecraft.client.main.Main.main(Main.java:113) [NullClient/:?]
+[01:23:05] [Client thread/INFO]: Stopping!
+[01:23:05] [Client thread/INFO]: SoundSystem shutting down...
+[01:23:06] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

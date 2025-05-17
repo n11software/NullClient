@@ -1,0 +1,11 @@
+{
+  "sector": 7,
+  "x": -100,
+  "y": 10,
+  "red": 255,
+  "green": 255,
+  "blue": 255,
+  "enabled": true,
+  "left": true,
+  "right": true
+}

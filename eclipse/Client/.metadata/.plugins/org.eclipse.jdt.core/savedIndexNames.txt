@@ -1,2 +1,0 @@
-INDEX VERSION 1.134+C:\Users\fire\Downloads\NullClient-17e2bfa88951ef021ec7c784947c773130398b91\NullClient-17e2bfa88951ef021ec7c784947c773130398b91\eclipse\Client\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index

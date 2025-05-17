@@ -1,0 +1,11 @@
+{
+  "sector": 6,
+  "x": 5,
+  "y": 24,
+  "red": 255,
+  "green": 255,
+  "blue": 255,
+  "enabled": true,
+  "sprintToggle": true,
+  "sneakToggle": false
+}

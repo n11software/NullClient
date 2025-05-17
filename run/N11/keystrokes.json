@@ -1,0 +1,23 @@
+{
+  "sector": 0,
+  "x": 5,
+  "y": 34,
+  "red": 255,
+  "green": 255,
+  "blue": 255,
+  "pressedRed": 0,
+  "pressedGreen": 0,
+  "pressedBlue": 0,
+  "enabled": true,
+  "mouseButtons": true,
+  "spaceBar": true,
+  "keyBackground": true,
+  "WASD": true,
+  "keyBackgroundAlpha": 120,
+  "keyBackgroundRed": 0,
+  "keyBackgroundGreen": 0,
+  "keyBackgroundBlue": 0,
+  "keyBackgroundPressedRed": 255,
+  "keyBackgroundPressedGreen": 255,
+  "keyBackgroundPressedBlue": 255
+}

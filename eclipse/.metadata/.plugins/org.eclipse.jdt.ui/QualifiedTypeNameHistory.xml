@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="n11client.gui.hud.HUDConfigScreen"/>
-    <fullyQualifiedTypeName name="java.awt.ItemSelectable"/>
-    <fullyQualifiedTypeName name="net.minecraft.item.ItemStack"/>
-    <fullyQualifiedTypeName name="net.minecraft.init.Items"/>
-    <fullyQualifiedTypeName name="net.minecraft.item.ItemPotion"/>
-</qualifiedTypeNameHistroy>
