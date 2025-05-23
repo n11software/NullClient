@@ -1,134 +1,69 @@
-[22:14:57] [Client thread/INFO]: Setting user: N11Client
-[22:14:57] [Client thread/INFO]: (Session ID is token:eyJraWQiOiIwNDkxODEiLCJhbGciOiJSUzI1NiJ9.eyJ4dWlkIjoiMjUzNTQ1NTU0MDI0Nzg1MCIsImFnZyI6IkFkdWx0Iiwic3ViIjoiMzhlNTVlOWEtYmIzMi00ZTA3LTkxNGItMmY1MzZhOTFmMWVmIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsibXVsdGlwbGF5ZXIiLCJ0d29mYWN0b3JhdXRoIiwibXNhbWlncmF0aW9uX3N0YWdlNCIsIm9yZGVyc18yMDIyIl0sInByb2ZpbGVzIjp7Im1jIjoiYmZlMzVlYzYtMTc2Ny00NzAxLTgyMWItOTM2MzdhMTYzM2QwIn0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInBmZCI6W3sidHlwZSI6Im1jIiwiaWQiOiJiZmUzNWVjNi0xNzY3LTQ3MDEtODIxYi05MzYzN2ExNjMzZDAiLCJuYW1lIjoiTjExQ2xpZW50In1dLCJuYmYiOjE3NDc5MjEwNDEsImV4cCI6MTc0ODAwNzQ0MSwiaWF0IjoxNzQ3OTIxMDQxfQ.y6jfAjU5vsf3Z0Xj4d0oEQ-4UEIQQ9dDAIcGpVP2hqTFkivEsVchm0uyPSEH2DTm2iFfB7UWHBvtuJcqs6ViOOOTG8zISODjtwyRsBB8w3F8FGTa3ksZKSBvS2oGMZ25TgjfsDB08U7l76aB29sjXj3PlWCq_gRSeLlhWUiBbBMEnUZldtQPEzo3M0kk8DMOTBRQ86JCPZpZFu0fBs0UBvtXVi2ksOz13hbTWtk3fNsiHIbJro5bsjAWZ4RUttrD_jaS_AYgBVlXJUAXEGID7noHkH7hdaqVkdENVv4CprF1xh8nFx3U-wqPPBqEviBQ5S0pfdRrxfXzNf-h-JEwSw:bfe35ec617674701821b93637a1633d0)
-[22:14:58] [Client thread/INFO]: [N11] Initializing client...
-[22:14:58] [Client thread/INFO]: LWJGL Version: 2.9.2
-[22:14:59] [Client thread/INFO]: Reloading ResourceManager: Default, ! monke sky
-[22:14:59] [Client thread/ERROR]: Couldn't initialize twitch stream
-[22:14:59] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[22:14:59] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[22:14:59] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[22:14:59] [Thread-6/INFO]: OpenAL initialized.
-[22:14:59] [Sound Library Loader/INFO]: Sound engine started
-[22:15:00] [Client thread/INFO]: Created: 512x512 textures-atlas
-[22:15:10] [Client thread/INFO]: Connecting to mc.hypixel.net., 25565
-[22:15:11] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/bfe35ec6-1767-4701-821b-93637a1633d0/cape.png
-[22:15:12] [Client thread/INFO]: [CHAT]                          
-[22:15:12] [Thread-11/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/9558c7c4-0938-2885-b6e1-37462be63012/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/4e9c7738-7ca8-29b5-b1bd-76878842ad9b/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/2b7f3185-3723-26dd-8f75-4d12661199b3/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/56263dab-dbe7-253c-866b-c733d6a7ac83/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/a68cbdf3-b4e0-2039-bc62-742cb8a3e9c5/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/a37f37f2-6591-2fca-85af-cfe64b0ad331/cape.png
-[22:15:12] [Client thread/INFO]: [CHAT] §aYou have §b1 §aunclaimed leveling reward!
-[22:15:12] [Client thread/INFO]: [CHAT] §eClick here to view it!
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/46f31e6e-87a2-2761-a637-e57772d93a68/cape.png
-[22:15:12] [Thread-13/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-21/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-17/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-15/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-23/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-19/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-25/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/595eabab-1e25-2c76-84a6-a655f706f223/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/78846135-bb9b-20ca-845d-68f8d8db72ca/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/79cd18d9-6955-2f46-9591-344ac9411085/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/a0ed9d68-db66-2694-8eab-17838dcceaae/cape.png
-[22:15:12] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/a7ba2d82-f5e6-2c6e-84ab-23d15be8f257/cape.png
-[22:15:12] [Thread-36/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-28/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-32/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-30/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:12] [Thread-34/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:16] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/fc9f9afa-44cf-2151-82db-22ae7aba9946/cape.png
-[22:15:16] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/bfc9e1d6-3de6-29d9-bf03-97a16a29570b/cape.png
-[22:15:16] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/ec80e2e9-ddda-2d72-801c-3368a814504b/cape.png
-[22:15:16] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/c3f77f45-c0e9-2bc9-abcb-8410f5060d68/cape.png
-[22:15:16] [Thread-40/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:16] [Thread-42/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:16] [Thread-44/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:16] [Thread-38/WARN]: [N11] Failed to download cape: Response code 404
-[22:15:20] [Client thread/INFO]: [CHAT] §b[MVP§d+§b] flourzin§f §6joined the lobby!
-[22:15:20] [Client thread/INFO]: [CHAT] §b[MVP§e+§b] urmuffin§f §6joined the lobby!
-[22:15:47] [Client thread/INFO]: [CHAT]  §b>§c>§a>§r §6[MVP§2++§6] Partyrockgirl§f §6joined the lobby! §a<§c<§b<
-[22:15:48] [Client thread/INFO]: [CHAT] §b[MVP§d+§b] NetheriteSpoon§f §6joined the lobby!
-[22:15:54] [Client thread/INFO]: [CHAT] §7[4✫] §a[VIP] Nyxx_light§f: here
-[22:15:55] [Client thread/INFO]: [CHAT]  §b>§c>§a>§r §b[MVP§f++§b] yoshikazugame§f §6joined the lobby! §a<§c<§b<
-[22:15:59] [Server thread/INFO]: Starting integrated minecraft server version 1.9
-[22:15:59] [Server thread/INFO]: Generating keypair
-[22:15:59] [Server thread/INFO]: Preparing start region for level 0
-[22:16:00] [Server thread/INFO]: Changing view distance to 16, from 10
-[22:16:00] [Server thread/INFO]: N11Client[local:E:d05e78a8] logged in with entity id 686837 at (584.3071766700596, 13.0, 380.94569613962057)
-[22:16:00] [Server thread/INFO]: N11Client joined the game
-[22:16:00] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/bfe35ec6-1767-4701-821b-93637a1633d0/cape.png
-[22:16:01] [Thread-47/WARN]: [N11] Failed to download cape: Response code 404
-[22:16:03] [Server thread/INFO]: Saving and pausing game...
-[22:16:03] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:03] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:03] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:07] [Server thread/INFO]: Saving and pausing game...
-[22:16:07] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:07] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:07] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:11] [Server thread/INFO]: Saving and pausing game...
-[22:16:11] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:11] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:11] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:15] [Server thread/INFO]: Saving and pausing game...
-[22:16:15] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:15] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:15] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:19] [Server thread/INFO]: Saving and pausing game...
-[22:16:19] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:19] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:19] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:26] [Server thread/INFO]: Saving and pausing game...
-[22:16:26] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:26] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:26] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:27] [Server thread/INFO]: Stopping server
-[22:16:27] [Server thread/INFO]: Saving players
-[22:16:27] [Server thread/INFO]: Saving worlds
-[22:16:27] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:27] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:27] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:16:29] [Server thread/INFO]: Starting integrated minecraft server version 1.9
-[22:16:29] [Server thread/INFO]: Generating keypair
-[22:16:29] [Server thread/INFO]: Preparing start region for level 0
-[22:16:29] [Server thread/INFO]: Changing view distance to 16, from 10
-[22:16:29] [Server thread/INFO]: N11Client[local:E:b03843cd] logged in with entity id 688756 at (581.4544848502376, 13.0, 381.45150839071545)
-[22:16:29] [Server thread/INFO]: N11Client joined the game
-[22:16:29] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/bfe35ec6-1767-4701-821b-93637a1633d0/cape.png
-[22:16:29] [Thread-49/WARN]: [N11] Failed to download cape: Response code 404
-[22:16:58] [Server thread/INFO]: Saving and pausing game...
-[22:16:58] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:16:58] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:16:58] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:17:08] [Server thread/INFO]: Saving and pausing game...
-[22:17:08] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:17:08] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:17:08] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:18:05] [Client thread/INFO]: [CHAT] EnderDragon, EnderCrystal, Enderman, Endermite
-[22:18:06] [Server thread/INFO]: [N11Client: Object successfully summoned]
-[22:18:06] [Client thread/INFO]: [CHAT] Object successfully summoned
-[22:18:08] [Server thread/INFO]: Saving and pausing game...
-[22:18:08] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:18:08] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:18:08] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:18:12] [Server thread/INFO]: Saving and pausing game...
-[22:18:12] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:18:12] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:18:12] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:18:45] [Server thread/INFO]: Saving and pausing game...
-[22:18:45] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:18:45] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:18:45] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:18:46] [Server thread/INFO]: Stopping server
-[22:18:46] [Server thread/INFO]: Saving players
-[22:18:46] [Server thread/INFO]: Saving worlds
-[22:18:46] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:18:46] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:18:46] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:18:46] [Client thread/INFO]: Stopping!
-[22:18:46] [Client thread/INFO]: SoundSystem shutting down...
-[22:18:47] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[22:28:39] [Client thread/INFO]: Setting user: N11Client
+[22:28:39] [Client thread/INFO]: (Session ID is token:eyJraWQiOiIwNDkxODEiLCJhbGciOiJSUzI1NiJ9.eyJ4dWlkIjoiMjUzNTQ1NTU0MDI0Nzg1MCIsImFnZyI6IkFkdWx0Iiwic3ViIjoiMzhlNTVlOWEtYmIzMi00ZTA3LTkxNGItMmY1MzZhOTFmMWVmIiwiYXV0aCI6IlhCT1giLCJucyI6ImRlZmF1bHQiLCJyb2xlcyI6W10sImlzcyI6ImF1dGhlbnRpY2F0aW9uIiwiZmxhZ3MiOlsibXVsdGlwbGF5ZXIiLCJ0d29mYWN0b3JhdXRoIiwibXNhbWlncmF0aW9uX3N0YWdlNCIsIm9yZGVyc18yMDIyIl0sInByb2ZpbGVzIjp7Im1jIjoiYmZlMzVlYzYtMTc2Ny00NzAxLTgyMWItOTM2MzdhMTYzM2QwIn0sInBsYXRmb3JtIjoiVU5LTk9XTiIsInBmZCI6W3sidHlwZSI6Im1jIiwiaWQiOiJiZmUzNWVjNi0xNzY3LTQ3MDEtODIxYi05MzYzN2ExNjMzZDAiLCJuYW1lIjoiTjExQ2xpZW50In1dLCJuYmYiOjE3NDc5MjEwNDEsImV4cCI6MTc0ODAwNzQ0MSwiaWF0IjoxNzQ3OTIxMDQxfQ.y6jfAjU5vsf3Z0Xj4d0oEQ-4UEIQQ9dDAIcGpVP2hqTFkivEsVchm0uyPSEH2DTm2iFfB7UWHBvtuJcqs6ViOOOTG8zISODjtwyRsBB8w3F8FGTa3ksZKSBvS2oGMZ25TgjfsDB08U7l76aB29sjXj3PlWCq_gRSeLlhWUiBbBMEnUZldtQPEzo3M0kk8DMOTBRQ86JCPZpZFu0fBs0UBvtXVi2ksOz13hbTWtk3fNsiHIbJro5bsjAWZ4RUttrD_jaS_AYgBVlXJUAXEGID7noHkH7hdaqVkdENVv4CprF1xh8nFx3U-wqPPBqEviBQ5S0pfdRrxfXzNf-h-JEwSw:bfe35ec617674701821b93637a1633d0)
+[22:28:40] [Client thread/INFO]: [N11] Initializing client...
+[22:28:40] [Client thread/INFO]: LWJGL Version: 2.9.2
+[22:28:41] [Client thread/INFO]: Reloading ResourceManager: Default, ! monke sky
+[22:28:41] [Client thread/ERROR]: Couldn't initialize twitch stream
+[22:28:41] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[22:28:41] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[22:28:41] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[22:28:41] [Thread-7/INFO]: OpenAL initialized.
+[22:28:41] [Sound Library Loader/INFO]: Sound engine started
+[22:28:42] [Client thread/INFO]: Created: 512x512 textures-atlas
+[22:28:48] [Client thread/INFO]: [N11] Clicked on aade641704364ba792c36b1d6799d5e2
+[22:28:50] [Client thread/INFO]: Connecting to mc.hypixel.net., 25565
+[22:28:51] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/aade6417-0436-4ba7-92c3-6b1d6799d5e2/cape.png
+[22:28:52] [Client thread/INFO]: [CHAT]                          
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/dc8b2a61-ea32-238b-a1b9-5bae75122863/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/6e18d658-ca71-27cd-8f71-b35771f57c14/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/634f900b-9586-2058-a4cb-f1bad41cde5d/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/2f80994c-d1cb-2974-a30d-265067348d78/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/9009615c-c1f9-2bdf-b1f9-525cd2653f12/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/bb2a9b53-1c05-27b5-b365-81b67fb48c72/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/8834233b-048c-2fae-977c-94e2559882df/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/76923e7e-20eb-2227-8d48-ad730680fe79/cape.png
+[22:28:52] [Thread-12/WARN]: [N11] Successfully connected to https://n11.dev/aade6417-0436-4ba7-92c3-6b1d6799d5e2/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/4046dd41-73df-254f-89db-cfbb025e5b68/cape.png
+[22:28:52] [Thread-16/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-14/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-20/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-26/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-24/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-18/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-28/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-22/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/ba7385a2-c926-27dc-ade5-68eaad18ce82/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/1113ae5f-4532-23e0-88c8-3ae0822c097b/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/2282fcd1-adee-2567-9f6f-971a43f251cc/cape.png
+[22:28:52] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/0fb421ee-1d82-2abd-97eb-a04034edefa9/cape.png
+[22:28:52] [Client thread/INFO]: [CHAT]  §b>§c>§a>§r §b[MVP§c++§b] bleemey§f §6joined the lobby! §a<§c<§b<
+[22:28:52] [Thread-30/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Client thread/INFO]: [CHAT]  §b>§c>§a>§r §6[MVP§2++§6] soldieroflove§f §6joined the lobby! §a<§c<§b<
+[22:28:52] [Client thread/INFO]: [CHAT] §b[MVP§4+§b] xaviuh§f §6joined the lobby!
+[22:28:52] [Thread-35/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:52] [Thread-33/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-39/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-37/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/8ac94658-9025-2cc2-95c8-4513fd3330f9/cape.png
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/be19b8ae-a098-2aab-b235-aefc205a56ef/cape.png
+[22:28:53] [Thread-43/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-47/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/9ad46083-f78e-2ee6-b4fd-e0628aa6c043/cape.png
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/affd1f30-132f-23ca-8b12-4579e1d67f61/cape.png
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/0b3bb798-a9fd-2be4-8813-1b9f21b606b9/cape.png
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/18d3278c-7103-2204-90ae-367794fa30e8/cape.png
+[22:28:53] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/ff7496d2-cb5a-289a-b8e9-9c4532c0d710/cape.png
+[22:28:53] [Thread-51/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-57/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-53/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-49/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:53] [Thread-55/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:54] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/2282fcd1-adee-2567-9f6f-971a43f251cc/cape.png
+[22:28:54] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/ba7385a2-c926-27dc-ade5-68eaad18ce82/cape.png
+[22:28:54] [Client thread/WARN]: [N11] Attempting to download cape from: https://n11.dev/0fb421ee-1d82-2abd-97eb-a04034edefa9/cape.png
+[22:28:54] [Thread-59/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:54] [Thread-61/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:54] [Thread-60/WARN]: [N11] Failed to download cape: Response code 404
+[22:28:55] [Client thread/INFO]: Stopping!
+[22:28:55] [Client thread/INFO]: SoundSystem shutting down...
+[22:28:56] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
