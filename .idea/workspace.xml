@@ -5,114 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff4bfd12-d8e4-4485-8ce1-ada317376520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deps.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libsref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/bin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/OpenAL32.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/OpenAL32.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/OpenAL64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/OpenAL64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/avutil-ttv-51.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/avutil-ttv-51.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/discord-rpc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/discord-rpc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/ibxm.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/ibxm.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/jinput-dx8.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/jinput-dx8.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/jinput-dx8_64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/jinput-dx8_64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/jinput-raw.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/jinput-raw.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/jinput-raw_64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/jinput-raw_64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/jinput-wintab.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/jinput-wintab.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/libmfxsw64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/libmfxsw64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/libmp3lame-ttv.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/libmp3lame-ttv.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/lwjgl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/lwjgl.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/lwjgl.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/lwjgl.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/lwjgl64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/lwjgl64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/slick.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/slick.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/swresample-ttv-0.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/swresample-ttv-0.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9-natives/twitchsdk.dll" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9-natives/twitchsdk.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/1.8.9.json" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/1.8.9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/N11.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/N11.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/authlib-1.5.21.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/authlib-1.5.21.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/auto-service-annotations-1.1.1-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/auto-service-annotations-1.1.1-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/auto-service-annotations-1.1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/auto-service-annotations-1.1.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/byte-buddy-1.17.5-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/byte-buddy-1.17.5-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/byte-buddy-1.17.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/byte-buddy-1.17.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/codecjorbis-20101023.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/codecjorbis-20101023.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/codecwav-20101023.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/codecwav-20101023.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-codec-1.9.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-codec-1.9.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-compress-1.8.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-compress-1.8.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-exec-1.4.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-exec-1.4.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-exec-1.4.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-exec-1.4.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-io-2.4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-io-2.4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-lang3-3.3.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-lang3-3.3.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/commons-logging-1.1.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/commons-logging-1.1.3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/discord-rpc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/discord-rpc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/driver-1.44.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/driver-1.44.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/driver-bundle-1.44.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/driver-bundle-1.44.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/error_prone_annotations-2.38.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/error_prone_annotations-2.38.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/error_prone_annotations-2.38.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/error_prone_annotations-2.38.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/failureaccess-1.0.3-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/failureaccess-1.0.3-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/failureaccess-1.0.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/failureaccess-1.0.3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/gson-2.10.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/gson-2.10.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/gson-2.2.4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/gson-2.2.4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/guava-17.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/guava-17.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/guava-33.4.8-jre-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/guava-33.4.8-jre-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/guava-33.4.8-jre.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/guava-33.4.8-jre.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/httpclient-4.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/httpclient-4.3.3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/httpcore-4.3.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/httpcore-4.3.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/ibxm.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/ibxm.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/icu4j-core-mojang-51.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/icu4j-core-mojang-51.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/j2objc-annotations-3.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/j2objc-annotations-3.0.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/j2objc-annotations-3.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/j2objc-annotations-3.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jinput-2.0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jinput-2.0.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jinput-platform-2.0.5-natives-windows.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jinput-platform-2.0.5-natives-windows.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jopt-simple-4.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jopt-simple-4.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jspecify-1.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jspecify-1.0.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jspecify-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jspecify-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/jutils-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/jutils-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/libraryjavasound-20101123.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/libraryjavasound-20101123.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/librarylwjglopenal-20100824.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/librarylwjglopenal-20100824.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/log4j-api-2.0-beta9.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/log4j-api-2.0-beta9.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/log4j-core-2.0-beta9.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/log4j-core-2.0-beta9.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/lwjgl-2.9.4-nightly-20150209.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/lwjgl-2.9.4-nightly-20150209.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/lwjgl-platform-2.9.4-nightly-20150209-natives-windows.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/lwjgl-platform-2.9.4-nightly-20150209-natives-windows.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/lwjgl.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/lwjgl.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/lwjgl_util-2.9.4-nightly-20150209.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/lwjgl_util-2.9.4-nightly-20150209.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/netty-1.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/netty-1.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/netty-all-4.0.23.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/netty-all-4.0.23.Final.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-api-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-api-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-api-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-api-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-context-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-context-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-context-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-context-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-exporter-logging-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-exporter-logging-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-exporter-logging-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-exporter-logging-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-common-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-common-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-common-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-common-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-extension-autoconfigure-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-extension-autoconfigure-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-extension-autoconfigure-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-extension-autoconfigure-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-extension-autoconfigure-spi-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-extension-autoconfigure-spi-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-extension-autoconfigure-spi-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-extension-autoconfigure-spi-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-logs-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-logs-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-logs-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-logs-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-metrics-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-metrics-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-metrics-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-metrics-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-trace-1.49.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-trace-1.49.0-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentelemetry-sdk-trace-1.49.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentelemetry-sdk-trace-1.49.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/opentest4j-1.3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/opentest4j-1.3.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/oshi-core-1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/oshi-core-1.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/playwright-1.44.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/playwright-1.44.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/realms-1.6.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/realms-1.6.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/selenium-java-3.8.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/selenium-java-3.8.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/slick.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/slick.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/soundsystem-20120107.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/soundsystem-20120107.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/trove4j-3.0.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/trove4j-3.0.3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/twitch-6.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/twitch-6.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/twitch-external-platform-4.5-natives-windows-32.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/twitch-external-platform-4.5-natives-windows-32.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/twitch-platform-6.5-natives-windows-32.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/twitch-platform-6.5-natives-windows-32.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/libs/vecmath-1.5.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/deps/libsBak/vecmath-1.5.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/run/options.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +49,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -209,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747460497036</updated>
       <workItem from="1747460498785" duration="2868000" />
-      <workItem from="1747968963757" duration="2231000" />
+      <workItem from="1747968963757" duration="2581000" />
     </task>
     <servers />
   </component>
