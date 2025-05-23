@@ -43,15 +43,25 @@ public class HTTPServer {
         		    else if (key.contains("uuid")) UUID = value;
         		    else if (key.contains("username")) Username = value;
         		}
+				// Return a html page that closes the tab
+				String css = "body { display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; background-color: #2D2D2A; }\n.title { font-size: 22pt; font-weight: bold; color: #EDF6F9; font-family: Arial; }\n.subtitle { font-size: 16pt; color: #C7CEDB; font-family: Arial; }";
+				String js = "<script>\n"
+						+ "window.close();\n"
+						+ "</script>";
+				String response = "<html><head><title>N11 Client</title></head><body><span class=\"title\">Logged In!</span><span class=\"subtitle\">You can close this window!</span></body><style>" + css + "</style>"+js+"</html>";
+				t.sendResponseHeaders(200, response.length());
+				OutputStream os = t.getResponseBody();
+				os.write(response.getBytes());
+				os.close();
                 stop();
                 Login.microsoftLoginDone(Token, UUID, Username, Client.getInstance().loginGUI);
         	} else {
 	            String css = "body { display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; background-color: #2D2D2A; }\n.title { font-size: 22pt; font-weight: bold; color: #EDF6F9; font-family: Arial; }\n.subtitle { font-size: 16pt; color: #C7CEDB; font-family: Arial; }";
 	            String js = "<script>\n"
 	            		+ "const key = new URLSearchParams(window.location.search).get('code');\n"
-	            		+ "window.location.href = \"http://n11.dev:25564/auth?code=\" + key;\n"
+	            		+ "window.location.href = \"https://n11.dev:25564/auth?code=\" + key;\n"
 	            		+ "</script>";
-	            String response = "<html><head><title>N11 Client</title></head><body><span class=\"title\">Logged In!</span><span class=\"subtitle\">You can close this window!</span></body><style>" + css + "</style>"+js+"</html>";
+	            String response = "<html><head><title>N11 Client</title></head><body><span class=\"title\">Please Wait!</span><span class=\"subtitle\">You can close this window!</span></body><style>" + css + "</style>"+js+"</html>";
 	            t.sendResponseHeaders(200, response.length());
 	            OutputStream os = t.getResponseBody();
 	            os.write(response.getBytes());

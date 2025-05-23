@@ -2,6 +2,7 @@ package net.minecraft.client.main;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.properties.PropertyMap.Serializer;
 import java.io.File;
@@ -27,6 +28,7 @@ public class Main
         optionparser.accepts("demo");
         optionparser.accepts("fullscreen");
         optionparser.accepts("checkGlErrors");
+
         OptionSpec<String> optionspec = optionparser.accepts("server").withRequiredArg();
         OptionSpec<Integer> optionspec1 = optionparser.accepts("port").withRequiredArg().ofType(Integer.class).defaultsTo(Integer.valueOf(25565), new Integer[0]);
         OptionSpec<File> optionspec2 = optionparser.accepts("gameDir").withRequiredArg().ofType(File.class).defaultsTo(new File("."), new File[0]);
@@ -49,6 +51,29 @@ public class Main
         OptionSpec<String> optionspec19 = optionparser.nonOptions();
         OptionSet optionset = optionparser.parse(p_main_0_);
         List<String> list = optionset.valuesOf(optionspec19);
+
+        // Load login
+        String uuid = "null";
+        String username = "Guest";
+        String accessToken = "null";
+        File loginFile = new File((File) optionset.valueOf(optionspec2), "n11client_token.json");
+        if (loginFile.exists()) {
+            // read the file
+            String json = "";
+            try {
+                json = new String(java.nio.file.Files.readAllBytes(loginFile.toPath()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
+            String token = jsonObject.get("active").getAsString();
+            JsonObject session = jsonObject.get("sessions").getAsJsonObject().get(token).getAsJsonObject();
+
+            uuid = session.get("uuid").getAsString();
+            username = session.get("username").getAsString();
+            accessToken = session.get("accessToken").getAsString();
+        }
 
         if (!list.isEmpty())
         {
@@ -100,7 +125,7 @@ public class Main
         String s5 = optionset.has(optionspec17) ? (String)optionspec17.value(optionset) : null;
         String s6 = (String)optionset.valueOf(optionspec);
         Integer integer = (Integer)optionset.valueOf(optionspec1);
-        Session session = new Session((String)optionspec9.value(optionset), s4, (String)optionspec11.value(optionset), (String)optionspec18.value(optionset));
+        Session session = new Session(username, uuid, accessToken, "microsoft");
         GameConfiguration gameconfiguration = new GameConfiguration(new GameConfiguration.UserInformation(session, propertymap, propertymap1, proxy), new GameConfiguration.DisplayInformation(i, j, flag, flag1), new GameConfiguration.FolderInformation(file1, file3, file2, s5), new GameConfiguration.GameInformation(flag2, s3), new GameConfiguration.ServerInformation(s6, integer.intValue()));
         Runtime.getRuntime().addShutdownHook(new Thread("Client Shutdown Thread")
         {

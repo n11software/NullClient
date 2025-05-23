@@ -4,22 +4,84 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff4bfd12-d8e4-4485-8ce1-ada317376520" name="Changes" comment="" />
+    <list default="true" id="ff4bfd12-d8e4-4485-8ce1-ada317376520" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/deps/libs/driver-1.44.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/libs/driver-bundle-1.44.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/libs/gson-2.10.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/libs/opentest4j-1.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/libs/playwright-1.44.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/gui/GuiLoginMicrosoft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/FullBright/FullBrightSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/FullBright/ModFullBright.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/OldAnimations/ModOldAnimations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/OldAnimations/OldAnimationsSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/WindowedFullscreen/ModWindowedFullscreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/WindowedFullscreen/WindowedFullscreenSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/armorstatus/ArmorStatusGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/bossbar/BossbarSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/bossbar/ModBossbar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/clock/ClockGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/cps/CPSGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/fps/FPSGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/keystrokes/KeystrokesGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/ping/ModPing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/ping/PingGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/ping/PingSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/togglesprintsneak/ToggleSprintSneakGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/armorstatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/armorstatus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/clock.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/clock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/cps.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/cps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/fps.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/fps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/keystrokes.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/keystrokes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/N11/togglesprintsneak.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/N11/togglesprintsneak.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-05-17-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-05-17-7.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/run/options.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/run/optionsof.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/run/optionsof.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/Minecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/gui/GuiLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/gui/GuiLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/gui/GuiSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/gui/GuiSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/renderer/ItemRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/client/renderer/ItemRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/entity/boss/BossStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/entity/boss/BossStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minecraft/net/minecraft/realms/RealmsBridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minecraft/net/minecraft/realms/RealmsBridge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/HTTPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/HTTPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/gui/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/gui/SplashScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/gui/hud/ModListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/gui/hud/ModListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/gui/hud/ModView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n11client/n11client/mods/ModInstances.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n11client/n11client/mods/ModInstances.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2xD6rc06ZrjHbSFA0NMr3Y8Sp2p" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,14 +89,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Run.executor": "Run",
+    "Application.Run.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/fire/Documents/GitHub/NullClient",
+    "last_opened_file_path": "C:/Users/fire/Documents/GitHub/NullClient/src/n11client/n11client/mods/FullBright",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,6 +109,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fire\Documents\GitHub\NullClient\src\n11client\n11client\mods\FullBright" />
+      <recent name="C:\Users\fire\Documents\GitHub\NullClient\src\n11client\n11client\mods" />
+      <recent name="C:\Users\fire\Documents\GitHub\NullClient\src\n11client\n11client\mods\WindowedFullscreen" />
+      <recent name="C:\Users\fire\Documents\GitHub\NullClient\src\n11client\n11client\mods\OldAnimations" />
+      <recent name="C:\Users\fire\Documents\GitHub\NullClient\src\n11client\n11client\mods\bossbar" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="n11client.mods.ping" />
+      <recent name="n11client.mods.togglesprintsneak" />
+      <recent name="n11client.mods.keystrokes" />
+      <recent name="n11client.mods.fps" />
+      <recent name="n11client.mods.cps" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -77,6 +155,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747460497036</updated>
       <workItem from="1747460498785" duration="2868000" />
+      <workItem from="1747968963757" duration="1354000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,13 @@
 {
   "sector": 8,
-  "x": 16,
+  "x": 62,
   "y": 80,
   "red": 255,
-  "green": 255,
-  "blue": 255,
+  "green": 85,
+  "blue": 0,
   "enabled": true,
   "durability": true,
-  "durabilityText": false,
+  "durabilityText": true,
   "vertical": true,
   "rightAligned": true,
   "itemCount": true

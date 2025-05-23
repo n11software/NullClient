@@ -1,5 +1,8 @@
 package net.minecraft.entity.boss;
 
+import n11client.Client;
+import n11client.mods.ModInstances;
+
 public final class BossStatus
 {
     public static float healthScale;
@@ -9,9 +12,11 @@ public final class BossStatus
 
     public static void setBossStatus(IBossDisplayData displayData, boolean hasColorModifierIn)
     {
-        healthScale = displayData.getHealth() / displayData.getMaxHealth();
-        statusBarTime = 100;
-        bossName = displayData.getDisplayName().getFormattedText();
-        hasColorModifier = hasColorModifierIn;
+        if (ModInstances.getBossbar().isEnabled()) {
+            healthScale = displayData.getHealth() / displayData.getMaxHealth();
+            statusBarTime = 100;
+            bossName = displayData.getDisplayName().getFormattedText();
+            hasColorModifier = hasColorModifierIn;
+        }
     }
 }

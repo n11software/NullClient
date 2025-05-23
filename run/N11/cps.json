@@ -1,9 +1,9 @@
 {
-  "sector": 7,
-  "x": -100,
-  "y": 10,
+  "sector": 0,
+  "x": 13,
+  "y": 126,
   "red": 255,
-  "green": 255,
+  "green": 85,
   "blue": 255,
   "enabled": true,
   "left": true,

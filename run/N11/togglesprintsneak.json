@@ -3,9 +3,9 @@
   "x": 5,
   "y": 24,
   "red": 255,
-  "green": 255,
+  "green": 85,
   "blue": 255,
-  "enabled": true,
+  "enabled": false,
   "sprintToggle": true,
   "sneakToggle": false
 }

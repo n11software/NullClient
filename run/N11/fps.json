@@ -3,7 +3,7 @@
   "x": 5,
   "y": 5,
   "red": 255,
-  "green": 255,
-  "blue": 255,
+  "green": 85,
+  "blue": 0,
   "enabled": true
 }

@@ -3,8 +3,8 @@
   "x": -14,
   "y": 20,
   "red": 255,
-  "green": 255,
+  "green": 85,
   "blue": 255,
   "enabled": true,
-  "24hr": true
+  "24hr": false
 }

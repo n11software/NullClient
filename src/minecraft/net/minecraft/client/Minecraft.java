@@ -456,6 +456,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 }
             }
         });
+        Client.getInstance().start();
         this.mouseHelper = new MouseHelper();
         this.checkGLError("Pre startup");
         GlStateManager.enableTexture2D();
@@ -523,7 +524,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
 
         this.renderGlobal.makeEntityOutlineShader();
-        Client.getInstance().start();
     }
 
     private void registerMetadataSerializers()
@@ -1038,7 +1038,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         if (!this.skipRenderWorld)
         {
             this.mcProfiler.endStartSection("gameRenderer");
-            this.entityRenderer.updateCameraAndRender(this.timer.renderPartialTicks, i);
+            this.entityRenderer.updateCameraAndRender(this.timer.renderPartialTicks, i); // This line takes so long TODO: Optimize
             this.mcProfiler.endSection();
         }
 
@@ -1377,7 +1377,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             this.leftClickCounter = 0;
         }
 
-        if ((this.leftClickCounter <= 0 || Client.isOldAnimationsEnabled) && !this.thePlayer.isUsingItem())
+        if ((this.leftClickCounter <= 0 || ModInstances.getOldAnimations().isEnabled()) && !this.thePlayer.isUsingItem())
         {
             if (leftClick && this.objectMouseOver != null && this.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
             {
@@ -1523,7 +1523,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.displayWidth = Display.getDisplayMode().getWidth();
                 this.displayHeight = Display.getDisplayMode().getHeight();
 
-                if (!Client.isBorderlessFullscreenEnabled) {
+                if (!ModInstances.getWindowedFullscreen().isEnabled()) {
                     if (this.displayWidth <= 0) {
                         this.displayWidth = 1;
                     }
@@ -1559,7 +1559,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 this.updateFramebufferSize();
             }
 
-            if (!Client.isBorderlessFullscreenEnabled) Display.setFullscreen(this.fullscreen);
+            if (!ModInstances.getWindowedFullscreen().isEnabled()) Display.setFullscreen(this.fullscreen);
             else {
                 System.setProperty("org.lwjgl.opengl.Window.undecorated", String.valueOf(fullscreen));
                 Display.setFullscreen(false);

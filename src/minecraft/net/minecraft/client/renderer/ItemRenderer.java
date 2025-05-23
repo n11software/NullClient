@@ -1,6 +1,7 @@
 package net.minecraft.client.renderer;
 
 import n11client.Client;
+import n11client.mods.ModInstances;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -335,22 +336,22 @@ public class ItemRenderer
                     switch (enumaction)
                     {
                         case NONE:
-                            this.transformFirstPersonItem(f, Client.isOldAnimationsEnabled ? f1 : 0.0F);
+                            this.transformFirstPersonItem(f, ModInstances.getOldAnimations().isEnabled() ? f1 : 0.0F);
                             break;
 
                         case EAT:
                         case DRINK:
                             this.performDrinking(abstractclientplayer, partialTicks);
-                            this.transformFirstPersonItem(f, Client.isOldAnimationsEnabled ? f1 : 0.0F);
+                            this.transformFirstPersonItem(f, ModInstances.getOldAnimations().isEnabled() ? f1 : 0.0F);
                             break;
 
                         case BLOCK:
-                            this.transformFirstPersonItem(f, Client.isOldAnimationsEnabled ? f1 : 0.0F);
+                            this.transformFirstPersonItem(f, ModInstances.getOldAnimations().isEnabled() ? f1 : 0.0F);
                             this.doBlockTransformations();
                             break;
 
                         case BOW:
-                            this.transformFirstPersonItem(f, Client.isOldAnimationsEnabled ? f1 : 0.0F);
+                            this.transformFirstPersonItem(f, ModInstances.getOldAnimations().isEnabled() ? f1 : 0.0F);
                             this.doBowTransformations(partialTicks, abstractclientplayer);
                     }
                 }
